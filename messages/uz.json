@@ -1,0 +1,101 @@
+{
+  "Nav": {
+    "home": "Bosh sahifa",
+    "work": "Loyihalar",
+    "office": "Ofis",
+    "about": "Biz haqimizda",
+    "contact": "Aloqa",
+    "menu": "Menyu",
+    "close": "Yopish",
+    "callUs": "Qo'ng'iroq qiling"
+  },
+  "Home": {
+    "heroCta": "Ko'rish",
+    "featuredEyebrow": "Tanlangan ishlar",
+    "featuredTitle": "Tanlangan loyihalar",
+    "viewAll": "Barcha ishlar",
+    "statementEyebrow": "Yondashuvimiz",
+    "statementBody": "True design lives at the intersection of technical discipline and deep emotion. We don't simply build walls and facades; we cultivate surroundings that provoke creativity, evoke stillness, and feel genuinely alive.",
+    "statementName": "Otabek Isoqjonov",
+    "statementByline": "Founder and CEO",
+    "spansEyebrow": "Ish yo'nalishlarimiz",
+    "officeTeaserEyebrow": "Studiya haqida",
+    "officeTeaserTitle": "Hunarga asoslangan, aniqlikka yo'naltirilgan",
+    "officeTeaserBody": "Castler — Toshkentda joylashgan arxitektura studiyasi, turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanadi — dastlabki konseptdan qurilishgacha.",
+    "officeTeaserCta": "Studiya haqida",
+    "teamHeading": "Castler jamoasi",
+    "teamBody": "Toshkentda joylashgan, o'sib borayotgan studiya — turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanuvchi me'mor va dizaynerlar jamoasi.",
+    "teamCta": "Bizning jamoa"
+  },
+  "Categories": {
+    "architecture": "Arxitektura",
+    "interior": "Interer",
+    "urban": "Shaharsozlik",
+    "concept": "Konsept"
+  },
+  "Work": {
+    "eyebrow": "Loyihalar",
+    "title": "Tanlangan ishlar",
+    "body": "Studiyaning jarayondagi va yakunlangan loyihalaridan namunalar.",
+    "filterAll": "Barchasi",
+    "placeholderNotice": "Loyihalar suratlari hozircha tayyorlanmoqda — bu yerda vaqtinchalik tasvirlar ko'rsatilgan."
+  },
+  "Blog": {
+    "eyebrow": "Jurnal",
+    "heading": "Castler Yangiliklari",
+    "notice": "Vaqtinchalik yozuvlar — haqiqiy yangiliklar va matbuot materiallari tez orada qo'shiladi."
+  },
+  "Project": {
+    "back": "Loyihalarga qaytish",
+    "location": "Manzil",
+    "category": "Yo'nalish",
+    "year": "Yil",
+    "gallery": "Galereya",
+    "readMore": "Batafsil",
+    "close": "Yopish",
+    "nextProject": "Keyingi loyiha",
+    "notFoundTitle": "Loyiha topilmadi",
+    "notFoundBody": "Bu loyiha ko'chirilgan yoki o'chirilgan bo'lishi mumkin.",
+    "notFoundCta": "Barcha ishlarga qaytish"
+  },
+  "About": {
+    "eyebrow": "Ofis",
+    "heroHeading": "Odamlarni atrof-muhit bilan bog'laydigan fazolarni yaratamiz.",
+    "heroCta": "Biz haqimizda",
+    "awardsEyebrow": "Yutuqlar",
+    "awardsHeading": "Mukofotlar",
+    "awardsNotice": "Vaqtinchalik yozuvlar — haqiqiy mukofotlar va matbuot tarixi tez orada qo'shiladi.",
+    "joinTitle": "Bizga qo'shiling",
+    "joinBody": "Yondashuvimizni baham ko'radigan me'mor va dizaynerlardan xabar olishdan doim mamnunmiz.",
+    "joinCta": "Bog'lanish"
+  },
+  "Contact": {
+    "eyebrow": "Aloqa",
+    "title": "Keling, biror narsa quramiz",
+    "body": "Loyihangiz haqida gapirib bering — uchastka, dastur yoki xom g'oya. Bir necha kun ichida javob beramiz.",
+    "studioLabel": "Studiya",
+    "studioValue": "Toshkent, O'zbekiston",
+    "emailLabel": "Elektron pochta",
+    "phoneLabel": "Telefon",
+    "formName": "Ism",
+    "formEmail": "Elektron pochta",
+    "formMessage": "Loyihangiz haqida gapirib bering",
+    "formSubmit": "Xabar yuborish",
+    "formHint": "Elektron pochta ilovangizni ushbu xabar bilan oldindan to'ldirilgan holda ochadi."
+  },
+  "NotFound": {
+    "title": "Sahifa topilmadi",
+    "body": "Siz izlagan sahifa mavjud emas yoki ko'chirilgan.",
+    "cta": "Bosh sahifaga qaytish"
+  },
+  "Footer": {
+    "tagline": "Arxitektura dizayn kompaniyasi",
+    "workHeading": "Ishlar",
+    "officeHeading": "Ofis",
+    "newsHeading": "Castler yangiliklari",
+    "signUp": "Obuna bo'lish",
+    "newsConsent": "Elektron pochta ilovangizni obuna so'rovi bilan ochadi.",
+    "language": "Til",
+    "rights": "Barcha huquqlar himoyalangan."
+  }
+}

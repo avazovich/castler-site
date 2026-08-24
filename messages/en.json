@@ -1,0 +1,101 @@
+{
+  "Nav": {
+    "home": "Home",
+    "work": "Work",
+    "office": "Office",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "callUs": "Call us"
+  },
+  "Home": {
+    "heroCta": "View",
+    "featuredEyebrow": "Selected Work",
+    "featuredTitle": "Featured Projects",
+    "viewAll": "All work",
+    "statementEyebrow": "Our Approach",
+    "statementBody": "True design lives at the intersection of technical discipline and deep emotion. We don't simply build walls and facades; we cultivate surroundings that provoke creativity, evoke stillness, and feel genuinely alive.",
+    "statementName": "Otabek Isoqjonov",
+    "statementByline": "Founder and CEO",
+    "spansEyebrow": "Our work spans",
+    "officeTeaserEyebrow": "The Studio",
+    "officeTeaserTitle": "Grounded in craft, driven by clarity",
+    "officeTeaserBody": "Castler is a Tashkent-based architectural studio working across residential, commercial, and public projects — from early concept through construction.",
+    "officeTeaserCta": "About the studio",
+    "teamHeading": "Castler Team",
+    "teamBody": "A growing studio based in Tashkent, bringing together architects and designers working across residential, commercial, and public projects.",
+    "teamCta": "Our people"
+  },
+  "Categories": {
+    "architecture": "Architecture",
+    "interior": "Interior",
+    "urban": "Urban Design",
+    "concept": "Concept"
+  },
+  "Work": {
+    "eyebrow": "Projects",
+    "title": "Selected Work",
+    "body": "A cross-section of the studio's work in progress and completed projects.",
+    "filterAll": "All",
+    "placeholderNotice": "Project photography is being finalized — shown here with placeholder artwork."
+  },
+  "Blog": {
+    "eyebrow": "Journal",
+    "heading": "Castler News",
+    "notice": "Placeholder entries — real studio news and press coverage coming soon."
+  },
+  "Project": {
+    "back": "Back to work",
+    "location": "Location",
+    "category": "Category",
+    "year": "Year",
+    "gallery": "Gallery",
+    "readMore": "Read more",
+    "close": "Close",
+    "nextProject": "Next project",
+    "notFoundTitle": "Project not found",
+    "notFoundBody": "This project may have moved or been removed.",
+    "notFoundCta": "Back to all work"
+  },
+  "About": {
+    "eyebrow": "Office",
+    "heroHeading": "Crafting spaces that connect people to their environment.",
+    "heroCta": "About us",
+    "awardsEyebrow": "Recognition",
+    "awardsHeading": "Awards",
+    "awardsNotice": "Placeholder entries — real award and press history coming soon.",
+    "joinTitle": "Join us",
+    "joinBody": "We're always open to hearing from architects and designers who share our approach.",
+    "joinCta": "Get in touch"
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Let's build something",
+    "body": "Tell us about your project — a plot, a program, a rough idea. We'll follow up within a few days.",
+    "studioLabel": "Studio",
+    "studioValue": "Tashkent, Uzbekistan",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Tell us about your project",
+    "formSubmit": "Send message",
+    "formHint": "Opens your email app with this message pre-filled."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "cta": "Back to home"
+  },
+  "Footer": {
+    "tagline": "Architectural design company",
+    "workHeading": "Work",
+    "officeHeading": "Office",
+    "newsHeading": "Castler News",
+    "signUp": "Sign up",
+    "newsConsent": "Opens your email app to send a signup request.",
+    "language": "Language",
+    "rights": "All rights reserved."
+  }
+}

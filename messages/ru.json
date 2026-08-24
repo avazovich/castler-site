@@ -1,0 +1,101 @@
+{
+  "Nav": {
+    "home": "Главная",
+    "work": "Проекты",
+    "office": "Офис",
+    "about": "О нас",
+    "contact": "Контакты",
+    "menu": "Меню",
+    "close": "Закрыть",
+    "callUs": "Позвонить"
+  },
+  "Home": {
+    "heroCta": "Смотреть",
+    "featuredEyebrow": "Избранные работы",
+    "featuredTitle": "Избранные проекты",
+    "viewAll": "Все работы",
+    "statementEyebrow": "Наш подход",
+    "statementBody": "True design lives at the intersection of technical discipline and deep emotion. We don't simply build walls and facades; we cultivate surroundings that provoke creativity, evoke stillness, and feel genuinely alive.",
+    "statementName": "Otabek Isoqjonov",
+    "statementByline": "Founder and CEO",
+    "spansEyebrow": "Наши направления",
+    "officeTeaserEyebrow": "О студии",
+    "officeTeaserTitle": "Мастерство в основе, ясность в подходе",
+    "officeTeaserBody": "Castler — архитектурная студия в Ташкенте, работающая над жилыми, коммерческими и общественными проектами — от концепции до строительства.",
+    "officeTeaserCta": "О студии",
+    "teamHeading": "Команда Castler",
+    "teamBody": "Растущая студия в Ташкенте — команда архитекторов и дизайнеров, работающих над жилыми, коммерческими и общественными проектами.",
+    "teamCta": "Наша команда"
+  },
+  "Categories": {
+    "architecture": "Архитектура",
+    "interior": "Интерьер",
+    "urban": "Градостроительство",
+    "concept": "Концепция"
+  },
+  "Work": {
+    "eyebrow": "Проекты",
+    "title": "Избранные работы",
+    "body": "Часть текущих и завершённых проектов студии.",
+    "filterAll": "Все",
+    "placeholderNotice": "Фотографии проектов пока готовятся — здесь показаны временные изображения."
+  },
+  "Blog": {
+    "eyebrow": "Журнал",
+    "heading": "Новости Castler",
+    "notice": "Временные записи — реальные новости и публикации появятся позже."
+  },
+  "Project": {
+    "back": "Назад к проектам",
+    "location": "Локация",
+    "category": "Категория",
+    "year": "Год",
+    "gallery": "Галерея",
+    "readMore": "Подробнее",
+    "close": "Закрыть",
+    "nextProject": "Следующий проект",
+    "notFoundTitle": "Проект не найден",
+    "notFoundBody": "Возможно, этот проект был перемещён или удалён.",
+    "notFoundCta": "Назад ко всем проектам"
+  },
+  "About": {
+    "eyebrow": "Офис",
+    "heroHeading": "Создаём пространства, которые связывают людей с их окружением.",
+    "heroCta": "О нас",
+    "awardsEyebrow": "Признание",
+    "awardsHeading": "Награды",
+    "awardsNotice": "Временные записи — реальная история наград и публикаций появится позже.",
+    "joinTitle": "Присоединяйтесь",
+    "joinBody": "Мы всегда рады архитекторам и дизайнерам, разделяющим наш подход.",
+    "joinCta": "Связаться"
+  },
+  "Contact": {
+    "eyebrow": "Контакты",
+    "title": "Построим что-нибудь вместе",
+    "body": "Расскажите о своём проекте — участок, программа или просто идея. Мы ответим в течение нескольких дней.",
+    "studioLabel": "Студия",
+    "studioValue": "Ташкент, Узбекистан",
+    "emailLabel": "Email",
+    "phoneLabel": "Телефон",
+    "formName": "Имя",
+    "formEmail": "Email",
+    "formMessage": "Расскажите о своём проекте",
+    "formSubmit": "Отправить сообщение",
+    "formHint": "Откроется почтовое приложение с готовым письмом."
+  },
+  "NotFound": {
+    "title": "Страница не найдена",
+    "body": "Запрашиваемая страница не существует или была перемещена.",
+    "cta": "На главную"
+  },
+  "Footer": {
+    "tagline": "Архитектурная дизайн-студия",
+    "workHeading": "Проекты",
+    "officeHeading": "Офис",
+    "newsHeading": "Новости Castler",
+    "signUp": "Подписаться",
+    "newsConsent": "Откроет почтовое приложение с запросом на подписку.",
+    "language": "Язык",
+    "rights": "Все права защищены."
+  }
+}
