@@ -15,9 +15,9 @@
     "featuredTitle": "Tanlangan loyihalar",
     "viewAll": "Barcha ishlar",
     "statementEyebrow": "Yondashuvimiz",
-    "statementBody": "True design lives at the intersection of technical discipline and deep emotion. We don't simply build walls and facades; we cultivate surroundings that provoke creativity, evoke stillness, and feel genuinely alive.",
+    "statementBody": "Haqiqiy dizayn texnik intizom bilan chuqur hissiyot kesishgan nuqtada yashaydi. Biz shunchaki devor va fasad qurmaymiz — ijodkorlikni uyg'otadigan, sokinlik baxsh etadigan va haqiqatan tirik his qildiradigan muhitlarni yaratamiz.",
     "statementName": "Otabek Isoqjonov",
-    "statementByline": "Founder and CEO",
+    "statementByline": "Asoschi va bosh direktor",
     "spansEyebrow": "Ish yo'nalishlarimiz",
     "officeTeaserEyebrow": "Studiya haqida",
     "officeTeaserTitle": "Hunarga asoslangan, aniqlikka yo'naltirilgan",
@@ -81,12 +81,136 @@
     "formEmail": "Elektron pochta",
     "formMessage": "Loyihangiz haqida gapirib bering",
     "formSubmit": "Xabar yuborish",
-    "formHint": "Elektron pochta ilovangizni ushbu xabar bilan oldindan to'ldirilgan holda ochadi."
+    "formHint": "Elektron pochta ilovangizni ushbu xabar bilan oldindan to'ldirilgan holda ochadi.",
+    "quickContact": "Biz bilan bog'lanishning eng tezkor yo'li",
+    "orSendDetails": "Yoki loyihangiz tafsilotlarini yozib qoldiring"
   },
   "NotFound": {
     "title": "Sahifa topilmadi",
     "body": "Siz izlagan sahifa mavjud emas yoki ko'chirilgan.",
     "cta": "Bosh sahifaga qaytish"
+  },
+  "Projects": {
+    "exclusive-signature-restaurant": {
+      "summary": "Faqat shu joy uchun yaratilgan noyob restoran dizayni — suv bo'yida umumiy kirish atrofida jamlangan, oltin tojli uchta doiraviy zal.",
+      "description": [
+        "Takrorlanmas restoran sifatida buyurtma qilingan bu pavilon hech qachon ko'paytirilishi mo'ljallanmagan: markaziy kirish atrofida yelpig'ichsimon joylashgan uchta doiraviy taom zali rejasi faqat Namangandagi shu ko'l bo'yi uchastkasi uchun yaratilgan.",
+        "Har bir zal tunda ko'ldan yoritilgan chiroq kabi ko'rinadigan porloq oltin disk bilan qoplangan, poldan shiftgacha oyna esa har bir stolni aks ettiruvchi hovuz va undan naridagi daraxtlar tomon qaratib turadi.",
+        "Ichkarida bosh taom zali ustida erkin shaklli bronza soyabon yig'ilgan bo'lib, u shiftning geometrik to'rini xuddi daraxt tozalikni bo'lganidek buzadi."
+      ]
+    },
+    "samarkand-hotel-room": {
+      "summary": "Samarqanddagi mehmonxona loyihasi uchun mehmon xonasi interyeri.",
+      "description": ["To'liq loyiha tavsifi tez orada qo'shiladi."]
+    },
+    "afsona-villa": {
+      "summary": "Namangandagi, aks ettiruvchi hovuz yonida joylashgan xususiy villa.",
+      "description": ["To'liq loyiha tavsifi tez orada qo'shiladi."]
+    },
+    "tashkent-penthouse": {
+      "summary": "Toshkentdagi penthouse turar-joyi uchun ochiq terrasa va dam olish zonasi.",
+      "description": ["To'liq loyiha tavsifi tez orada qo'shiladi."]
+    },
+    "yorokobi-wok-and-noodles": {
+      "summary": "Buxorodagi tezkor wok va lag'mon restorani — yorqin qizil va xantal ranglari hamda osilib turgan yashil o'simliklar bilan qoplangan shift atrofida qurilgan.",
+      "description": [
+        "Yorokobi to'liq xizmat ko'rsatuvchi lag'mon barini ixcham maydonga jamlagan — bu yerda kvadrat metr emas, rang ishlaydi: lak qizil kabinalar, xantal-sariq osma chiroqlar va qo'lda chizilgan logotip devori kirgan zahoti zalning kayfiyatini belgilaydi.",
+        "Shift bo'ylab osilib turgan o'simliklar soyaboni pastdagi ochiq kommunikatsiyalarni yumshatadi, mehmonlar ko'rmaydigan xonalar — menejer kabineti, xavfsizlik xonasi, xodimlar dam olish xonasi — esa xuddi shu qizil-ko'mir rang palitrasini davom ettiradi."
+      ]
+    },
+    "turakorgan-residence": {
+      "summary": "An'anaviy va zamonaviy dizayn uyg'unligi har bir xonada davom etadigan oilaviy turar-joy — katta dasturxon zali aniq zamonaviy interyerlar yonida.",
+      "description": [
+        "Uy yagona g'oyaga asoslangan: an'ana va zamonaviylik bir xonada raqobatlashish o'rniga birga yashaydi. Katta oilaviy yig'inlar uchun mo'ljallangan dasturxon zali — uzun umumiy stol, naqshli yog'och panellar, haykaltaroshlik uslubidagi lyuster — an'anaviy o'zbek mehmondo'stligini zamonaviy qobiq orqali olib o'tuvchi uyning yuragida joylashgan.",
+        "Boshqa joylarda material tili sokinroq va zamonaviyroqqa aylanadi: yong'oq rangidagi yog'och, boucle mato va abstrakt san'at asarlari yashash xonalari, yotoqxonalar va oshxonada bir xil vazminlikni davom ettiradi, shunday qilib uyning an'anaviy yuragi zamonaviy qobiqqa yopishtirilgan davr buyumidek tuyulmaydi."
+      ]
+    },
+    "afsona-mall": {
+      "summary": "Bizning flagman tijorat interyerimiz — 20 000+ m² savdo markazi, to'liq balandlikdagi atrium atrofida qurilgan, uning ko'p qirrali fonar shifti kunduzgi yorug'likni to'rt qavatli savdo maydoniga tortib tushiradi.",
+      "description": [
+        "20 000 kvadrat metrdan oshadigan Afsona Mall — Castler hozirgacha yaratgan eng katta interyer. Reja yagona ulkan atrium atrofida quriladi: eskalatorlar va shishali panjarali balkonlar markaziy hovli atrofida to'rt qavatni o'rab oladi, bularning barchasi ustidan to'g'ridan-to'g'ri doiraviy fonarga ochiladigan yulduzsimon naqshli, ko'p qirrali shift ostida jamlangan.",
+        "Bronza rangidagi lift o'zaklari va tosh bilan qoplangan ustunlar atriumning issiq palitrasini mustahkamlaydi, birinchi qavatdagi aylanuvchi namoyish platformasi esa — namoyishdagi avtomobildan tortib mavsumiy o'rnatmagacha har qanday narsa uchun mo'ljallangan — savdo markazi yuragini doimiy harakatda saqlaydi. Ovqatlanish zonasi esa xuddi shu tilni inson o'lchamida takrorlaydi: osma disksimon yoritgichlar soyaboni, terrakota ustunlar va o'simlikli to'siqlar katta ovqatlanish zalini bir necha qulay, alohida bo'linmalarga aylantiradi."
+      ]
+    },
+    "inolla-office": {
+      "summary": "Ikki xil kayfiyatga bo'lingan korporativ ofis — issiq yog'och va yashillik bilan qoplangan ish stollari hamda norasmiy uchrashuvlar uchun quyuqroq, terrakota-ko'mir rangidagi dam olish zonasi.",
+      "description": [
+        "Inolla ish maydoni osilib turgan yashillik bilan qoplangan uzun yoritgich qutilar atrofida tashkil etilgan bo'lib, ular pastdagi ochiq shiftli, ochiq rejali ish stollarini yumshatadi. Natija dekorativ qo'shimcha emas, balki ish stollari orasidan o'tuvchi bog'ga o'xshaydi.",
+        "Alohida dam olish qanoti kayfiyatni butunlay o'zgartiradi — quyuq charm divanlar, terrakota-ko'mir palitrasi va poldan shiftgacha oyna — bu ofisga stol atrofida bo'lmaydigan suhbatlar uchun norasmiy makon beradi."
+      ]
+    },
+    "megaton-office": {
+      "summary": "Brendlangan, jilolangan metall qabulxonasini bog' manzarali tinch shaxsiy kabinetlar bilan birlashtiruvchi korporativ bosh ofis interyeri.",
+      "description": [
+        "Qabulxona ketma-ketligi kayfiyatni latun va jilolangan po'lat orqali belgilaydi: metall bilan qoplangan devorga o'rnatilgan orqa yoritgichli brend belgisi, charm divan va terrazzo pol material tilini kirish eshigidan harakat yo'laklariga qadar olib boradi.",
+        "Shaxsiy kabinetlar bu rasmiylikni osoyishtalikka almashtiradi — och rangli yog'och naqqoshligi, xususiy maysazorga ochiladigan poldan shiftgacha oynali eshiklar va to'liq jihozlangan ish stoli har bir kabinetni oddiy xona emas, balki mustaqil ish xonasiga aylantiradi."
+      ]
+    },
+    "mustang-showroom": {
+      "summary": "Kiyimlar galereya eksponatlaridek namoyish etiladigan tikuvchilik ko'rgazma zali — zaytun daraxtlari, tosh p'edestallar va o'lchov xonasi bo'ylab cho'zilgan uzun kiyim shkafi devori.",
+      "description": [
+        "Ko'rgazma zali savdo maydoni qadar kuratorlik qilingan galereyaga o'xshaydi: kostyum va tashqi kiyimlar tuvakdagi zaytun daraxtlari va xom tosh p'edestallar yonidagi mustaqil ilgichlarga osilgan, naqshli plitka yo'lagi esa kirishdan o'lchov xonalarigacha yo'lni belgilaydi.",
+        "Ochiq yog'och shkaflar devori yo'lakni xususiy maslahat xonasi tomon o'raydi, shunday qilib ko'rgazma tajribasi birinchi ko'rikdan yakuniy o'lchovgacha material tilida hech qanday o'zgarishsiz davom etadi."
+      ]
+    },
+    "mustang-office": {
+      "summary": "Issiq eman panellari bilan qoplangan shaxsiy ofis — oddiy shift yoritgichi o'rniga stol ustida osilgan, osilib turgan o'simlikli yorug'lik soyaboni bilan.",
+      "description": [
+        "Mustang ofisi brendning boshqa interyerlaridagi osilib turgan yashillik motivini qayta ishlatadi, bu yerda esa u stol ustidagi yagona soyabonga qisqartirilgan — xonaning qolgan qismini o'rab turgan eman panellari va orqa yoritgichli shisha javonlarga o'simlik bilan yumshatilgan sokin qarshi ohang.",
+        "Har bir sirt — stol, javonlar, shkaf, kiyim ilgichi — bir xil issiq yog'och rangida saqlanadi, shunday qilib ofis alohida mebel to'plami emas, balki yagona uzluksiz material sifatida o'qiladi."
+      ]
+    },
+    "axsikent": {
+      "summary": "Klassik turar-joy interyeri — panelli devorlar, xrustal lyusterlar va markaziy zinapoya atrofida qurilgan simmetrik ikki qavatli balandlikdagi yashash xonasi.",
+      "description": [
+        "Yashash xonasi uyning tilini eng aniq ifodalaydi: baland panelli devorlar, ramkalangan botanik gravyuralar va ikki qavat balandlikdagi shiftdan osilgan bosqichma-bosqich xrustal lyuster, qora lak rangli choy stoli atrofida qat'iy simmetriyada joylashtirilgan bir xil divan va qanotli kreslolar juftligi bilan.",
+        "Xuddi shu vazmin klassitsizm — yumshoq neytral mato, quyuq yog'och urg'ular, monoxrom detallar — turar-joyning qolgan qismida ham davom etadi, har bir xonaga sovuq tuyulmasdan bir xil sokin rasmiylikni beradi."
+      ]
+    },
+    "mashad": {
+      "summary": "Yumshoq taup va yong'oq ranglaridagi turar-joy interyeri, uning yotoqxonalari haykaltaroshlik uslubidagi osma yoritgichlar va baland yumshoq boshsupa atrofida qurilgan.",
+      "description": [
+        "Har bir yotoqxona bitta ta'sirli jihoz atrofida tuzilgan — bosqichli mato osma chiroq yoki osilib turgan sham uslubidagi chiroqlar to'plami — baland yumshoq boshsupa ustiga osilgan, gipsli shift medalyoni esa yoritishni ustidagi arxitektura bilan bog'laydi.",
+        "Xira taup-yong'oq palitrasi har bir xonada davom etadi, egri chiziqli naqqoshlik, orqa yoritgichli tokchalar va \"baliq suyagi\" uslubidagi pol esa uyning sokin, ohangdosh vazminligini buzmasdan detallarni boy saqlaydi."
+      ]
+    }
+  },
+  "Story": {
+    "eyebrow": "Bizning tariximiz",
+    "heading": "Castler haqida",
+    "intro": "Castler — arxitektura, interyer va shaharsozlik yo'nalishlarida ishlaydigan dizayn studiyasi. Maqsadimiz — qurilgan muhitni undan foydalanadigan odamlar bilan chuqur bog'laydigan makonlar yaratish.",
+    "paragraphs": [
+      "Otabek Isoqjonov tomonidan asos solingan Castler Toshkentda joylashgan bo'lib, turar-joy, tijorat va ijtimoiy loyihalar bilan — dastlabki g'oyadan qurilish yakuniga qadar — shug'ullanadi. Studiya har bir loyihaga uning joylashuvi, iqlimi va undan foydalanadigan odamlar bilan bog'liqligi orqali yondashadi.",
+      "Vaqtinchalik matn — studiyaning to'liq tarixi, e'tiborga molik loyihalari va matbuotdagi eslatmalari tayyor bo'lgach shu yerga qo'shiladi."
+    ],
+    "sections": [
+      {
+        "title": "Yo'nalishlar",
+        "seed": "story-disciplines",
+        "body": "Biz arxitektura, interyer dizayni va shaharsozlik bo'yicha ishlaymiz — har bir loyihaga umumiy hajmdan tortib material va detallargacha yagona uzluksiz g'oya sifatida yondashamiz. Vaqtinchalik matn — yakuniy nusxa keyinroq qo'shiladi."
+      },
+      {
+        "title": "Loyiha turlari",
+        "seed": "story-programs",
+        "body": "Portfolimiz villalar va xususiy turar-joylardan tortib, mehmonxona interyerlari, madaniy-ijtimoiy binolar va dastlabki bosqichdagi shaharsozlik konseptlarigacha bo'lgan yo'nalishlarni qamrab oladi. Vaqtinchalik matn — yakuniy nusxa keyinroq qo'shiladi."
+      },
+      {
+        "title": "Qadriyatlar",
+        "seed": "story-values",
+        "body": "Yaxshi dizayn mijozlar va pudratchilar bilan yaqin hamkorlik, bosqichma-bosqich ishlash jarayoni hamda joy, iqlim va mahalliy kontekstga doimo sezgir bo'lgan intizom natijasida yuzaga keladi, deb ishonamiz. Vaqtinchalik matn — yakuniy nusxa keyinroq qo'shiladi."
+      }
+    ]
+  },
+  "Awards": {
+    "flagshipMall": "Flagman loyiha, 20 000+ m² tijorat majmuasi",
+    "centralAsianDesign": "Markaziy Osiyo dizayn mukofotlari — nomzod",
+    "regionalInteriorJournal": "Mintaqaviy interyer jurnalida yoritilgan loyiha",
+    "emergingStudios": "Yosh studiyalar ko'rgazmasiga tanlangan",
+    "workplaceDesign": "Ish makoni dizayni mukofotlari — faxriy eslatma",
+    "residentialInterior": "Toshkent dizayn haftaligi — eng yaxshi turar-joy interyeri",
+    "hospitalityDigest": "Mehmondo'stlik dizayni jurnalida yoritilgan",
+    "residentialInteriorsPrize": "Turar-joy interyerlari mukofoti — nomzod",
+    "retailConceptShowcase": "Chakana savdo konsepti ko'rgazmasiga tanlangan"
   },
   "Footer": {
     "tagline": "Arxitektura dizayn kompaniyasi",

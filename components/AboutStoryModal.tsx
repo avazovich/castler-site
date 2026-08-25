@@ -4,12 +4,12 @@ import { motion } from "motion/react";
 import { useEffect } from "react";
 import { useLenis } from "lenis/react";
 import { useRouter } from "@/i18n/navigation";
-import { AboutStoryContent } from "./AboutStoryContent";
+import { AboutStoryContent, type StoryContent } from "./AboutStoryContent";
 import { CloseIcon } from "./icons";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-export function AboutStoryModal({ closeLabel }: { closeLabel: string }) {
+export function AboutStoryModal({ closeLabel, content }: { closeLabel: string; content: StoryContent }) {
   const router = useRouter();
   const lenis = useLenis();
   const close = () => router.back();
@@ -60,7 +60,7 @@ export function AboutStoryModal({ closeLabel }: { closeLabel: string }) {
         </div>
 
         <div className="px-6 pb-16 sm:px-10">
-          <AboutStoryContent />
+          <AboutStoryContent content={content} />
         </div>
       </motion.div>
     </div>

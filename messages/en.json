@@ -81,12 +81,51 @@
     "formEmail": "Email",
     "formMessage": "Tell us about your project",
     "formSubmit": "Send message",
-    "formHint": "Opens your email app with this message pre-filled."
+    "formHint": "Opens your email app with this message pre-filled.",
+    "quickContact": "Fastest way to reach us",
+    "orSendDetails": "Or send us the details"
   },
   "NotFound": {
     "title": "Page not found",
     "body": "The page you're looking for doesn't exist or has moved.",
     "cta": "Back to home"
+  },
+  "Story": {
+    "eyebrow": "Our Story",
+    "heading": "About Castler",
+    "intro": "Castler is an architectural design studio working across architecture, interiors, and urban design to create environments where the built form connects deeply with the people who use it.",
+    "paragraphs": [
+      "Founded by Otabek Isoqjonov, Castler is based in Tashkent and works across residential, commercial, and public projects, from early concept through construction. The studio approaches each project through its relationship to site, climate, and the people who will use it.",
+      "Placeholder — a fuller studio history, notable projects, and press mentions will be added here once available."
+    ],
+    "sections": [
+      {
+        "title": "Disciplines",
+        "seed": "story-disciplines",
+        "body": "We work across architecture, interior design, and urban planning, approaching each project as a single continuous idea carried from massing down to material and detail. Placeholder text — final copy to follow."
+      },
+      {
+        "title": "Program Types",
+        "seed": "story-programs",
+        "body": "Our portfolio spans villas and private residences, hospitality interiors, cultural and civic buildings, and early-stage urban concepts. Placeholder text — final copy to follow."
+      },
+      {
+        "title": "Values",
+        "seed": "story-values",
+        "body": "We believe good design comes from close collaboration with clients and contractors, an iterative process, and a discipline that stays responsive to site, climate, and local context. Placeholder text — final copy to follow."
+      }
+    ]
+  },
+  "Awards": {
+    "flagshipMall": "Flagship Project, 20,000+ m² Commercial Development",
+    "centralAsianDesign": "Shortlisted, Central Asian Design Awards",
+    "regionalInteriorJournal": "Featured Project, Regional Interior Journal",
+    "emergingStudios": "Selected, Emerging Studios Showcase",
+    "workplaceDesign": "Honorable Mention, Workplace Design Awards",
+    "residentialInterior": "Best Residential Interior, Tashkent Design Week",
+    "hospitalityDigest": "Featured, Hospitality Design Digest",
+    "residentialInteriorsPrize": "Shortlisted, Residential Interiors Prize",
+    "retailConceptShowcase": "Selected, Retail Concept Showcase"
   },
   "Footer": {
     "tagline": "Architectural design company",

@@ -25,11 +25,13 @@ export function ProjectModal({
   categoryLabel,
   labels,
   images,
+  description,
 }: {
   project: Project;
   categoryLabel: string;
   labels: Labels;
   images: GalleryItem[];
+  description: string[];
 }) {
   const router = useRouter();
   const lenis = useLenis();
@@ -109,7 +111,7 @@ export function ProjectModal({
               </div>
 
               <div className={`mt-6 space-y-4 text-ink-soft ${expanded ? "" : "line-clamp-5"}`}>
-                {project.description.map((paragraph, i) => (
+                {description.map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
                 ))}
               </div>

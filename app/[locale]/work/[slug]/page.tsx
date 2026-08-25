@@ -9,6 +9,7 @@ import { ParallaxImage } from "@/components/ParallaxImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { getProject, photographedProjects, projects } from "@/content/projects";
 import { getImageDimensions } from "@/lib/imageDimensions";
+import { getLocalizedProjectContent } from "@/lib/projectContent";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -35,6 +36,7 @@ export default async function ProjectPage({
 
   const t = await getTranslations("Project");
   const tCategories = await getTranslations("Categories");
+  const { description } = await getLocalizedProjectContent(project);
 
   const currentIndex = photographedProjects.findIndex((p) => p.slug === slug);
   const nextProject =
@@ -84,7 +86,7 @@ export default async function ProjectPage({
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.1} className="mt-8 space-y-4 text-ink-soft">
-            {project.description.map((paragraph, i) => (
+            {description.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
           </RevealOnScroll>

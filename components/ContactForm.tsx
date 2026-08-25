@@ -27,10 +27,11 @@ export function ContactForm({
         <input
           id="name"
           type="text"
+          autoComplete="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="mt-2 w-full border-b border-line bg-transparent py-2 text-lg outline-none transition-colors focus:border-ink"
+          className="mt-2 w-full border-b border-line bg-transparent py-3 text-lg outline-none transition-colors focus:border-ink"
         />
       </div>
       <div>
@@ -40,10 +41,12 @@ export function ContactForm({
         <input
           id="email"
           type="email"
+          inputMode="email"
+          autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="mt-2 w-full border-b border-line bg-transparent py-2 text-lg outline-none transition-colors focus:border-ink"
+          className="mt-2 w-full border-b border-line bg-transparent py-3 text-lg outline-none transition-colors focus:border-ink"
         />
       </div>
       <div>
@@ -62,7 +65,7 @@ export function ContactForm({
       <div>
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium uppercase tracking-wide text-paper transition-all duration-200 hover:scale-[1.03] hover:opacity-85 active:scale-[0.97]"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-4 text-sm font-medium uppercase tracking-wide text-paper transition-all duration-200 hover:scale-[1.02] hover:opacity-85 active:scale-[0.98] sm:w-auto sm:py-3"
         >
           {labels.submit}
         </button>

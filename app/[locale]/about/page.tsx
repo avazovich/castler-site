@@ -6,6 +6,7 @@ import { ArrowRightIcon } from "@/components/icons";
 import { AwardsSection } from "@/components/AwardsSection";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { awards } from "@/content/awards";
+import { getProject } from "@/content/projects";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("About");
@@ -14,6 +15,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AboutPage() {
   const t = await getTranslations("About");
+  const tAwards = await getTranslations("Awards");
+  const resolvedAwards = awards.map((entry) => ({
+    award: tAwards(entry.id),
+    project: getProject(entry.projectSlug)?.title ?? entry.projectSlug,
+    year: entry.year,
+  }));
 
   return (
     <div>
@@ -23,7 +30,7 @@ export default async function AboutPage() {
         eyebrow={t("awardsEyebrow")}
         heading={t("awardsHeading")}
         notice={t("awardsNotice")}
-        awards={awards}
+        awards={resolvedAwards}
       />
 
       <section className="border-t border-line bg-ink text-paper">

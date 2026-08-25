@@ -73,7 +73,7 @@ export function Navbar() {
           </button>
         </div>
       </header>
-      <MobileMenu open={mobileOpen} onOpenChange={setMobileOpen} links={links} />
+      <MobileMenu open={mobileOpen} onOpenChange={setMobileOpen} />
     </>
   );
 }

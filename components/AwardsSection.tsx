@@ -1,5 +1,6 @@
-import type { AwardEntry } from "@/content/awards";
 import { RevealOnScroll } from "./RevealOnScroll";
+
+type ResolvedAward = { award: string; project: string; year: string };
 
 export function AwardsSection({
   eyebrow,
@@ -10,7 +11,7 @@ export function AwardsSection({
   eyebrow: string;
   heading: string;
   notice: string;
-  awards: AwardEntry[];
+  awards: ResolvedAward[];
 }) {
   return (
     <section className="border-t border-line px-6 py-24 sm:px-10 sm:py-32">
