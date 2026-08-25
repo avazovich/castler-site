@@ -7,7 +7,8 @@ import { ArrowRightIcon } from "@/components/icons";
 import { ImageSlider, type GalleryItem } from "@/components/ImageSlider";
 import { ParallaxImage } from "@/components/ParallaxImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { getProject, projects } from "@/content/projects";
+import { getProject, photographedProjects, projects } from "@/content/projects";
+import { getImageDimensions } from "@/lib/imageDimensions";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -35,11 +36,14 @@ export default async function ProjectPage({
   const t = await getTranslations("Project");
   const tCategories = await getTranslations("Categories");
 
-  const currentIndex = projects.findIndex((p) => p.slug === slug);
-  const nextProject = projects[(currentIndex + 1) % projects.length];
+  const currentIndex = photographedProjects.findIndex((p) => p.slug === slug);
+  const nextProject =
+    currentIndex === -1
+      ? photographedProjects[0]
+      : photographedProjects[(currentIndex + 1) % photographedProjects.length];
 
   const galleryImages: GalleryItem[] = project.gallery
-    ? project.gallery.map((src, i) => ({ key: `g-${i}`, src }))
+    ? project.gallery.map((src, i) => ({ key: `g-${i}`, src, ...getImageDimensions(src) }))
     : Array.from({ length: Math.max(project.galleryCount - 1, 0) }).map((_, i) => ({
         key: `g-${i}`,
         seed: `${project.slug}-${i}`,

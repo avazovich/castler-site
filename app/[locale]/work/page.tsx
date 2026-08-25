@@ -6,7 +6,7 @@ import { OfficeTeaser } from "@/components/OfficeTeaser";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { WorkGallery } from "@/components/WorkGallery";
 import { blogPosts } from "@/content/blog";
-import { categories, projects, type ProjectCategory } from "@/content/projects";
+import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Work");
@@ -27,6 +27,9 @@ export default async function WorkPage({
     ? (category as ProjectCategory)
     : undefined;
 
+  const visibleCategories = categories.filter((c) =>
+    photographedProjects.some((p) => p.category === c),
+  );
   const categoryLabels = Object.fromEntries(
     categories.map((c) => [c, tCategories(c)]),
   ) as Record<ProjectCategory, string>;
@@ -40,13 +43,12 @@ export default async function WorkPage({
             <AnimatedText text={t("title")} />
           </h1>
           <p className="mt-4 max-w-lg text-ink-soft">{t("body")}</p>
-          <p className="mt-2 max-w-lg text-sm italic text-ink-soft/70">{t("placeholderNotice")}</p>
         </RevealOnScroll>
 
         <div className="mt-10">
           <WorkGallery
-            projects={projects}
-            categoryList={categories}
+            projects={photographedProjects}
+            categoryList={visibleCategories}
             initialCategory={initialCategory}
             allLabel={t("filterAll")}
             categoryLabels={categoryLabels}

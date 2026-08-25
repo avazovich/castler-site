@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { ProjectModal } from "@/components/ProjectModal";
 import { getProject } from "@/content/projects";
+import { buildGalleryItems } from "@/lib/projectImages";
 
 export default async function InterceptedProjectModal({
   params,
@@ -19,6 +20,7 @@ export default async function InterceptedProjectModal({
     <ProjectModal
       key={project.slug}
       project={project}
+      images={buildGalleryItems(project)}
       categoryLabel={tCategories(project.category)}
       labels={{
         location: t("location"),

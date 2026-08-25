@@ -1,18 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import type { Project } from "@/content/projects";
 import { ArrowRightIcon } from "./icons";
 import { PlaceholderImage } from "./PlaceholderImage";
 
-export type GalleryItem = { key: string; src?: string; seed?: string };
+export type GalleryItem = { key: string; src?: string; width?: number; height?: number; seed?: string };
 
 /**
  * Horizontal slider used for a project's images — real photos are placed at
  * their natural aspect ratio (height-bound, width auto) rather than cropped
  * into a fixed box, so a vertical shot stays vertical and a wide one stays
- * wide. Placeholder (non-real) slides fall back to a fixed 4:3 box since a
- * generated gradient has no "natural" size to preserve.
+ * wide. Uses next/image (not a raw <img>) with each photo's real width/height
+ * so Next can serve a compressed, appropriately-sized file instead of the
+ * original multi-megabyte source — the width/height props only feed the
+ * aspect ratio and srcset; CSS still controls the actual rendered size, so
+ * nothing is cropped or stretched. Placeholder (non-real) slides fall back
+ * to a fixed 4:3 box since a generated gradient has no "natural" size.
  */
 export function ImageSlider({
   images,
@@ -44,11 +49,13 @@ export function ImageSlider({
       >
         {images.map((item) =>
           item.src ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               key={item.key}
               src={item.src}
               alt={project.title}
+              width={item.width ?? 1600}
+              height={item.height ?? 1200}
+              sizes="80vw"
               className={`${imageHeightClass} w-auto shrink-0 snap-center rounded-xl object-contain`}
             />
           ) : (

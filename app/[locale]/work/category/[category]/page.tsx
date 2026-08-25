@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { categories, projects, type ProjectCategory } from "@/content/projects";
+import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
 
 function isCategory(value: string): value is ProjectCategory {
   return (categories as string[]).includes(value);
@@ -36,7 +36,10 @@ export default async function CategoryPage({
 
   const t = await getTranslations("Work");
   const tCategories = await getTranslations("Categories");
-  const filtered = projects.filter((p) => p.category === category);
+  const filtered = photographedProjects.filter((p) => p.category === category);
+  const visibleCategories = categories.filter((c) =>
+    photographedProjects.some((p) => p.category === c),
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-6 pb-24 pt-24 sm:px-10 sm:pt-28">
@@ -45,7 +48,7 @@ export default async function CategoryPage({
           <Link href="/work" className="pill bg-paper-2 text-ink transition-colors hover:bg-line">
             {t("filterAll")}
           </Link>
-          {categories.map((c) => (
+          {visibleCategories.map((c) => (
             <Link
               key={c}
               href={`/work/category/${c}`}
@@ -60,7 +63,6 @@ export default async function CategoryPage({
         <h1 className="font-display mt-3 text-4xl sm:text-5xl">
           <AnimatedText text={tCategories(category)} />
         </h1>
-        <p className="mt-2 max-w-lg text-sm italic text-ink-soft/70">{t("placeholderNotice")}</p>
       </RevealOnScroll>
 
       <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">

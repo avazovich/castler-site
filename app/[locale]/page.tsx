@@ -10,7 +10,7 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { SectionSnapScroll } from "@/components/SectionSnapScroll";
 import { WorkSpansAccordion } from "@/components/WorkSpansAccordion";
 import { ArrowRightIcon } from "@/components/icons";
-import { categories, heroProjects, projects } from "@/content/projects";
+import { categories, heroProjects, photographedProjects } from "@/content/projects";
 
 /**
  * Explicit tile placement for the featured mosaic, index-aligned to `projects`.
@@ -72,8 +72,8 @@ export default async function HomePage() {
           </Link>
         </RevealOnScroll>
 
-        <div className="mt-12 grid grid-cols-1 gap-2 md:grid-cols-2 md:auto-rows-[260px] lg:grid-cols-3 lg:auto-rows-[300px]">
-          {projects.map((project, i) => (
+        <div className="mt-12 grid grid-cols-1 gap-2 md:grid-cols-2 md:auto-rows-[260px] lg:grid-cols-3 lg:auto-rows-[300px] lg:grid-flow-row-dense">
+          {photographedProjects.map((project, i) => (
             <RevealOnScroll
               key={project.slug}
               delay={Math.min(i * 0.04, 0.3)}

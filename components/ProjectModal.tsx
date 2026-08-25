@@ -24,10 +24,12 @@ export function ProjectModal({
   project,
   categoryLabel,
   labels,
+  images,
 }: {
   project: Project;
   categoryLabel: string;
   labels: Labels;
+  images: GalleryItem[];
 }) {
   const router = useRouter();
   const lenis = useLenis();
@@ -50,16 +52,6 @@ export function ProjectModal({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const images: GalleryItem[] = [
-    { key: "hero", src: project.image, seed: project.slug },
-    ...(project.gallery
-      ? project.gallery.map((src, i) => ({ key: `g-${i}`, src }))
-      : Array.from({ length: Math.max(project.galleryCount - 1, 0) }).map((_, i) => ({
-          key: `g-${i}`,
-          seed: `${project.slug}-${i}`,
-        }))),
-  ];
 
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center ${view === "gallery" ? "" : "p-2 sm:p-6"}`}>
