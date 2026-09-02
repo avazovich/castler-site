@@ -7,8 +7,8 @@ import { WorkGallery } from "@/components/WorkGallery";
 import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Work");
-  return { title: `${t("title")} — Castler` };
+  const t = await getTranslations("Meta");
+  return { title: t("work.title"), description: t("work.description") };
 }
 
 export default async function WorkPage({

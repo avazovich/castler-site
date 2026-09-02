@@ -1,4 +1,21 @@
 {
+  "Meta": {
+    "home": {
+      "title": "Castler — Namangandan arxitektura va dizayn kompaniyasi | 2013 yildan",
+      "description": "Castler — 2013 yildan Namanganda faoliyat yurituvchi arxitektura va dizayn kompaniyasi. Turar joy, tijorat va jamoat obyektlari uchun konsepsiyadan qurilish nazoratigacha to'liq xizmat."
+    },
+    "work": {
+      "title": "Loyihalar — Castler arxitektura va dizayn",
+      "description": "Castler tomonidan loyihalashtirilgan turar joy va tijorat obyektlari. 2013 yildan beri taxminan 200 000 m² maydon amalga oshirilgan."
+    },
+    "about": {
+      "title": "Biz haqimizda — Castler, 2013 yildan Namangan arxitektura kompaniyasi",
+      "description": "Castler — 12 yildan ortiq tajribaga ega arxitektura va dizayn kompaniyasi. Bizning tarixi, yondashuvimiz va qadriyatlarimiz haqida."
+    },
+    "contact": {
+      "title": "Aloqa — Castler bilan bog'laning"
+    }
+  },
   "Nav": {
     "home": "Bosh sahifa",
     "work": "Loyihalar",
@@ -12,6 +29,13 @@
     "callUs": "Qo'ng'iroq qiling"
   },
   "Home": {
+    "tagline": "Ishlaydigan arxitektura.",
+    "statYears": "12+",
+    "statYearsLabel": "Yillik tajriba",
+    "statArea": "~200 000 m²",
+    "statAreaLabel": "Amalga oshirilgan",
+    "statLargest": "20 000 m²",
+    "statLargestLabel": "Eng yirik loyiha",
     "heroCta": "Ko'rish",
     "featuredEyebrow": "Tanlangan ishlar",
     "featuredTitle": "Tanlangan loyihalar",
@@ -162,6 +186,79 @@
     "joinTitle": "Bizga qo'shiling",
     "joinBody": "Yondashuvimizni baham ko'radigan me'mor va dizaynerlardan xabar olishdan doim mamnunmiz.",
     "joinCta": "Bog'lanish"
+  },
+  "AboutNarrative": {
+    "heading": "Castler haqida",
+    "intro": [
+      "Castler — 2013 yildan beri O'zbekistonning Namangan shahrida faoliyat yuritayotgan, tijorat yo'nalishiga ixtisoslashgan arxitektura va dizayn kompaniyasi. On ikki yildan ortiq davr ichida kompaniya loyihalari orqali taxminan 200 000 m² maydon amalga oshirilgan — xususiy uylardan tortib yirik savdo va biznes markazlarigacha.",
+      "Kompaniyani me'mor Otabek Isoqjonov asos solgan va bugungi kunda ham ijodiy rahbarlik qilib kelmoqda. Castler interyer dizayn va arxitektura/eksteryer loyihalash yo'nalishlarida xizmat ko'rsatadi, har bir loyiha uchun zarur mutaxassislar jamoasini shakllantiradi."
+    ],
+    "sections": [
+      {
+        "title": "Nima uchun Castler",
+        "body": [
+          "Castler uchun yaxshi arxitektura ikkita narsani bir vaqtda ta'minlashi kerak: kuchli dizayn va ishlaydigan biznes natijasi. Biz loyihani nafaqat qanday ko'rinishi, balki u qanday ishlashi, qancha daromad keltirishi, qay darajada moslashuvchan va foydali bo'lishi nuqtai nazaridan ham baholaymiz. Tijorat mijozlari uchun bu — maydonning har bir kvadrat metri hisobga olinishi, dizayn qarorlari amaliy va investitsiyaga oqlanadigan bo'lishi demakdir.",
+          "Bu bizni bitta uslub yoki material atrofida ishlaydigan studiyalardan ajratib turadi. Castlerda har bir loyiha o'ziga xos — obyekt turi, mijozning maqsadi va bozor talabidan kelib chiqib shakllantiriladi. Bizning ishimiz avval odamdan boshlanadi: bu joyda kim yashaydi yoki ishlaydi, va u o'zini qanday his qilishi kerak — so'ngra bu tushuncha aniq, o'lchanadigan natijaga aylantiriladi."
+        ]
+      },
+      {
+        "title": "To'liq javobgarlik",
+        "body": [
+          "Castler loyihani konsepsiyadan boshlab, konstruktiv va muhandislik yechimlarigacha, hamda qurilish jarayonidagi nazoratgacha to'liq o'z zimmasiga oladi. Mijoz butun jarayon davomida bitta jamoa bilan ishlaydi — bir nechta pudratchini o'zi muvofiqlashtirishga hojat qolmaydi."
+        ]
+      },
+      {
+        "title": "Tajriba va miqyos",
+        "body": [
+          "Castlerning portfeli xususiy uylar, villalar, ko'p qavatli turar-joy binolari, restoranlar, ofis markazlari va yirik tijorat obyektlarini o'z ichiga oladi. Kompaniyaning eng yirik loyihalaridan biri — xalqaro pudratchi bilan raqobatda tanlab olingan, 20 000 m² maydondagi Afsona Mall savdo markazi bo'lib, hozirda qurilish nazorati bosqichida. Bu — Castlerning yirik, murakkab tijorat loyihalarini boshqarish qobiliyatining amaldagi isboti."
+        ]
+      },
+      {
+        "title": "Qadriyatlar",
+        "body": [
+          "Castler ba'zi loyihalarni printsip asosida rad etadi — jumladan, alkogol mahsulotlari bilan bog'liq bizneslar uchun xizmat ko'rsatmaydi. Kompaniyaning manifesti: \"Makonlarni obod, insonlarni shod qilish maqsadi ila dunyoga boqish\" — dunyoni makonlarni obod va insonlarni shod qilish maqsadi bilan ko'rish. Bu — nafaqat go'zal, balki ishlaydigan va foydali makonlar yaratish majburiyati."
+        ]
+      },
+      {
+        "title": "Namangandan O'zbekistongacha",
+        "body": [
+          "Namanganda tashkil topgan Castler bugungi kunda O'zbekistonning turli hududlaridagi jiddiy mijozlar va tijorat loyihalari bilan ishlaydi. Kompaniya faol o'sib bormoqda va Toshkentda yangi ofis ochishni rejalashtirmoqda — mamlakat miqyosida tijorat arxitekturasi yo'nalishida ishonchli hamkor sifatida tanilishga intilib."
+        ]
+      }
+    ]
+  },
+  "FAQ": {
+    "heading": "Tez-tez so'raladigan savollar",
+    "items": [
+      {
+        "question": "Castler qachon tashkil topgan?",
+        "answer": "Castler 2013 yilda Namanganda tashkil topgan va o'shandan beri faoliyat yuritib kelmoqda."
+      },
+      {
+        "question": "Castler qanday xizmatlar ko'rsatadi?",
+        "answer": "Castler interyer dizayn va arxitektura/eksteryer loyihalash bo'yicha xizmat ko'rsatadi — konsepsiyadan tortib to qurilish nazoratigacha to'liq jarayonni o'z ichiga oladi."
+      },
+      {
+        "question": "Castler qayerda joylashgan?",
+        "answer": "Castlerning bosh ofisi Namangan shahrida, O'zbekistonda joylashgan. Kompaniya mamlakatning turli hududlaridagi loyihalar bilan ishlaydi va Toshkentda yangi ofis ochishni rejalashtirmoqda."
+      },
+      {
+        "question": "Castler nechta loyiha bajargan?",
+        "answer": "2013 yildan beri Castler orqali taxminan 200 000 m² maydon amalga oshirilgan — xususiy uylardan yirik tijorat obyektlarigacha."
+      },
+      {
+        "question": "Castler tijorat obyektlarini loyihalaydimi?",
+        "answer": "Ha. Castler savdo markazlari, ofis binolari, restoranlar va boshqa tijorat obyektlarini loyihalash bo'yicha ixtisoslashgan, jumladan xalqaro pudratchi bilan raqobatda tanlab olingan Afsona Mall — 20 000 m² savdo markazi loyihasi ustida ishlamoqda."
+      },
+      {
+        "question": "Castlerni kim asos solgan?",
+        "answer": "Castlerni me'mor Otabek Isoqjonov asos solgan bo'lib, u bugungi kunda ham kompaniyaning ijodiy rahbari hisoblanadi."
+      },
+      {
+        "question": "Castler qanday loyihalarni qabul qilmaydi?",
+        "answer": "Castler alkogol mahsulotlari bilan bog'liq bizneslar uchun xizmat ko'rsatmaydi — bu kompaniyaning printsipial pozitsiyasi."
+      }
+    ]
   },
   "Contact": {
     "eyebrow": "Aloqa",

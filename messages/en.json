@@ -1,4 +1,21 @@
 {
+  "Meta": {
+    "home": {
+      "title": "Castler — Architecture & Design Company in Namangan, Uzbekistan | Since 2013",
+      "description": "Castler is an architecture and design company based in Namangan, Uzbekistan, practising since 2013. Full-service design for residential, commercial, and public projects — concept to construction supervision."
+    },
+    "work": {
+      "title": "Projects — Castler Architecture & Design",
+      "description": "A selection of residential and commercial projects designed by Castler — approximately 200,000 m² realised since 2013."
+    },
+    "about": {
+      "title": "About Castler — Architecture Company in Namangan Since 2013",
+      "description": "Learn about Castler's history, design philosophy, and values — an architecture and design company practising in Namangan, Uzbekistan since 2013."
+    },
+    "contact": {
+      "title": "Contact — Get in Touch with Castler"
+    }
+  },
   "Nav": {
     "home": "Home",
     "work": "Work",
@@ -12,6 +29,13 @@
     "callUs": "Call us"
   },
   "Home": {
+    "tagline": "Design that performs.",
+    "statYears": "12+",
+    "statYearsLabel": "Years of practice",
+    "statArea": "~200,000 m²",
+    "statAreaLabel": "Realised",
+    "statLargest": "20,000 m²",
+    "statLargestLabel": "Largest project",
     "heroCta": "View",
     "featuredEyebrow": "Selected Work",
     "featuredTitle": "Featured Projects",
@@ -140,6 +164,79 @@
     "joinTitle": "Join us",
     "joinBody": "We're always open to hearing from architects and designers who share our approach.",
     "joinCta": "Get in touch"
+  },
+  "AboutNarrative": {
+    "heading": "About Castler",
+    "intro": [
+      "Castler is an architecture and design company, focused on commercial work, practising in Namangan, Uzbekistan since 2013. Over more than twelve years, the company's projects have realised approximately 200,000 m² — from private homes to large-scale retail and business developments.",
+      "The company was founded by architect Otabek Isoqjonov, who continues to serve as its creative lead today. Castler works across two core disciplines — interior design and architecture/exterior design — bringing together the right expertise for each project."
+    ],
+    "sections": [
+      {
+        "title": "Why Castler",
+        "body": [
+          "For Castler, good architecture has to deliver two things at once: strong design and a working business outcome. We evaluate a project not only on how it looks, but on how it performs — how it generates revenue, how flexible it is, and how usable it remains over time. For commercial clients, that means every square metre is accounted for, and design decisions hold up as a sound investment, not just a good picture.",
+          "That is what sets Castler apart from studios built around a single style or material. Every Castler project is shaped by the specific building type, the client's goals, and market demand — not a house aesthetic applied regardless of context. The work still starts with the person: who will use this space, and how should they feel in it — but that understanding is then translated into a concrete, measurable result."
+        ]
+      },
+      {
+        "title": "Full ownership",
+        "body": [
+          "Castler carries a project from initial concept through structural and engineering solutions to on-site construction supervision. Clients work with one team for the entire process, rather than coordinating multiple separate contractors themselves."
+        ]
+      },
+      {
+        "title": "Experience and scale",
+        "body": [
+          "Castler's portfolio spans private houses, villas, multi-storey residential buildings, restaurants, office centres, and large commercial developments. Among its most significant projects is Afsona Mall, a 20,000 m² shopping centre selected in competition with an international contractor and currently in the construction-supervision phase — a live proof point of Castler's ability to manage large, complex commercial work."
+        ]
+      },
+      {
+        "title": "Values",
+        "body": [
+          "Castler declines certain projects on principle — including work for alcohol-related businesses. The company's guiding philosophy is to look upon the world with the aim of making places prosper and people rejoice, reflected in its tagline: \"Through the lens of life, better places.\" In practice, that means a commitment to spaces that are not only beautiful, but genuinely functional and profitable to their owners."
+        ]
+      },
+      {
+        "title": "From Namangan to Uzbekistan",
+        "body": [
+          "Founded in Namangan, Castler now works with serious clients and commercial projects across Uzbekistan. The company is actively growing and planning to open a Tashkent office, as it builds a national reputation as a trusted partner in commercial architecture."
+        ]
+      }
+    ]
+  },
+  "FAQ": {
+    "heading": "Frequently asked questions",
+    "items": [
+      {
+        "question": "When was Castler founded?",
+        "answer": "Castler was founded in 2013 in Namangan, Uzbekistan, and has been in continuous operation since."
+      },
+      {
+        "question": "What services does Castler offer?",
+        "answer": "Castler offers interior design and architectural/exterior design services, covering the full process from initial concept through construction supervision."
+      },
+      {
+        "question": "Where is Castler located?",
+        "answer": "Castler's head office is in Namangan, Uzbekistan. The company works with clients across the country and is planning to open a Tashkent office."
+      },
+      {
+        "question": "How much has Castler built?",
+        "answer": "Castler has realised approximately 200,000 m² across its projects since it was founded in 2013."
+      },
+      {
+        "question": "Does Castler design commercial buildings?",
+        "answer": "Yes. Castler specialises in commercial projects including shopping centres, office buildings, and restaurants, and is currently working on Afsona Mall, a 20,000 m² shopping centre selected in competition with an international contractor."
+      },
+      {
+        "question": "Who founded Castler?",
+        "answer": "Castler was founded by architect Otabek Isoqjonov, who remains the company's creative lead."
+      },
+      {
+        "question": "What kind of projects does Castler decline?",
+        "answer": "Castler does not accept projects for alcohol-related businesses, as a matter of company principle."
+      }
+    ]
   },
   "Contact": {
     "eyebrow": "Contact",

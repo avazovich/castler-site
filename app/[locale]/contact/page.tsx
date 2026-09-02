@@ -7,8 +7,8 @@ import { ProjectImage } from "@/components/ProjectImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Contact");
-  return { title: `${t("eyebrow")} — Castler` };
+  const t = await getTranslations("Meta");
+  return { title: t("contact.title") };
 }
 
 export default async function ContactPage() {

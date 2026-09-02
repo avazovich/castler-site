@@ -10,6 +10,7 @@ import { ModalSlot } from "@/components/ModalSlot";
 import { Navbar } from "@/components/Navbar";
 import { PageTransition } from "@/components/PageTransition";
 import { routing } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/siteConfig";
 import "../globals.css";
 
 const inter = Inter({
@@ -31,6 +32,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Castler — Architectural Design Company",
   description:
     "Castler is an architectural design studio shaping buildings, interiors, and urban spaces.",

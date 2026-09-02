@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -11,6 +12,7 @@ import { SectionSnapScroll } from "@/components/SectionSnapScroll";
 import { WorkSpansAccordion } from "@/components/WorkSpansAccordion";
 import { ArrowRightIcon } from "@/components/icons";
 import { categories, heroProjects, photographedProjects } from "@/content/projects";
+import { FOUNDER_NAME, FOUNDING_YEAR, INSTAGRAM_URL, SITE_URL } from "@/lib/siteConfig";
 
 /**
  * Explicit tile placement for the featured mosaic, index-aligned to `projects`.
@@ -36,17 +38,77 @@ const GRID_POSITIONS = [
   "lg:col-start-1 lg:col-span-2 lg:row-start-[8] lg:row-span-2",
 ];
 
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Meta");
+  return {
+    title: t("home.title"),
+    description: t("home.description"),
+    alternates: { canonical: SITE_URL },
+  };
+}
+
 export default async function HomePage() {
   const t = await getTranslations("Home");
   const tCategories = await getTranslations("Categories");
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Castler",
+    alternateName: "Castler Group",
+    description:
+      "Architecture and design company based in Namangan, Uzbekistan, founded in 2013, focused on commercial projects. Approximately 200,000 m² realised across residential and commercial work, including Afsona Mall, a 20,000 m² shopping centre. Full-service design from concept to construction supervision.",
+    foundingDate: FOUNDING_YEAR,
+    founder: { "@type": "Person", name: FOUNDER_NAME },
+    address: { "@type": "PostalAddress", addressLocality: "Namangan", addressCountry: "UZ" },
+    areaServed: "Uzbekistan",
+    url: SITE_URL,
+    sameAs: [INSTAGRAM_URL],
+    priceRange: "$$$",
+    serviceType: ["Commercial Architecture", "Interior Design", "Architectural Design"],
+    makesOffer: {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "CreativeWork",
+        name: "Afsona Mall",
+        description:
+          "A 20,000 m² shopping centre designed by Castler, selected in competition with an international contractor, currently in construction supervision.",
+      },
+    },
+  };
+
   return (
     <>
       <SectionSnapScroll />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero: swipable carousel, inset to the same gutter as the mosaic below */}
       <section data-snap className="mx-auto max-w-[1600px] px-4 pt-20 sm:px-6">
         <HeroCarousel slides={heroProjects} />
+      </section>
+
+      {/* Tagline + stats strip */}
+      <section data-snap className="mx-auto max-w-[1600px] px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-16">
+        <RevealOnScroll className="text-center">
+          <p className="font-display text-3xl sm:text-4xl">{t("tagline")}</p>
+        </RevealOnScroll>
+        <RevealOnScroll
+          delay={0.05}
+          className="mt-10 grid grid-cols-1 gap-y-8 border-t border-line pt-8 sm:grid-cols-3 sm:gap-4"
+        >
+          <div className="text-center">
+            <p className="font-display text-3xl sm:text-4xl">{t("statYears")}</p>
+            <p className="label-mono mt-2 text-ink-soft">{t("statYearsLabel")}</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-3xl sm:text-4xl">{t("statArea")}</p>
+            <p className="label-mono mt-2 text-ink-soft">{t("statAreaLabel")}</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-3xl sm:text-4xl">{t("statLargest")}</p>
+            <p className="label-mono mt-2 text-ink-soft">{t("statLargestLabel")}</p>
+          </div>
+        </RevealOnScroll>
       </section>
 
       {/* Featured works — hand-placed 3x7 mosaic. data-snap-free: this section
