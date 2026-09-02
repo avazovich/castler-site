@@ -47,6 +47,12 @@ export function Footer() {
                 <Link href="/about" className="pill bg-paper/10 text-paper transition-colors hover:bg-paper/20">
                   {tNav("about")}
                 </Link>
+                <Link href="/journal" className="pill bg-paper/10 text-paper transition-colors hover:bg-paper/20">
+                  {tNav("journal")}
+                </Link>
+                <Link href="/careers" className="pill bg-paper/10 text-paper transition-colors hover:bg-paper/20">
+                  {tNav("careers")}
+                </Link>
                 <Link href="/contact" className="pill bg-paper/10 text-paper transition-colors hover:bg-paper/20">
                   {tNav("contact")}
                 </Link>

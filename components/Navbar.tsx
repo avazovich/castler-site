@@ -8,6 +8,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { MenuIcon, PhoneIcon } from "./icons";
 import { MobileMenu } from "./MobileMenu";
+import { OfficeMenu } from "./OfficeMenu";
 import { Wordmark } from "./Wordmark";
 
 export function Navbar() {
@@ -20,9 +21,10 @@ export function Navbar() {
     setScrolled(lenis.scroll > 8);
   });
 
-  const links = [
-    { href: "/work", label: t("work") },
+  const officeLinks = [
     { href: "/about", label: t("about") },
+    { href: "/journal", label: t("journal") },
+    { href: "/careers", label: t("careers") },
     { href: "/contact", label: t("contact") },
   ];
 
@@ -42,18 +44,13 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-2 md:flex">
-            {links.map((link) => {
-              const active = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`pill ${active ? "bg-ink text-paper" : "bg-paper-2 text-ink hover:bg-line"}`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+            <Link
+              href="/work"
+              className={`pill ${pathname === "/work" ? "bg-ink text-paper" : "bg-paper-2 text-ink hover:bg-line"}`}
+            >
+              {t("work")}
+            </Link>
+            <OfficeMenu label={t("office")} links={officeLinks} />
             <a
               href="tel:+998000000000"
               aria-label={t("callUs")}

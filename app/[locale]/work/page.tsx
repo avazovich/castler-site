@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { AnimatedText } from "@/components/AnimatedText";
-import { BlogSection } from "@/components/BlogSection";
 import { OfficeTeaser } from "@/components/OfficeTeaser";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { WorkGallery } from "@/components/WorkGallery";
-import { blogPosts } from "@/content/blog";
 import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,7 +18,6 @@ export default async function WorkPage({
 }) {
   const t = await getTranslations("Work");
   const tHome = await getTranslations("Home");
-  const tBlog = await getTranslations("Blog");
   const tCategories = await getTranslations("Categories");
   const { category } = await searchParams;
   const initialCategory = categories.includes(category as ProjectCategory)
@@ -60,13 +57,6 @@ export default async function WorkPage({
         title={tHome("officeTeaserTitle")}
         body={tHome("officeTeaserBody")}
         cta={tHome("officeTeaserCta")}
-      />
-
-      <BlogSection
-        eyebrow={tBlog("eyebrow")}
-        heading={tBlog("heading")}
-        notice={tBlog("notice")}
-        posts={blogPosts}
       />
     </>
   );

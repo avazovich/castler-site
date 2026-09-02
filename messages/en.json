@@ -4,6 +4,8 @@
     "work": "Work",
     "office": "Office",
     "about": "About",
+    "journal": "Journal",
+    "careers": "Careers",
     "contact": "Contact",
     "menu": "Menu",
     "close": "Close",
@@ -43,7 +45,24 @@
   "Blog": {
     "eyebrow": "Journal",
     "heading": "Castler News",
+    "body": "News, press mentions, and studio updates as they happen.",
     "notice": "Placeholder entries — real studio news and press coverage coming soon."
+  },
+  "Careers": {
+    "eyebrow": "Careers",
+    "heading": "Join the studio",
+    "body": "We're a growing studio and we're always looking for architects, designers, and visualizers who share our approach — even when there isn't an open listing for your exact role.",
+    "rolesHeading": "Where we're hiring",
+    "roles": [
+      { "title": "Architects", "body": "Concept through construction documentation, across residential, commercial, and public work." },
+      { "title": "Interior Designers", "body": "Material, lighting, and furniture decisions that carry a concept from massing down to detail." },
+      { "title": "3D Visualization Artists", "body": "Photoreal renders and walkthroughs that carry a project from pitch to construction." },
+      { "title": "Project Managers", "body": "Coordinating design, contractors, and clients from first sketch to handover." }
+    ],
+    "applyEyebrow": "Apply",
+    "applyHeading": "Send us your portfolio",
+    "applyBody": "Tell us which of these you'd be a fit for, and attach a few examples of your work. We reply to every serious application.",
+    "applyCta": "Email your portfolio"
   },
   "Project": {
     "back": "Back to work",

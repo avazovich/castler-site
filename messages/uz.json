@@ -4,6 +4,8 @@
     "work": "Loyihalar",
     "office": "Ofis",
     "about": "Biz haqimizda",
+    "journal": "Jurnal",
+    "careers": "Karyera",
     "contact": "Aloqa",
     "menu": "Menyu",
     "close": "Yopish",
@@ -43,7 +45,46 @@
   "Blog": {
     "eyebrow": "Jurnal",
     "heading": "Castler Yangiliklari",
-    "notice": "Vaqtinchalik yozuvlar — haqiqiy yangiliklar va matbuot materiallari tez orada qo'shiladi."
+    "body": "Yangiliklar, matbuotdagi eslatmalar va studiya yangilanishlari — sodir bo'lgan zahoti.",
+    "notice": "Vaqtinchalik yozuvlar — haqiqiy yangiliklar va matbuot materiallari tez orada qo'shiladi.",
+    "posts": {
+      "afsona-villa-completion": {
+        "tag": "Yakunlandi",
+        "title": "Afsona Villa Namanganda qurilishi yakunlandi",
+        "date": "2026-yil avgust"
+      },
+      "penthouse-feature": {
+        "tag": "Nashr",
+        "title": "Toshkentdagi penthouse mintaqaviy interyer jurnalida yoritildi",
+        "date": "2026-yil iyul"
+      },
+      "studio-award": {
+        "tag": "Mukofot",
+        "title": "Castler Markaziy Osiyo dizayn mukofotlari dasturida nomzod bo'ldi",
+        "date": "2026-yil iyun"
+      },
+      "hotel-room-groundbreaking": {
+        "tag": "Voqea",
+        "title": "Samarqanddagi mehmonxona interyeri qurilishi boshlandi",
+        "date": "2026-yil may"
+      }
+    }
+  },
+  "Careers": {
+    "eyebrow": "Karyera",
+    "heading": "Jamoamizga qo'shiling",
+    "body": "Biz o'sib borayotgan studiyamiz va aynan sizning lavozimingiz uchun ochiq e'lon bo'lmasa ham, yondashuvimizni baham ko'radigan me'mor, dizayner va vizualizatorlarni doimo izlaymiz.",
+    "rolesHeading": "Qaysi yo'nalishlarda ish beryapmiz",
+    "roles": [
+      { "title": "Me'morlar", "body": "Turar-joy, tijorat va ijtimoiy loyihalarda konseptdan tortib qurilish hujjatlarigacha." },
+      { "title": "Interyer dizaynerlari", "body": "Konseptni umumiy hajmdan detalgacha olib boruvchi material, yoritish va mebel qarorlari." },
+      { "title": "3D vizualizatorlar", "body": "Loyihani taqdimotdan qurilishgacha olib boruvchi fotorealistik render va videoaylanmalar." },
+      { "title": "Loyiha menejerlari", "body": "Birinchi eskizdan topshirishgacha dizayn, pudratchilar va mijozlarni muvofiqlashtirish." }
+    ],
+    "applyEyebrow": "Ariza",
+    "applyHeading": "Portfolio yuboring",
+    "applyBody": "Yuqoridagilardan qaysi biriga mos kelishingizni ayting va ishlaringizdan bir nechta namuna biriktiring. Har bir jiddiy arizaga javob beramiz.",
+    "applyCta": "Portfolioingizni yuboring"
   },
   "Project": {
     "back": "Loyihalarga qaytish",
