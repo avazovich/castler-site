@@ -6,6 +6,15 @@ import type { ProjectCategory } from "@/content/projects";
 import { Link } from "@/i18n/navigation";
 import { ArrowRightIcon } from "./icons";
 import { PlaceholderImage } from "./PlaceholderImage";
+import { ProjectImage } from "./ProjectImage";
+
+/** Real photography representing each category — categories without any
+ *  photographed project yet (urban, concept) fall back to the abstract
+ *  placeholder rather than misrepresenting work that doesn't exist. */
+const CATEGORY_IMAGES: Partial<Record<ProjectCategory, string>> = {
+  architecture: "/projects/qodirxon-pavilion.jpg",
+  interior: "/projects/afsona-mall-hero.jpg",
+};
 
 export function WorkSpansAccordion({ categoryList }: { categoryList: ProjectCategory[] }) {
   const tCategories = useTranslations("Categories");
@@ -30,12 +39,23 @@ export function WorkSpansAccordion({ categoryList }: { categoryList: ProjectCate
             }}
           >
             <div className="relative min-w-0 flex-1 overflow-hidden rounded-xl">
-              <PlaceholderImage
-                seed={category}
-                className={`absolute inset-0 h-full w-full transition-all duration-700 ease-out ${
-                  active ? "scale-[1.06]" : dimmed ? "scale-100 brightness-[0.55] saturate-[0.65]" : "scale-100"
-                }`}
-              />
+              {CATEGORY_IMAGES[category] ? (
+                <ProjectImage
+                  slug={category}
+                  title={tCategories(category)}
+                  image={CATEGORY_IMAGES[category]}
+                  className={`absolute inset-0 h-full w-full transition-all duration-700 ease-out ${
+                    active ? "scale-[1.06]" : dimmed ? "scale-100 brightness-[0.55] saturate-[0.65]" : "scale-100"
+                  }`}
+                />
+              ) : (
+                <PlaceholderImage
+                  seed={category}
+                  className={`absolute inset-0 h-full w-full transition-all duration-700 ease-out ${
+                    active ? "scale-[1.06]" : dimmed ? "scale-100 brightness-[0.55] saturate-[0.65]" : "scale-100"
+                  }`}
+                />
+              )}
             </div>
             <span className="mt-4 flex items-center gap-2">
               <span

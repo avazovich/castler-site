@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ArrowRightIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { ProjectImage } from "@/components/ProjectImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { RoleNotifyForm } from "@/components/RoleNotifyForm";
 import { openRoles, TELEGRAM_APPLY_URL } from "@/content/roles";
@@ -50,7 +50,12 @@ export default async function CareersPage() {
 
       <RevealOnScroll delay={0.15} className="mx-auto mt-14 max-w-5xl px-6 sm:px-10">
         <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-          <PlaceholderImage seed="careers-hero" className="h-full w-full" />
+          <ProjectImage
+            slug="careers-hero"
+            title={t("heading")}
+            image="/projects/afsona-mall-hero.jpg"
+            className="h-full w-full"
+          />
         </div>
       </RevealOnScroll>
 
@@ -112,8 +117,10 @@ export default async function CareersPage() {
           <RevealOnScroll>
             <Link href="/about" className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                <PlaceholderImage
-                  seed="careers-team"
+                <ProjectImage
+                  slug="careers-team"
+                  title={tHome("teamHeading")}
+                  image="/projects/mustang-showroom-hero.jpg"
                   className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-110"
                 />
               </div>
@@ -129,8 +136,10 @@ export default async function CareersPage() {
           <RevealOnScroll delay={0.05}>
             <Link href="/work" className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                <PlaceholderImage
-                  seed="careers-work"
+                <ProjectImage
+                  slug="careers-work"
+                  title={tWork("title")}
+                  image="/projects/qodirxon-pavilion.jpg"
                   className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-110"
                 />
               </div>
@@ -146,8 +155,10 @@ export default async function CareersPage() {
           <RevealOnScroll delay={0.1}>
             <Link href="/contact" className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                <PlaceholderImage
-                  seed="careers-contact"
+                <ProjectImage
+                  slug="careers-contact"
+                  title={tContact("title")}
+                  image="/projects/axsikent-hero.jpg"
                   className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-110"
                 />
               </div>

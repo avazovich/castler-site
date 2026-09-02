@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ContactForm } from "@/components/ContactForm";
 import { ArrowRightIcon, MailIcon, PhoneIcon } from "@/components/icons";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
+import { ProjectImage } from "@/components/ProjectImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -74,7 +74,12 @@ export default async function ContactPage() {
         </div>
 
         <RevealOnScroll delay={0.1} className="relative hidden aspect-[3/4] overflow-hidden md:block">
-          <PlaceholderImage seed="contact-studio" className="h-full w-full" />
+          <ProjectImage
+            slug="contact-studio"
+            title={t("title")}
+            image="/projects/axsikent-hero.jpg"
+            className="h-full w-full"
+          />
         </RevealOnScroll>
       </div>
     </div>

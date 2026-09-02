@@ -1,19 +1,17 @@
 import { Link } from "@/i18n/navigation";
 import { ArrowRightIcon } from "./icons";
-import { PlaceholderImage } from "./PlaceholderImage";
+import { ProjectImage } from "./ProjectImage";
 import { RevealOnScroll } from "./RevealOnScroll";
 
 export function OfficeTeaser({
   title,
   body,
   cta,
-  seed = "office-teaser",
   snap = false,
 }: {
   title: string;
   body: string;
   cta: string;
-  seed?: string;
   snap?: boolean;
 }) {
   return (
@@ -31,7 +29,12 @@ export function OfficeTeaser({
           </Link>
         </RevealOnScroll>
         <RevealOnScroll delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-          <PlaceholderImage seed={seed} className="h-full w-full" />
+          <ProjectImage
+            slug="turakorgan-residence"
+            title="Turakorgan Residence"
+            image="/projects/torakorgan-hero.jpg"
+            className="h-full w-full"
+          />
         </RevealOnScroll>
       </div>
     </section>

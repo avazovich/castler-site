@@ -1,6 +1,15 @@
 import { ArrowRightIcon } from "./icons";
-import { PlaceholderImage } from "./PlaceholderImage";
+import { ProjectImage } from "./ProjectImage";
 import { ShareButton } from "./ShareButton";
+
+/** Real photography per role — reused across the four roles rather than
+ *  needing a distinct "office life" shot for each one. */
+const ROLE_IMAGES: Record<string, string> = {
+  "architectural-designer": "/projects/qodirxon-pavilion.jpg",
+  "interior-designer": "/projects/afsona-mall-hero.jpg",
+  "facade-designer": "/projects/qodirxon-pavilion.jpg",
+  "visualization-artist": "/projects/mustang-showroom-hero.jpg",
+};
 
 export function RoleDetailContent({
   slug,
@@ -31,7 +40,7 @@ export function RoleDetailContent({
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-[380px_1fr] lg:gap-16">
       <div className="relative aspect-[4/5] overflow-hidden rounded-2xl lg:sticky lg:top-24 lg:h-fit">
-        <PlaceholderImage seed={`role-${slug}`} className="h-full w-full" />
+        <ProjectImage slug={slug} title={title} image={ROLE_IMAGES[slug]} className="h-full w-full" />
       </div>
 
       <div>

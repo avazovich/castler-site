@@ -3,8 +3,8 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { OfficeTeaser } from "@/components/OfficeTeaser";
-import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectImage } from "@/components/ProjectImage";
 import { AnimatedText } from "@/components/AnimatedText";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { SectionSnapScroll } from "@/components/SectionSnapScroll";
@@ -156,7 +156,12 @@ export default async function HomePage() {
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.1} className="relative mt-12 aspect-[21/9] overflow-hidden">
-            <PlaceholderImage seed="team-photo" className="h-full w-full" />
+            <ProjectImage
+              slug="team-photo"
+              title={t("teamHeading")}
+              image="/projects/mustang-showroom-hero.jpg"
+              className="h-full w-full"
+            />
           </RevealOnScroll>
         </div>
       </section>

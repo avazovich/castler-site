@@ -1,4 +1,4 @@
-import { PlaceholderImage } from "./PlaceholderImage";
+import { ProjectImage } from "./ProjectImage";
 
 export type StoryContent = {
   eyebrow: string;
@@ -6,6 +6,15 @@ export type StoryContent = {
   intro: string;
   paragraphs: string[];
   sections: { title: string; seed: string; body: string }[];
+};
+
+/** Real photography standing in for each editorial image, keyed by the
+ *  section's seed — reuses our own project work rather than generic art. */
+const STORY_IMAGES: Record<string, string> = {
+  "story-intro": "/projects/axsikent-hero.jpg",
+  "story-disciplines": "/projects/megaton-office-hero.jpg",
+  "story-programs": "/projects/mashad-hero.jpg",
+  "story-values": "/projects/inolla-office-hero.jpg",
 };
 
 export function AboutStoryContent({ content }: { content: StoryContent }) {
@@ -16,7 +25,7 @@ export function AboutStoryContent({ content }: { content: StoryContent }) {
       <p className="mt-6 text-lg leading-relaxed text-ink sm:text-xl">{content.intro}</p>
 
       <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl">
-        <PlaceholderImage seed="story-intro" className="h-full w-full" />
+        <ProjectImage slug="story-intro" title={content.heading} image={STORY_IMAGES["story-intro"]} className="h-full w-full" />
       </div>
 
       <div className="mt-8 space-y-5 text-ink-soft">
@@ -29,7 +38,7 @@ export function AboutStoryContent({ content }: { content: StoryContent }) {
         <div key={section.title} className="mt-16 border-t border-line pt-10">
           <p className="label-mono text-ink-soft">{section.title}</p>
           <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl">
-            <PlaceholderImage seed={section.seed} className="h-full w-full" />
+            <ProjectImage slug={section.seed} title={section.title} image={STORY_IMAGES[section.seed]} className="h-full w-full" />
           </div>
           <p className="mt-6 text-ink-soft">{section.body}</p>
         </div>
