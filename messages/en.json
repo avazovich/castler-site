@@ -23,10 +23,10 @@
     "spansEyebrow": "Our work spans",
     "officeTeaserEyebrow": "The Studio",
     "officeTeaserTitle": "Grounded in craft, driven by clarity",
-    "officeTeaserBody": "Castler is a Tashkent-based architectural studio working across residential, commercial, and public projects — from early concept through construction.",
+    "officeTeaserBody": "Castler is a Namangan-based architectural studio working across residential, commercial, and public projects — from early concept through construction, with a second studio opening soon in Tashkent.",
     "officeTeaserCta": "About the studio",
     "teamHeading": "Castler Team",
-    "teamBody": "A growing studio based in Tashkent, bringing together architects and designers working across residential, commercial, and public projects.",
+    "teamBody": "A growing studio based in Namangan, bringing together architects and designers working across residential, commercial, and public projects.",
     "teamCta": "Our people"
   },
   "Categories": {
@@ -49,20 +49,73 @@
     "notice": "Placeholder entries — real studio news and press coverage coming soon."
   },
   "Careers": {
-    "eyebrow": "Careers",
-    "heading": "Join the studio",
-    "body": "We're a growing studio and we're always looking for architects, designers, and visualizers who share our approach — even when there isn't an open listing for your exact role.",
-    "rolesHeading": "Where we're hiring",
-    "roles": [
-      { "title": "Architects", "body": "Concept through construction documentation, across residential, commercial, and public work." },
-      { "title": "Interior Designers", "body": "Material, lighting, and furniture decisions that carry a concept from massing down to detail." },
-      { "title": "3D Visualization Artists", "body": "Photoreal renders and walkthroughs that carry a project from pitch to construction." },
-      { "title": "Project Managers", "body": "Coordinating design, contractors, and clients from first sketch to handover." }
-    ],
-    "applyEyebrow": "Apply",
-    "applyHeading": "Send us your portfolio",
-    "applyBody": "Tell us which of these you'd be a fit for, and attach a few examples of your work. We reply to every serious application.",
-    "applyCta": "Email your portfolio"
+    "eyebrow": "Castler Careers",
+    "heading": "Join us and make your best work.",
+    "body": "We're a growing studio in Namangan, and we're always looking for architects, interior designers, and visualizers who share our approach — even when there isn't an open listing for your exact role.",
+    "viewOpenRolesCta": "View open roles",
+    "aboutUsCta": "About us",
+    "openRolesHeading": "Open Roles",
+    "openRolesIntro1": "Castler is currently based in Namangan, with a second studio opening soon in Tashkent. We work across architecture, interior design, and visualization — from private villas to large-scale commercial interiors.",
+    "openRolesIntro2": "We're open to architectural, interior, exterior/facade, and visualization talent of all experience levels who want to grow with us.",
+    "officeHeading": "Namangan Office",
+    "tashkentNote": "Tashkent studio opening soon — reach out to be considered first.",
+    "learnMoreCta": "Learn more",
+    "applyCta": "Apply",
+    "notifyHeading": "Get notified when a new role opens",
+    "notifyPlaceholder": "Email",
+    "notifySubmit": "Sign up",
+    "notifyConsent": "Opens your email app to send a signup request.",
+    "teaserTeamCta": "Meet the team",
+    "teaserWorkCta": "See our work",
+    "teaserContactCta": "Get in touch",
+    "roleBack": "Back to careers",
+    "roleLocation": "Location",
+    "roleShare": "Share",
+    "roleShareCopied": "Link copied",
+    "roleHowToApply": "How to apply",
+    "roleWhatWereLookingFor": "What we're looking for",
+    "roles": {
+      "architectural-designer": {
+        "intro": "We're looking for an architectural designer to join our studio in Namangan, working across residential and commercial projects from early concept through construction documentation.",
+        "requirements": [
+          "A strong design sensibility, shown through a portfolio with complete design processes, not just final renders",
+          "Comfort working in AutoCAD, Revit, SketchUp, or similar tools, alongside a rendering package such as Enscape, Lumion, or D5",
+          "Ability to take a project from concept sketch through construction-ready documentation",
+          "A collaborative mindset — our projects move fast and depend on close teamwork with interior and visualization colleagues"
+        ],
+        "howToApply": "Message us on Telegram with a short introduction and a link to your portfolio."
+      },
+      "interior-designer": {
+        "intro": "We're looking for an interior designer to join our studio in Namangan, shaping material, lighting, and furniture decisions across residential and commercial interiors.",
+        "requirements": [
+          "A portfolio showing a clear point of view on material, light, and detail",
+          "Comfort working in AutoCAD or SketchUp for layout and detailing, plus a rendering package for presentation",
+          "Experience specifying furniture, fixtures, and finishes for real, buildable projects",
+          "Close attention to how spaces are actually lived in and used, not just how they photograph"
+        ],
+        "howToApply": "Message us on Telegram with a short introduction and a link to your portfolio."
+      },
+      "facade-designer": {
+        "intro": "We're looking for an exterior and facade designer to join our studio in Namangan, developing the massing, materiality, and building envelope for our architectural projects.",
+        "requirements": [
+          "A portfolio showing facade and massing studies, not only interior or rendering work",
+          "Comfort working in Rhino, Grasshopper, Revit, or similar tools for envelope and detailing studies",
+          "An understanding of how material choice, climate, and construction method shape a facade",
+          "Ability to coordinate facade decisions with the wider architectural and interior teams"
+        ],
+        "howToApply": "Message us on Telegram with a short introduction and a link to your portfolio."
+      },
+      "visualization-artist": {
+        "intro": "We're looking for a 3D visualization artist to join our studio in Namangan, producing the renders and walkthroughs that carry our projects from pitch to construction.",
+        "requirements": [
+          "A portfolio of photoreal architectural or interior renders",
+          "Proficiency in 3ds Max, SketchUp, or Blender, alongside a renderer such as Corona, V-Ray, Enscape, or D5",
+          "An eye for lighting, material, and composition that reads as real, not just polished",
+          "Ability to work from architectural/interior drawings and turn them into accurate, believable scenes"
+        ],
+        "howToApply": "Message us on Telegram with a short introduction and a link to your portfolio."
+      }
+    }
   },
   "Project": {
     "back": "Back to work",
@@ -93,7 +146,7 @@
     "title": "Let's build something",
     "body": "Tell us about your project — a plot, a program, a rough idea. We'll follow up within a few days.",
     "studioLabel": "Studio",
-    "studioValue": "Tashkent, Uzbekistan",
+    "studioValue": "Namangan, Uzbekistan",
     "emailLabel": "Email",
     "phoneLabel": "Phone",
     "formName": "Name",
@@ -114,7 +167,7 @@
     "heading": "About Castler",
     "intro": "Castler is an architectural design studio working across architecture, interiors, and urban design to create environments where the built form connects deeply with the people who use it.",
     "paragraphs": [
-      "Founded by Otabek Isoqjonov, Castler is based in Tashkent and works across residential, commercial, and public projects, from early concept through construction. The studio approaches each project through its relationship to site, climate, and the people who will use it.",
+      "Founded by Otabek Isoqjonov, Castler is based in Namangan and works across residential, commercial, and public projects, from early concept through construction — with a second studio opening soon in Tashkent. The studio approaches each project through its relationship to site, climate, and the people who will use it.",
       "Placeholder — a fuller studio history, notable projects, and press mentions will be added here once available."
     ],
     "sections": [

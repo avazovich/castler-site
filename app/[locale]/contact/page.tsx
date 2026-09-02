@@ -30,12 +30,12 @@ export default async function ContactPage() {
             <p className="label-mono text-ink-soft">{t("quickContact")}</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <a
-                href="tel:+998000000000"
+                href="tel:+998770001600"
                 className="group flex flex-1 items-center justify-between gap-3 rounded-2xl border border-line bg-paper-2 px-6 py-5 transition-all duration-200 hover:scale-[1.02] hover:border-ink hover:bg-ink hover:text-paper active:scale-[0.98]"
               >
                 <div>
                   <p className="label-mono text-ink-soft group-hover:text-paper/70">{t("phoneLabel")}</p>
-                  <p className="font-display mt-1 text-lg sm:text-xl">+998 00 000 00 00</p>
+                  <p className="font-display mt-1 text-lg sm:text-xl">+998 77 000 16 00</p>
                 </div>
                 <PhoneIcon className="h-5 w-5 shrink-0 transition-transform group-hover:scale-110" />
               </a>

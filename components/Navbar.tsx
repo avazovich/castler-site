@@ -52,7 +52,7 @@ export function Navbar() {
             </Link>
             <OfficeMenu label={t("office")} links={officeLinks} />
             <a
-              href="tel:+998000000000"
+              href="tel:+998770001600"
               aria-label={t("callUs")}
               className="pill flex items-center bg-paper-2 text-ink transition-colors hover:bg-line"
             >

@@ -23,10 +23,10 @@
     "spansEyebrow": "Ish yo'nalishlarimiz",
     "officeTeaserEyebrow": "Studiya haqida",
     "officeTeaserTitle": "Hunarga asoslangan, aniqlikka yo'naltirilgan",
-    "officeTeaserBody": "Castler — Toshkentda joylashgan arxitektura studiyasi, turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanadi — dastlabki konseptdan qurilishgacha.",
+    "officeTeaserBody": "Castler — Namanganda joylashgan arxitektura studiyasi, turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanadi — dastlabki konseptdan qurilishgacha, tez orada Toshkentda ikkinchi studiyamiz ham ochiladi.",
     "officeTeaserCta": "Studiya haqida",
     "teamHeading": "Castler jamoasi",
-    "teamBody": "Toshkentda joylashgan, o'sib borayotgan studiya — turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanuvchi me'mor va dizaynerlar jamoasi.",
+    "teamBody": "Namanganda joylashgan, o'sib borayotgan studiya — turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanuvchi me'mor va dizaynerlar jamoasi.",
     "teamCta": "Bizning jamoa"
   },
   "Categories": {
@@ -71,20 +71,73 @@
     }
   },
   "Careers": {
-    "eyebrow": "Karyera",
-    "heading": "Jamoamizga qo'shiling",
-    "body": "Biz o'sib borayotgan studiyamiz va aynan sizning lavozimingiz uchun ochiq e'lon bo'lmasa ham, yondashuvimizni baham ko'radigan me'mor, dizayner va vizualizatorlarni doimo izlaymiz.",
-    "rolesHeading": "Qaysi yo'nalishlarda ish beryapmiz",
-    "roles": [
-      { "title": "Me'morlar", "body": "Turar-joy, tijorat va ijtimoiy loyihalarda konseptdan tortib qurilish hujjatlarigacha." },
-      { "title": "Interyer dizaynerlari", "body": "Konseptni umumiy hajmdan detalgacha olib boruvchi material, yoritish va mebel qarorlari." },
-      { "title": "3D vizualizatorlar", "body": "Loyihani taqdimotdan qurilishgacha olib boruvchi fotorealistik render va videoaylanmalar." },
-      { "title": "Loyiha menejerlari", "body": "Birinchi eskizdan topshirishgacha dizayn, pudratchilar va mijozlarni muvofiqlashtirish." }
-    ],
-    "applyEyebrow": "Ariza",
-    "applyHeading": "Portfolio yuboring",
-    "applyBody": "Yuqoridagilardan qaysi biriga mos kelishingizni ayting va ishlaringizdan bir nechta namuna biriktiring. Har bir jiddiy arizaga javob beramiz.",
-    "applyCta": "Portfolioingizni yuboring"
+    "eyebrow": "Castler Karyera",
+    "heading": "Jamoamizga qo'shiling va eng yaxshi ishingizni yarating.",
+    "body": "Biz Namangandagi o'sib borayotgan studiyamiz va aynan sizning lavozimingiz uchun ochiq e'lon bo'lmasa ham, yondashuvimizni baham ko'radigan me'mor, interyer dizaynerlari va vizualizatorlarni doimo izlaymiz.",
+    "viewOpenRolesCta": "Bo'sh o'rinlarni ko'rish",
+    "aboutUsCta": "Biz haqimizda",
+    "openRolesHeading": "Bo'sh o'rinlar",
+    "openRolesIntro1": "Castler hozircha Namanganda joylashgan, tez orada Toshkentda ikkinchi studiyamiz ham ochiladi. Biz arxitektura, interyer dizayni va vizualizatsiya bo'yicha — xususiy villalardan tortib yirik tijorat interyerlarigacha — ishlaymiz.",
+    "openRolesIntro2": "Biz har qanday tajriba darajasidagi arxitektura, interyer, tashqi ko'rinish/fasad va vizualizatsiya iste'dodlariga ochiqmiz.",
+    "officeHeading": "Namangan ofisi",
+    "tashkentNote": "Toshkent studiyasi tez orada ochiladi — birinchilardan bo'lib ko'rib chiqilish uchun biz bilan bog'laning.",
+    "learnMoreCta": "Batafsil",
+    "applyCta": "Ariza berish",
+    "notifyHeading": "Yangi bo'sh o'rin ochilganda xabar oling",
+    "notifyPlaceholder": "Elektron pochta",
+    "notifySubmit": "Obuna bo'lish",
+    "notifyConsent": "Elektron pochta ilovangizni obuna so'rovi bilan ochadi.",
+    "teaserTeamCta": "Jamoa bilan tanishing",
+    "teaserWorkCta": "Ishlarimizni ko'ring",
+    "teaserContactCta": "Bog'laning",
+    "roleBack": "Karyeraga qaytish",
+    "roleLocation": "Manzil",
+    "roleShare": "Ulashish",
+    "roleShareCopied": "Havola nusxalandi",
+    "roleHowToApply": "Qanday ariza berish mumkin",
+    "roleWhatWereLookingFor": "Kimni izlayapmiz",
+    "roles": {
+      "architectural-designer": {
+        "intro": "Namangandagi studiyamizga qo'shiladigan arxitektor-dizaynerni izlayapmiz — turar-joy va tijorat loyihalarida dastlabki konseptdan tortib qurilish hujjatlarigacha ishlaysiz.",
+        "requirements": [
+          "Faqat tayyor renderlar emas, balki to'liq dizayn jarayonini ko'rsatuvchi portfolio orqali namoyon bo'ladigan kuchli dizayn hissi",
+          "AutoCAD, Revit, SketchUp yoki shunga o'xshash dasturlarda, shuningdek Enscape, Lumion yoki D5 kabi render dasturlarida ishlash ko'nikmasi",
+          "Loyihani konsept eskizidan qurilishga tayyor hujjatlarga qadar olib borish qobiliyati",
+          "Hamkorlikka moyillik — loyihalarimiz tez sur'atda harakatlanadi va interyer hamda vizualizatsiya hamkasblari bilan yaqin jamoaviy ishga bog'liq"
+        ],
+        "howToApply": "Telegram orqali qisqa tanishuv va portfolioingiz havolasi bilan yozing."
+      },
+      "interior-designer": {
+        "intro": "Namangandagi studiyamizga qo'shiladigan interyer dizaynerini izlayapmiz — turar-joy va tijorat interyerlarida material, yoritish va mebel qarorlarini shakllantirasiz.",
+        "requirements": [
+          "Material, yorug'lik va detallarga aniq qarashni ko'rsatuvchi portfolio",
+          "Joylashuv va detallashtirish uchun AutoCAD yoki SketchUp'da, taqdimot uchun esa render dasturida ishlash ko'nikmasi",
+          "Haqiqiy, quriladigan loyihalar uchun mebel, jihozlar va pardozlarni belgilash tajribasi",
+          "Fazolar qanday suratga tushishi emas, balki qanday yashalishi va foydalanilishiga alohida e'tibor"
+        ],
+        "howToApply": "Telegram orqali qisqa tanishuv va portfolioingiz havolasi bilan yozing."
+      },
+      "facade-designer": {
+        "intro": "Namangandagi studiyamizga qo'shiladigan tashqi ko'rinish va fasad dizaynerini izlayapmiz — arxitektura loyihalarimiz uchun hajm, material va bino qobig'ini ishlab chiqasiz.",
+        "requirements": [
+          "Faqat interyer yoki render ishlari emas, balki fasad va hajm tadqiqotlarini ko'rsatuvchi portfolio",
+          "Qobiq va detallashtirish tadqiqotlari uchun Rhino, Grasshopper, Revit yoki shunga o'xshash dasturlarda ishlash ko'nikmasi",
+          "Material tanlovi, iqlim va qurilish usuli fasadni qanday shakllantirishini tushunish",
+          "Fasad qarorlarini kengroq arxitektura va interyer jamoalari bilan muvofiqlashtirish qobiliyati"
+        ],
+        "howToApply": "Telegram orqali qisqa tanishuv va portfolioingiz havolasi bilan yozing."
+      },
+      "visualization-artist": {
+        "intro": "Namangandagi studiyamizga qo'shiladigan 3D vizualizatorni izlayapmiz — loyihalarimizni taqdimotdan qurilishgacha olib boruvchi render va videoaylanmalarni yaratasiz.",
+        "requirements": [
+          "Fotorealistik arxitektura yoki interyer renderlaridan iborat portfolio",
+          "3ds Max, SketchUp yoki Blender'da, shuningdek Corona, V-Ray, Enscape yoki D5 kabi render dasturida ishlash ko'nikmasi",
+          "Sayqallangan emas, balki haqiqiy ko'rinadigan yorug'lik, material va kompozitsiyaga nazar",
+          "Arxitektura/interyer chizmalari asosida ishlab, ularni aniq va ishonarli sahnalarga aylantirish qobiliyati"
+        ],
+        "howToApply": "Telegram orqali qisqa tanishuv va portfolioingiz havolasi bilan yozing."
+      }
+    }
   },
   "Project": {
     "back": "Loyihalarga qaytish",
@@ -115,7 +168,7 @@
     "title": "Keling, biror narsa quramiz",
     "body": "Loyihangiz haqida gapirib bering — uchastka, dastur yoki xom g'oya. Bir necha kun ichida javob beramiz.",
     "studioLabel": "Studiya",
-    "studioValue": "Toshkent, O'zbekiston",
+    "studioValue": "Namangan, O'zbekiston",
     "emailLabel": "Elektron pochta",
     "phoneLabel": "Telefon",
     "formName": "Ism",
@@ -221,7 +274,7 @@
     "heading": "Castler haqida",
     "intro": "Castler — arxitektura, interyer va shaharsozlik yo'nalishlarida ishlaydigan dizayn studiyasi. Maqsadimiz — qurilgan muhitni undan foydalanadigan odamlar bilan chuqur bog'laydigan makonlar yaratish.",
     "paragraphs": [
-      "Otabek Isoqjonov tomonidan asos solingan Castler Toshkentda joylashgan bo'lib, turar-joy, tijorat va ijtimoiy loyihalar bilan — dastlabki g'oyadan qurilish yakuniga qadar — shug'ullanadi. Studiya har bir loyihaga uning joylashuvi, iqlimi va undan foydalanadigan odamlar bilan bog'liqligi orqali yondashadi.",
+      "Otabek Isoqjonov tomonidan asos solingan Castler Namanganda joylashgan bo'lib, turar-joy, tijorat va ijtimoiy loyihalar bilan — dastlabki g'oyadan qurilish yakuniga qadar — shug'ullanadi; tez orada Toshkentda ikkinchi studiyamiz ham ochiladi. Studiya har bir loyihaga uning joylashuvi, iqlimi va undan foydalanadigan odamlar bilan bog'liqligi orqali yondashadi.",
       "Vaqtinchalik matn — studiyaning to'liq tarixi, e'tiborga molik loyihalari va matbuotdagi eslatmalari tayyor bo'lgach shu yerga qo'shiladi."
     ],
     "sections": [
