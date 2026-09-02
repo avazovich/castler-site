@@ -30,7 +30,7 @@ export function LanguageSwitch({ tone = "ink" }: { tone?: "ink" | "cream" }) {
         </button>
       </Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content align="end" sideOffset={10} className="z-50">
+        <Popover.Content align="end" sideOffset={10} className="nav-popover z-50 origin-top-right">
           <div className="overflow-hidden rounded-2xl border border-line bg-paper shadow-xl">
             {routing.locales.map((l) => (
               <button
@@ -39,8 +39,8 @@ export function LanguageSwitch({ tone = "ink" }: { tone?: "ink" | "cream" }) {
                   router.replace(pathname, { locale: l });
                   setOpen(false);
                 }}
-                className={`block w-full px-5 py-2.5 text-left text-sm transition-colors ${
-                  l === locale ? "bg-ink text-paper" : "text-ink hover:bg-paper-2"
+                className={`block w-full px-5 py-3 text-left font-mono text-xs font-bold uppercase tracking-wide transition-all duration-200 active:scale-[0.97] ${
+                  l === locale ? "bg-ink text-paper" : "text-ink hover:translate-x-1 hover:bg-paper-2"
                 }`}
               >
                 {LABELS[l]}

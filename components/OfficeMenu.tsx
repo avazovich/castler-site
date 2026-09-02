@@ -25,7 +25,7 @@ export function OfficeMenu({
         </button>
       </Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content align="end" sideOffset={10} className="z-50">
+        <Popover.Content align="end" sideOffset={10} className="nav-popover z-50 origin-top-right">
           <div className="min-w-[180px] overflow-hidden rounded-2xl border border-line bg-paper py-1.5 shadow-xl">
             {links.map((link) => {
               const isActive = pathname === link.href;
@@ -34,8 +34,10 @@ export function OfficeMenu({
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`block px-5 py-2.5 text-left text-sm transition-colors ${
-                    isActive ? "bg-ink text-paper" : "text-ink hover:bg-paper-2"
+                  className={`block px-5 py-3 text-left font-mono text-xs font-bold uppercase tracking-wide transition-all duration-200 active:scale-[0.97] ${
+                    isActive
+                      ? "bg-ink text-paper"
+                      : "text-ink hover:translate-x-1 hover:bg-paper-2"
                   }`}
                 >
                   {link.label}

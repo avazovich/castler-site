@@ -28,17 +28,21 @@ export default async function JournalPage() {
           <p className="mt-2 max-w-lg text-sm italic text-ink-soft/70">{t("notice")}</p>
         </RevealOnScroll>
 
-        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {posts.map((post, i) => (
             <RevealOnScroll key={post.slug} delay={Math.min(i * 0.05, 0.3)}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                <PlaceholderImage seed={post.seed} className="h-full w-full" />
-                <span className="label-mono absolute left-3 top-3 rounded-full bg-ink/85 px-3 py-1 text-paper backdrop-blur">
-                  {post.tag}
-                </span>
+              <div className="group relative block aspect-[4/3] cursor-pointer overflow-hidden rounded-lg transition-transform duration-200 active:scale-[0.98]">
+                <PlaceholderImage
+                  seed={post.seed}
+                  className="absolute inset-0 h-full w-full transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute bottom-3 left-3 w-fit max-w-[calc(100%-1.5rem)] translate-y-3 rounded-xl bg-ink/55 px-4 py-3 text-paper opacity-0 backdrop-blur-md transition-all duration-[600ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="label-mono truncate text-paper/70">
+                    {post.tag} · {post.date}
+                  </p>
+                  <h3 className="font-display mt-1 text-lg leading-snug">{post.title}</h3>
+                </div>
               </div>
-              <h3 className="font-display mt-4 text-lg leading-snug">{post.title}</h3>
-              <p className="label-mono mt-2 text-ink-soft">{post.date}</p>
             </RevealOnScroll>
           ))}
         </div>
