@@ -9,7 +9,6 @@ export interface Project {
   summary: string;
   description: string[];
   galleryCount: number;
-  hero?: boolean;
   /** Path under /public to a real photo (e.g. "/projects/afsona-villa.jpg").
    *  Falls back to the abstract PlaceholderImage gradient when unset. */
   image?: string;
@@ -34,7 +33,6 @@ export const projects: Project[] = [
     location: "Namangan, Uzbekistan",
     year: "2026",
     category: "architecture",
-    hero: true,
     image: "/projects/qodirxon-pavilion.jpg",
     summary: "An exclusive restaurant design made only for this place — three gold-crowned circular halls gathered around a shared threshold beside the water.",
     description: [
@@ -88,7 +86,6 @@ export const projects: Project[] = [
     location: "Samarkand, Uzbekistan",
     year: "2024",
     category: "interior",
-    hero: true,
     image: "/projects/hotel-room.jpg",
     summary: "A guest suite interior for a hotel project in Samarkand.",
     description: ["Full project write-up coming soon."],
@@ -113,7 +110,6 @@ export const projects: Project[] = [
     location: "Namangan, Uzbekistan",
     year: "2024",
     category: "architecture",
-    hero: true,
     image: "/projects/afsona-villa.jpg",
     summary: "A charcoal-and-travertine villa built around a lap pool, its dark slate cladding and cypress courtyard giving way to a glazed riverside elevation of timber and stone.",
     description: [
@@ -139,7 +135,6 @@ export const projects: Project[] = [
     location: "Tashkent, Uzbekistan",
     year: "2024",
     category: "interior",
-    hero: true,
     image: "/projects/penthouse.jpg",
     summary: "An outdoor terrace and lounge for a penthouse residence in Tashkent.",
     description: ["Full project write-up coming soon."],
@@ -601,7 +596,14 @@ export function getProject(slug: string) {
 
 export const categories: ProjectCategory[] = ["architecture", "interior", "urban", "concept"];
 
-export const heroProjects = projects.filter((p) => p.hero);
+/**
+ * Home hero carousel, in display order — an explicit slug list rather than a
+ * `hero` flag on each project, since the flag left ordering to depend on each
+ * project's position in the array above, which made "put this one first"
+ * require moving whole project blocks around rather than editing one list.
+ */
+const HERO_SLUGS = ["afsona-villa", "samarkand-hotel-room", "inolla-office", "tashkent-penthouse"];
+export const heroProjects = HERO_SLUGS.map((slug) => getProject(slug)).filter((p) => p !== undefined);
 
 /** Projects with real photography — the only ones shown on public listings,
  *  so a still-unphotographed project never renders as an empty placeholder
