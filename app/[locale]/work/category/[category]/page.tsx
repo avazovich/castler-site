@@ -6,6 +6,7 @@ import { AnimatedText } from "@/components/AnimatedText";
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
+import { getCardShape } from "@/lib/projectCardShape";
 
 function isCategory(value: string): value is ProjectCategory {
   return (categories as string[]).includes(value);
@@ -71,7 +72,9 @@ export default async function CategoryPage({
             <ProjectCard
               project={project}
               categoryLabel={tCategories(project.category)}
-              aspectClassName="aspect-[4/3]"
+              aspectClassName={
+                getCardShape(project, "hero") === "tall" ? "aspect-[4/5]" : "aspect-[4/3]"
+              }
             />
           </RevealOnScroll>
         ))}

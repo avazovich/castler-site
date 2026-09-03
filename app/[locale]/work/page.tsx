@@ -5,6 +5,7 @@ import { OfficeTeaser } from "@/components/OfficeTeaser";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { WorkGallery } from "@/components/WorkGallery";
 import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
+import { getCardShapes } from "@/lib/projectCardShape";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
@@ -45,6 +46,7 @@ export default async function WorkPage({
         <div className="mt-10">
           <WorkGallery
             projects={photographedProjects}
+            shapes={getCardShapes(photographedProjects, "hero")}
             categoryList={visibleCategories}
             initialCategory={initialCategory}
             allLabel={t("filterAll")}

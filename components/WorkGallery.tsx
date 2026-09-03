@@ -3,38 +3,47 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import type { Project, ProjectCategory } from "@/content/projects";
+import type { CardShape } from "@/lib/projectCardShape";
 import { Link } from "@/i18n/navigation";
 import { GridViewIcon, ListViewIcon } from "./icons";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectImage } from "./ProjectImage";
 
-/**
- * Repeating tile-size pattern for the masonry grid — cycles by index so it
- * keeps working for any filtered count, unlike a hand-placed layout.
- * `grid-flow-dense` (below) fills any gaps the varied spans leave behind.
- * Only square (1x1), portrait (1x2), and big-square (2x2) shapes — a wide,
- * short (2x1) tile stretches a photo into an awkward horizontal sliver with
- * nothing worth putting in it, so that shape is deliberately excluded.
- */
-const TILE_PATTERN = [
-  "sm:col-span-2 sm:row-span-2",
-  "",
-  "sm:row-span-2",
-  "",
-  "sm:row-span-2",
-  "",
-];
-
 type View = "grid" | "list";
+
+/**
+ * Tile span for one project, taken from the shape of the photo it shows
+ * (resolved server-side in `shapes`) rather than a repeating pattern: a
+ * portrait photo forced into a short, wide tile gets its subject cropped in
+ * half, which is exactly what the fixed pattern used to do. With `auto-rows`
+ * at 240px a 1x2 tile lands at ~0.81 and a 1x1 at ~1.65 — close enough to the
+ * two shapes the photography comes in that `object-cover` only trims edges.
+ * `grid-flow-dense` backfills the gaps the mix leaves behind.
+ */
+function tileSpan(shape: CardShape): string {
+  return shape === "tall" ? "lg:row-span-2" : "";
+}
+
+/**
+ * Below `lg` the mosaic gives way to a plain 1–2 column stack, where each card
+ * is sized by its own photo's proportions instead of a shared row height —
+ * that fits exactly at any width, which fixed rows can't.
+ */
+function cardAspect(shape: CardShape): string {
+  return shape === "tall" ? "aspect-[4/5] lg:aspect-auto" : "aspect-[4/3] lg:aspect-auto";
+}
 
 export function WorkGallery({
   projects,
+  shapes,
   categoryList,
   initialCategory,
   allLabel,
   categoryLabels,
 }: {
   projects: Project[];
+  /** Tile shape per project, index-aligned to `projects` (resolved server-side). */
+  shapes: CardShape[];
   categoryList: ProjectCategory[];
   initialCategory?: ProjectCategory;
   allLabel: string;
@@ -43,6 +52,8 @@ export function WorkGallery({
   const [active, setActive] = useState<ProjectCategory | "all">(initialCategory ?? "all");
   const [view, setView] = useState<View>("grid");
   const filtered = active === "all" ? projects : projects.filter((p) => p.category === active);
+  // Keyed by slug, not index: filtering reorders the list the tiles render from.
+  const shapeBySlug = new Map(projects.map((p, i) => [p.slug, shapes[i] ?? "tall"]));
 
   return (
     <div>
@@ -78,7 +89,7 @@ export function WorkGallery({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 grid grid-flow-dense grid-cols-1 gap-1.5 sm:grid-cols-3 sm:auto-rows-[220px] sm:gap-2 lg:auto-rows-[260px]"
+            className="mt-10 grid grid-flow-dense grid-cols-1 gap-1.5 sm:grid-cols-2 sm:gap-2 lg:grid-cols-3 lg:auto-rows-[220px] xl:auto-rows-[240px]"
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((project, i) => (
@@ -89,12 +100,12 @@ export function WorkGallery({
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.6, delay: Math.min(i * 0.04, 0.3), ease: [0.16, 1, 0.3, 1] }}
-                  className={TILE_PATTERN[i % TILE_PATTERN.length]}
+                  className={tileSpan(shapeBySlug.get(project.slug) ?? "tall")}
                 >
                   <ProjectCard
                     project={project}
                     categoryLabel={categoryLabels[project.category]}
-                    aspectClassName="aspect-[4/3] sm:aspect-auto"
+                    aspectClassName={cardAspect(shapeBySlug.get(project.slug) ?? "tall")}
                     className="h-full"
                   />
                 </motion.div>

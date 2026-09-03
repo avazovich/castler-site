@@ -12,31 +12,33 @@ import { SectionSnapScroll } from "@/components/SectionSnapScroll";
 import { WorkSpansAccordion } from "@/components/WorkSpansAccordion";
 import { ArrowRightIcon } from "@/components/icons";
 import { categories, heroProjects, photographedProjects } from "@/content/projects";
+import { getCardShapes, type CardShape } from "@/lib/projectCardShape";
 import { FOUNDER_NAME, FOUNDING_YEAR, INSTAGRAM_URL, SITE_URL } from "@/lib/siteConfig";
 
 /**
- * Explicit tile placement for the featured mosaic, index-aligned to `projects`.
- * The layout is a deliberate 3-column x 7-row tessellation (21 cells, no holes),
- * so each tile is positioned by hand rather than left to auto-flow — dense
- * auto-placement can't reproduce this arrangement reliably.
- * Below `lg` the grid collapses to a simple 2-col (md) / 1-col (mobile) stack.
+ * Tile span for one featured-grid cell, chosen from the photo's own shape
+ * rather than a fixed pattern: portrait/square photos take a tall 1x2 cell,
+ * landscape photos a short 1x1 one, and the first project — the featured
+ * slot — widens to 2x2 when its photo is landscape. With `auto-rows` at
+ * 240px a 1x2 cell lands at ~0.81 and a 1x1 at ~1.65, which is within a few
+ * percent of the two shapes the photography actually comes in, so
+ * `object-cover` trims edges instead of cutting the subject apart.
+ * `grid-flow-dense` (below) backfills whatever gaps the mix leaves.
+ * Below `lg` the grid collapses to a 2-col (md) / 1-col (mobile) stack.
  */
-const GRID_POSITIONS = [
-  // Index 0 is the featured (first) project — a wide 2x2 box suits a
-  // landscape hero photo far better than a narrow tall one.
-  "lg:col-start-2 lg:col-span-2 lg:row-start-1 lg:row-span-2",
-  "lg:col-start-1 lg:row-start-1 lg:row-span-2",
-  "lg:col-start-1 lg:col-span-2 lg:row-start-3 lg:row-span-2",
-  "lg:col-start-3 lg:row-start-3",
-  "lg:col-start-3 lg:row-start-4 lg:row-span-2",
-  "lg:col-start-1 lg:row-start-5",
-  "lg:col-start-2 lg:row-start-5 lg:row-span-2",
-  "lg:col-start-1 lg:row-start-6 lg:row-span-2",
-  "lg:col-start-3 lg:row-start-6",
-  "lg:col-start-2 lg:row-start-[7]",
-  "lg:col-start-3 lg:row-start-[7]",
-  "lg:col-start-1 lg:col-span-2 lg:row-start-[8] lg:row-span-2",
-];
+function tileSpan(shape: CardShape, isFeatured: boolean): string {
+  if (shape === "tall") return "lg:row-span-2";
+  return isFeatured ? "lg:col-span-2 lg:row-span-2" : "";
+}
+
+/**
+ * Below `lg` the mosaic gives way to a plain 1–2 column stack, where each card
+ * is sized by its own photo's proportions instead of a shared row height —
+ * that fits exactly at any width, which fixed rows can't.
+ */
+function cardAspect(shape: CardShape): string {
+  return shape === "tall" ? "aspect-[4/5] lg:aspect-auto" : "aspect-[4/3] lg:aspect-auto";
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
@@ -50,6 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function HomePage() {
   const t = await getTranslations("Home");
   const tCategories = await getTranslations("Categories");
+  const cardShapes = getCardShapes(photographedProjects);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -134,16 +137,17 @@ export default async function HomePage() {
           </Link>
         </RevealOnScroll>
 
-        <div className="mt-12 grid grid-cols-1 gap-2 md:grid-cols-2 md:auto-rows-[260px] lg:grid-cols-3 lg:auto-rows-[300px] lg:grid-flow-row-dense">
+        <div className="mt-12 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[240px] lg:grid-flow-row-dense xl:auto-rows-[280px]">
           {photographedProjects.map((project, i) => (
             <RevealOnScroll
               key={project.slug}
               delay={Math.min(i * 0.04, 0.3)}
-              className={GRID_POSITIONS[i]}
+              className={tileSpan(cardShapes[i], i === 0)}
             >
               <ProjectCard
                 project={project}
                 categoryLabel={tCategories(project.category)}
+                aspectClassName={cardAspect(cardShapes[i])}
                 className="h-full"
                 imageOverride={project.coverImage}
               />
