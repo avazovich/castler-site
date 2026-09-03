@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   title: "Castler — Architectural Design Company",
   description:
     "Castler is an architectural design studio shaping buildings, interiors, and urban spaces.",
+  verification: {
+    google: "D_UKUg1miiNXp-Aw6dm9CQx2Kl3_NvewOcp5paumXEg",
+  },
 };
 
 export function generateStaticParams() {
