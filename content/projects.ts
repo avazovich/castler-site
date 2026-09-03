@@ -135,7 +135,6 @@ export const projects: Project[] = [
     location: "Tashkent, Uzbekistan",
     year: "2024",
     category: "interior",
-    image: "/projects/penthouse.jpg",
     summary: "An outdoor terrace and lounge for a penthouse residence in Tashkent.",
     description: ["Full project write-up coming soon."],
     galleryCount: 1,
@@ -456,7 +455,7 @@ export const projects: Project[] = [
       "A muted taupe-and-walnut palette runs through every room, with curved joinery, backlit niches, and herringbone flooring keeping the detailing rich without breaking the calm, tonal restraint of the house.",
       "Outside, the same warmth carries into the architecture itself: a low beige-stucco villa with a deep entrance overhang, slatted timber screening, and a cypress-lined motor court that sets the tone before a single interior door is opened.",
     ],
-    galleryCount: 23,
+    galleryCount: 24,
     gallery: [
       "/projects/mashad-01.jpg",
       "/projects/mashad-08.jpg",
@@ -471,6 +470,7 @@ export const projects: Project[] = [
       "/projects/mashad-ex-01.jpg",
       "/projects/mashad-ex-09.jpg",
       "/projects/mashad-ex-07.jpg",
+      "/projects/mashad-ex-13.jpg",
       "/projects/mashad-ex-04.jpg",
       "/projects/mashad-ex-02.jpg",
       "/projects/mashad-ex-12.jpg",
@@ -602,8 +602,27 @@ export const categories: ProjectCategory[] = ["architecture", "interior", "urban
  * project's position in the array above, which made "put this one first"
  * require moving whole project blocks around rather than editing one list.
  */
-const HERO_SLUGS = ["afsona-villa", "samarkand-hotel-room", "inolla-office", "tashkent-penthouse"];
-export const heroProjects = HERO_SLUGS.map((slug) => getProject(slug)).filter((p) => p !== undefined);
+const HERO_SLUGS = ["afsona-villa", "samarkand-hotel-room", "exclusive-signature-restaurant", "mashad"];
+
+/**
+ * Per-slide photo override for the hero banner, keyed by slug — used when the
+ * project's own `image` (picked for its detail page and listing tiles first)
+ * isn't the photo this wide, 80vh-tall banner should show: either the wrong
+ * shape for a landscape crop (Mashad's hero is a 0.73 portrait bedroom shot),
+ * or simply not the specific photo wanted here (the restaurant's own hero is
+ * landscape too, but the arrival shot reads better at this size).
+ */
+const HERO_IMAGE_OVERRIDES: Partial<Record<string, string>> = {
+  "exclusive-signature-restaurant": "/projects/qodirxon-pavilion-7.jpg",
+  mashad: "/projects/mashad-ex-13.jpg",
+};
+
+export const heroProjects = HERO_SLUGS.map((slug) => {
+  const project = getProject(slug);
+  if (!project) return undefined;
+  const heroImage = HERO_IMAGE_OVERRIDES[slug];
+  return heroImage ? { ...project, image: heroImage } : project;
+}).filter((p) => p !== undefined);
 
 /** Projects with real photography — the only ones shown on public listings,
  *  so a still-unphotographed project never renders as an empty placeholder
