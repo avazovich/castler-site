@@ -292,15 +292,21 @@
     },
     "samarkand-hotel-room": {
       "summary": "Samarqanddagi mehmonxona loyihasi uchun mehmon xonasi interyeri.",
-      "description": ["To'liq loyiha tavsifi tez orada qo'shiladi."]
+      "description": [
+        "To'liq loyiha tavsifi tez orada qo'shiladi."
+      ]
     },
     "afsona-villa": {
       "summary": "Namangandagi, aks ettiruvchi hovuz yonida joylashgan xususiy villa.",
-      "description": ["To'liq loyiha tavsifi tez orada qo'shiladi."]
+      "description": [
+        "To'liq loyiha tavsifi tez orada qo'shiladi."
+      ]
     },
     "tashkent-penthouse": {
       "summary": "Toshkentdagi penthouse turar-joyi uchun ochiq terrasa va dam olish zonasi.",
-      "description": ["To'liq loyiha tavsifi tez orada qo'shiladi."]
+      "description": [
+        "To'liq loyiha tavsifi tez orada qo'shiladi."
+      ]
     },
     "yorokobi-wok-and-noodles": {
       "summary": "Buxorodagi tezkor wok va lag'mon restorani — yorqin qizil va xantal ranglari hamda osilib turgan yashil o'simliklar bilan qoplangan shift atrofida qurilgan.",
@@ -359,10 +365,60 @@
       ]
     },
     "mashad": {
-      "summary": "Yumshoq taup va yong'oq ranglaridagi turar-joy interyeri, uning yotoqxonalari haykaltaroshlik uslubidagi osma yoritgichlar va baland yumshoq boshsupa atrofida qurilgan.",
+      "summary": "Yumshoq taup va yong'oq ranglaridagi turar-joy interyeri, uning yotoqxonalari haykaltaroshlik uslubidagi osma yoritgichlar va baland yumshoq boshsupa atrofida qurilgan — bularning barchasi arkali, sarv daraxtlari bilan o'ralgan hovliga ega bezh suvoqli fasad ortida joylashgan.",
       "description": [
         "Har bir yotoqxona bitta ta'sirli jihoz atrofida tuzilgan — bosqichli mato osma chiroq yoki osilib turgan sham uslubidagi chiroqlar to'plami — baland yumshoq boshsupa ustiga osilgan, gipsli shift medalyoni esa yoritishni ustidagi arxitektura bilan bog'laydi.",
-        "Xira taup-yong'oq palitrasi har bir xonada davom etadi, egri chiziqli naqqoshlik, orqa yoritgichli tokchalar va \"baliq suyagi\" uslubidagi pol esa uyning sokin, ohangdosh vazminligini buzmasdan detallarni boy saqlaydi."
+        "Xira taup-yong'oq palitrasi har bir xonada davom etadi, egri chiziqli naqqoshlik, orqa yoritgichli tokchalar va \"baliq suyagi\" uslubidagi pol esa uyning sokin, ohangdosh vazminligini buzmasdan detallarni boy saqlaydi.",
+        "Tashqarida ham xuddi shu iliqlik arxitekturaning o'ziga ko'chadi: chuqur kirish soyabonli, taxta panjarali va sarv daraxtlari bilan o'ralgan mashinalar maydonchali past bezh suvoqli villa — bir eshik ochilmasdan turib uyning ohangini belgilaydi."
+      ]
+    },
+    "navoiy": {
+      "summary": "Navoiydagi bir qavatli turar-joy bosqichma-bosqich tosh suv devori atrofida qurilgan, uning iliq yoritilgan tomlari va sarv daraxtlari bilan o'ralgan yo'lagi yog'och panelli, yagona dumaloq oynavand orqali yoritilgan ichki makonga davom etadi.",
+      "description": [
+        "Uy bir nechta bosqichli kirish sifatida idrok etiladi: sarv daraxtlari bilan o'ralgan yo'lak chuqur, orqadan yoritilgan tom soyaboniga, so'ngra kechqurun pastdan yoritiladigan beshta oqimli tosh sharsharali devor bilan bezatilgan hovliga olib boradi.",
+        "Ichkarida ham xuddi shunday vazminlik davom etadi — quyuq yog'och shiftga o'yilgan dumaloq oyna faqat bitta daraxtni ko'rsatadi, oddiy tomoyna o'rniga ataylab tanlangan, yagona manzarani yaratadi."
+      ]
+    },
+    "akhsikent-dacha": {
+      "summary": "Basseyn atrofida qurilgan ko'mir rangli va travertin dacha, uning quyuq shifer qoplamasi va sarv hovlisi daryo bo'yidagi oynavand, yog'och va tosh fasadga o'tadi.",
+      "description": [
+        "Dachaning ko'cha tomoni ataylab vazmin qilingan — quyuq tosh, taxta panjarali eshik, qat'iy qatorlarda ekilgan sarv daraxtlari — bu esa to'liq balandlikdagi oynavand va bronza suv haykali bilan o'ralgan basseyn terrasasiga ochiladi.",
+        "Daryoga qaragan orqa fasad kirish qismining rasmiyligidan farqli, ochiqlikni tanlaydi: chuqur tom soyabonlariga o'ralgan ikki qavatli shisha va travertin — daryo qirg'og'idan ham, bog'dan ham bir xil ta'sirchan ko'rinadi."
+      ]
+    },
+    "chortoq-estate": {
+      "summary": "Chortoq yaqinidagi krem-travertin mulk ustunli pavilyonlar ketma-ketligi atrofida qurilgan, uning ulug'vor arkali kirish qismi ochiq havodagi ovqatlanish loji va qora tosh sharsharali devorga davom etadi.",
+      "description": [
+        "Mulkning kirish qismi darhol ohangni belgilaydi: och rangli travertindan ikki qavatli arkali portik, qora g'isht urg'ulari va tom ustidagi panjarali bog'. Hovlidagi ustunli pergola, oq zig'ir pardalar bilan bezatilgan, tushlik quyoshidan soya beruvchi ochiq havodagi ovqatlanish xonasi vazifasini o'taydi.",
+        "Qolgan hudud kurort xilma-xilligidagi elementlarni o'z ichiga oladi — sarg'ish-yashil rangga bo'yalgan panjarali bog' pavilyoni, sarmashiq bilan o'ralgan qora tosh sharshara va uchta sham-halqali lyuster bilan yoritilgan ichki zal — barchasi mulkning yagona material tili, och tosh va quyuq urg'ular bilan bog'langan holda."
+      ]
+    },
+    "margilon-residence": {
+      "summary": "Marg'ilondagi travertin turar-joy qo'lda o'yilgan dumaloq yog'och eshik atrofida markazlashgan, uning iliq tom osti yoritilishi va yapon zarangi ekinlari kirish qismini bezaydi.",
+      "description": [
+        "Kirish qismi uyning aniq diqqat markazi hisoblanadi: travertin ramka ichiga o'rnatilgan konsentrik halqali yog'och eshik, yonidagi oynavand bo'sag'a orqali ko'rinadigan osma xrustal jihoz bilan yoritilgan, undan narida esa lyustrali hovli ovqatlanish to'plami joylashgan.",
+        "Qizil zarang va sarv ekinlari kirish yo'lida tosh qobiqni yumshatadi, chuqur tom soyaboni ostidagi iliq chiziqli yoritish esa xuddi shu material sokinligini alanggacha, ichkarigacha olib boradi."
+      ]
+    },
+    "mingchinor-residence": {
+      "summary": "Mingchinordagi ikki qavatli turar-joy och rangli tosh va quyuq po'lat bilan qoplangan, uning oynavand yuqori qavati va yopiq garaji jiddiy avtomobil to'plami uchun qurilgan.",
+      "description": [
+        "Uy bir vaqtning o'zida ikki registrni namoyish etadi: kechasi zamonaviy quti kabi ko'rinadigan oynavand, quyuq ramkali yuqori qavat, uning ostida esa chuqur, yog'och shiftli garaj atrofida qurilgan mustahkam tosh-yog'och birinchi qavat joylashgan.",
+        "Sarv va qarag'ay ekinlari uchastka bo'ylab davom etadi, bu esa miqyosga qaramay kompozitsiyani sokin saqlaydi — bu uy xonalar kabi o'z avtomobillari va bog'i atrofida ham qurilgan."
+      ]
+    },
+    "nanay-dacha": {
+      "summary": "Nanaydagi travertin dacha yagona quyuq tosh mo'ri elementi atrofida qurilgan, uning yopiq garaji va zich keng bargli landshafti kirish qismiga kurortga xos sokinlik baxsh etadi.",
+      "description": [
+        "Ko'mir rangli tosh minora — yarim mo'ri, yarim haykaltaroshlik belgisi — kompozitsiyani markazlashtiradi, chuqur botiq yog'och old eshikli past travertin hajm ustida ko'tariladi.",
+        "Garaj xuddi shu tosh-yog'och tilini uy miqyosida takrorlaydi, kirish qismidagi keng bargli ekinlar esa rasmiy ko'z-ko'z qilishdan ko'ra soya va maxfiylik uchun qurilgan bog'dan darak beradi."
+      ]
+    },
+    "lakeside-resort-pavilion": {
+      "summary": "Kurort pavilyoni oltin suvli, yulduzcha chiroqli porte-cochère atrofida qurilgan, uning egri kolonnadasi haykaltarosh qarag'ay va osma lyustrali ko'l bo'yidagi restoran terrasasiga ochiladi.",
+      "description": [
+        "Kirish ketma-ketligi kelish uchun mo'ljallangan: bronza va oltin rangdagi keng soyabon, mayda nur nuqtalari to'ri bilan orqadan yoritilgan, avtomobillarni qora marmar ustunlar bilan o'ralgan favvorali hovliga ochilishidan oldin qopqoq ostiga jalb qiladi.",
+        "Undan narida joylashgan terrasa oltin rangni tinchroq palitraga almashtiradi — haykaltarosh qarag'ay, xrustal osma yoritish va suv bo'yida joylashgan oynavand ovqatlanish xonachalari — porte-cochère'dan stol ustigacha bir xil marosim tuyg'usini olib boradi."
       ]
     }
   },
