@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 export function ContactForm({
   labels,
@@ -13,6 +14,7 @@ export function ContactForm({
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    trackEvent("contact_form_submit");
     const subject = encodeURIComponent(`Project inquiry from ${name || "the website"}`);
     const body = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
     window.location.href = `mailto:hello@castler.uz?subject=${subject}&body=${body}`;

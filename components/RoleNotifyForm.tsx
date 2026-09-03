@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 export function RoleNotifyForm({
   heading,
@@ -17,6 +18,7 @@ export function RoleNotifyForm({
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    trackEvent("careers_notify_signup");
     window.location.href = `mailto:hello@castler.uz?subject=${encodeURIComponent(
       "Notify me about new roles",
     )}&body=${encodeURIComponent(`Please notify ${email} when a new role opens at Castler.`)}`;

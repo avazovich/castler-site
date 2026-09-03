@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
+import { trackEvent } from "@/lib/analytics";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { MenuIcon, PhoneIcon } from "./icons";
 import { MobileMenu } from "./MobileMenu";
@@ -54,6 +55,7 @@ export function Navbar() {
             <a
               href="tel:+998770001600"
               aria-label={t("callUs")}
+              onClick={() => trackEvent("phone_click", { location: "navbar" })}
               className="pill flex items-center bg-paper-2 text-ink transition-colors hover:bg-line"
             >
               <PhoneIcon className="h-3.5 w-3.5" />

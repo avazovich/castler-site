@@ -3,6 +3,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { trackEvent } from "@/lib/analytics";
 import { CloseIcon, PhoneIcon } from "./icons";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { Wordmark } from "./Wordmark";
@@ -71,7 +72,11 @@ export function MobileMenu({
           </nav>
 
           <div className="flex items-center justify-between border-t border-paper/15 pt-5">
-            <a href="tel:+998770001600" className="flex items-center gap-2 text-sm text-paper/80">
+            <a
+              href="tel:+998770001600"
+              onClick={() => trackEvent("phone_click", { location: "mobile_menu" })}
+              className="flex items-center gap-2 text-sm text-paper/80"
+            >
               <PhoneIcon className="h-4 w-4" /> {t("callUs")}
             </a>
             <LanguageSwitch tone="cream" />

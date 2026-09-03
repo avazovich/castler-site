@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 export function NewsletterSignup({ signUpLabel }: { signUpLabel: string }) {
   const [email, setEmail] = useState("");
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    trackEvent("newsletter_signup");
     window.location.href = `mailto:hello@castler.uz?subject=${encodeURIComponent(
       "Newsletter signup",
     )}&body=${encodeURIComponent(`Please add ${email} to the Castler mailing list.`)}`;

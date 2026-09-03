@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from "./icons";
 import { ProjectImage } from "./ProjectImage";
 import { ShareButton } from "./ShareButton";
+import { TrackedLink } from "./TrackedLink";
 
 /** Real photography per role — reused across the four roles rather than
  *  needing a distinct "office life" shot for each one. */
@@ -50,15 +51,17 @@ export function RoleDetailContent({
         <h1 className="font-display mt-4 text-4xl leading-tight sm:text-5xl">{title}</h1>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          <a
+          <TrackedLink
             href={applyUrl}
+            eventName="telegram_apply_click"
+            eventParams={{ role: slug, location: "role_detail_top" }}
             target="_blank"
             rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium uppercase tracking-wide text-paper transition-all duration-200 hover:scale-[1.03] hover:opacity-85 active:scale-[0.97]"
           >
             {labels.apply}
             <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </TrackedLink>
           <ShareButton label={labels.share} copiedLabel={labels.shareCopied} />
         </div>
 
@@ -79,15 +82,17 @@ export function RoleDetailContent({
         <div className="mt-10 border-t border-line pt-8">
           <p className="label-mono text-ink-soft">{labels.howToApply}</p>
           <p className="mt-4 max-w-2xl text-ink-soft">{howToApply}</p>
-          <a
+          <TrackedLink
             href={applyUrl}
+            eventName="telegram_apply_click"
+            eventParams={{ role: slug, location: "role_detail_how_to_apply" }}
             target="_blank"
             rel="noreferrer"
             className="group mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium uppercase tracking-wide text-paper transition-all duration-200 hover:scale-[1.03] hover:opacity-85 active:scale-[0.97]"
           >
             {labels.apply}
             <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </TrackedLink>
         </div>
       </div>
     </div>

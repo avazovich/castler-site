@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { ArrowRightIcon, MailIcon, PhoneIcon } from "@/components/icons";
 import { ProjectImage } from "@/components/ProjectImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
@@ -29,8 +30,10 @@ export default async function ContactPage() {
           <RevealOnScroll delay={0.1} className="mt-10 border-t border-line pt-8">
             <p className="label-mono text-ink-soft">{t("quickContact")}</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <a
+              <TrackedLink
                 href="tel:+998770001600"
+                eventName="phone_click"
+                eventParams={{ location: "contact_page" }}
                 className="group flex flex-1 items-center justify-between gap-3 rounded-2xl border border-line bg-paper-2 px-6 py-5 transition-all duration-200 hover:scale-[1.02] hover:border-ink hover:bg-ink hover:text-paper active:scale-[0.98]"
               >
                 <div>
@@ -38,9 +41,11 @@ export default async function ContactPage() {
                   <p className="font-display mt-1 text-lg sm:text-xl">+998 77 000 16 00</p>
                 </div>
                 <PhoneIcon className="h-5 w-5 shrink-0 transition-transform group-hover:scale-110" />
-              </a>
-              <a
+              </TrackedLink>
+              <TrackedLink
                 href="mailto:hello@castler.uz"
+                eventName="email_click"
+                eventParams={{ location: "contact_page" }}
                 className="group flex flex-1 items-center justify-between gap-3 rounded-2xl border border-line bg-paper-2 px-6 py-5 transition-all duration-200 hover:scale-[1.02] hover:border-ink hover:bg-ink hover:text-paper active:scale-[0.98]"
               >
                 <div>
@@ -48,7 +53,7 @@ export default async function ContactPage() {
                   <p className="font-display mt-1 truncate text-lg sm:text-xl">hello@castler.uz</p>
                 </div>
                 <MailIcon className="h-5 w-5 shrink-0 transition-transform group-hover:scale-110" />
-              </a>
+              </TrackedLink>
             </div>
             <div className="mt-4 flex gap-4 text-sm">
               <span className="label-mono w-20 shrink-0 text-ink-soft">{t("studioLabel")}</span>
