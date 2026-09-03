@@ -298,9 +298,10 @@
       ]
     },
     "afsona-villa": {
-      "summary": "Namangandagi, aks ettiruvchi hovuz yonida joylashgan xususiy villa.",
+      "summary": "Basseyn atrofida qurilgan ko'mir rangli va travertin villa, uning quyuq shifer qoplamasi va sarv hovlisi daryo bo'yidagi oynavand, yog'och va tosh fasadga o'tadi.",
       "description": [
-        "To'liq loyiha tavsifi tez orada qo'shiladi."
+        "Villaning ko'cha tomoni ataylab vazmin qilingan — quyuq tosh, taxta panjarali eshik, qat'iy qatorlarda ekilgan sarv daraxtlari — bu esa to'liq balandlikdagi oynavand va bronza suv haykali bilan o'ralgan basseyn terrasasiga ochiladi.",
+        "Suvga qaragan orqa fasad kirish qismining rasmiyligidan farqli, ochiqlikni tanlaydi: chuqur tom soyabonlariga o'ralgan ikki qavatli shisha va travertin, aks ettiruvchi hovuz yonida joylashgan va suvdan ham, bog'dan ham bir xil ta'sirchan ko'rinadigan qilib loyihalashtirilgan."
       ]
     },
     "tashkent-penthouse": {
@@ -359,11 +360,10 @@
       ]
     },
     "axsikent": {
-      "summary": "Klassik turar-joy interyeri — panelli devorlar, xrustal lyusterlar va markaziy zinapoya atrofida qurilgan simmetrik ikki qavatli balandlikdagi yashash xonasi — basseyn atrofida qurilgan quyuq, zamonaviy tashqi ko'rinish ortida joylashgan.",
+      "summary": "Klassik turar-joy interyeri — panelli devorlar, xrustal lyusterlar va markaziy zinapoya atrofida qurilgan simmetrik ikki qavatli balandlikdagi yashash xonasi.",
       "description": [
         "Yashash xonasi uyning tilini eng aniq ifodalaydi: baland panelli devorlar, ramkalangan botanik gravyuralar va ikki qavat balandlikdagi shiftdan osilgan bosqichma-bosqich xrustal lyuster, qora lak rangli choy stoli atrofida qat'iy simmetriyada joylashtirilgan bir xil divan va qanotli kreslolar juftligi bilan.",
-        "Xuddi shu vazmin klassitsizm — yumshoq neytral mato, quyuq yog'och urg'ular, monoxrom detallar — turar-joyning qolgan qismida ham davom etadi, har bir xonaga sovuq tuyulmasdan bir xil sokin rasmiylikni beradi.",
-        "Tashqarida uy butunlay boshqa registrga o'tadi: quyuq shifer qoplama, qat'iy qatorlarda ekilgan sarv daraxtlari va basseyn hamda bronza suv haykali atrofida o'ralgan oynavand va travertindan iborat daryo bo'yi fasadi."
+        "Xuddi shu vazmin klassitsizm — yumshoq neytral mato, quyuq yog'och urg'ular, monoxrom detallar — turar-joyning qolgan qismida ham davom etadi, har bir xonaga sovuq tuyulmasdan bir xil sokin rasmiylikni beradi."
       ]
     },
     "mashad": {
