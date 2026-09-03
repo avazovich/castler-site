@@ -9,6 +9,7 @@
   --ink-soft: #6b6f61;
   --gold: #9a8550;
   --gold-light: #c2ab74;
+  --moss: #5d7355; /* not from the logo — a third muted earth tone for the News philosophy category tag */
   --paper: #ffffff;
   --paper-2: #f4f4f4;
   --line: #e2e2e2;
@@ -25,6 +26,7 @@
   --color-ink-soft: var(--ink-soft);
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
+  --color-moss: var(--moss);
   --color-paper: var(--paper);
   --color-paper-2: var(--paper-2);
   --color-line: var(--line);

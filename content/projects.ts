@@ -19,6 +19,11 @@ export interface Project {
    *  from `image` (the one used on the Work page and the project's own
    *  hero). Falls back to `image` when unset. */
   coverImage?: string;
+  /** CSS object-position for `image`, when a plain center crop cuts off the
+   *  part of the photo that matters — only ever set on the hero-carousel
+   *  copy of a project (see HERO_IMAGE_OVERRIDES below), never on the base
+   *  entry, since every other use of `image` crops it differently. */
+  objectPosition?: string;
 }
 
 /**
@@ -605,23 +610,33 @@ export const categories: ProjectCategory[] = ["architecture", "interior", "urban
 const HERO_SLUGS = ["afsona-villa", "samarkand-hotel-room", "exclusive-signature-restaurant", "mashad"];
 
 /**
- * Per-slide photo override for the hero banner, keyed by slug — used when the
- * project's own `image` (picked for its detail page and listing tiles first)
- * isn't the photo this wide, 80vh-tall banner should show: either the wrong
- * shape for a landscape crop (Mashad's hero is a 0.73 portrait bedroom shot),
- * or simply not the specific photo wanted here (the restaurant's own hero is
- * landscape too, but the arrival shot reads better at this size).
+ * Per-slide photo (and crop) override for the hero banner, keyed by slug —
+ * used when the project's own `image` (picked for its detail page and
+ * listing tiles first) isn't right for this wide banner: either the wrong
+ * shape for a landscape crop (Mashad's hero is a 0.73 portrait bedroom
+ * shot), simply not the specific photo wanted here (the restaurant's own
+ * hero is landscape too, but the arrival shot reads better at this size),
+ * or a photo whose subject sits low in the frame — a plain center crop on a
+ * wide, short banner keeps mostly empty sky and clips the subject itself.
  */
-const HERO_IMAGE_OVERRIDES: Partial<Record<string, string>> = {
-  "exclusive-signature-restaurant": "/projects/qodirxon-pavilion-7.jpg",
-  mashad: "/projects/mashad-ex-13.jpg",
+const HERO_IMAGE_OVERRIDES: Partial<Record<string, { image?: string; objectPosition?: string }>> = {
+  "exclusive-signature-restaurant": {
+    image: "/projects/qodirxon-pavilion-7.jpg",
+    objectPosition: "50% 80%",
+  },
+  mashad: { image: "/projects/mashad-ex-13.jpg" },
 };
 
 export const heroProjects = HERO_SLUGS.map((slug) => {
   const project = getProject(slug);
   if (!project) return undefined;
-  const heroImage = HERO_IMAGE_OVERRIDES[slug];
-  return heroImage ? { ...project, image: heroImage } : project;
+  const override = HERO_IMAGE_OVERRIDES[slug];
+  if (!override) return project;
+  return {
+    ...project,
+    image: override.image ?? project.image,
+    objectPosition: override.objectPosition,
+  };
 }).filter((p) => p !== undefined);
 
 /** Projects with real photography — the only ones shown on public listings,

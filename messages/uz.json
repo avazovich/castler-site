@@ -14,6 +14,10 @@
     },
     "contact": {
       "title": "Aloqa — Castler bilan bog'laning"
+    },
+    "news": {
+      "title": "Yangiliklar — Castler",
+      "description": "Castlerning loyihalari, rejalari va dizayn falsafasi — Namangandagi arxitektura va dizayn kompaniyasidan yangiliklar."
     }
   },
   "Nav": {
@@ -21,12 +25,12 @@
     "work": "Loyihalar",
     "office": "Ofis",
     "about": "Biz haqimizda",
-    "journal": "Jurnal",
     "careers": "Karyera",
     "contact": "Aloqa",
     "menu": "Menyu",
     "close": "Yopish",
-    "callUs": "Qo'ng'iroq qiling"
+    "callUs": "Qo'ng'iroq qiling",
+    "news": "Yangiliklar"
   },
   "Home": {
     "tagline": "Ishlaydigan arxitektura.",
@@ -65,34 +69,6 @@
     "body": "Studiyaning jarayondagi va yakunlangan loyihalaridan namunalar.",
     "filterAll": "Barchasi",
     "placeholderNotice": "Loyihalar suratlari hozircha tayyorlanmoqda — bu yerda vaqtinchalik tasvirlar ko'rsatilgan."
-  },
-  "Blog": {
-    "eyebrow": "Jurnal",
-    "heading": "Castler Yangiliklari",
-    "body": "Yangiliklar, matbuotdagi eslatmalar va studiya yangilanishlari — sodir bo'lgan zahoti.",
-    "notice": "Vaqtinchalik yozuvlar — haqiqiy yangiliklar va matbuot materiallari tez orada qo'shiladi.",
-    "posts": {
-      "afsona-villa-completion": {
-        "tag": "Yakunlandi",
-        "title": "Afsona Villa Namanganda qurilishi yakunlandi",
-        "date": "2026-yil avgust"
-      },
-      "penthouse-feature": {
-        "tag": "Nashr",
-        "title": "Toshkentdagi penthouse mintaqaviy interyer jurnalida yoritildi",
-        "date": "2026-yil iyul"
-      },
-      "studio-award": {
-        "tag": "Mukofot",
-        "title": "Castler Markaziy Osiyo dizayn mukofotlari dasturida nomzod bo'ldi",
-        "date": "2026-yil iyun"
-      },
-      "hotel-room-groundbreaking": {
-        "tag": "Voqea",
-        "title": "Samarqanddagi mehmonxona interyeri qurilishi boshlandi",
-        "date": "2026-yil may"
-      }
-    }
   },
   "Careers": {
     "eyebrow": "Castler Karyera",
@@ -450,5 +426,214 @@
     "newsConsent": "Elektron pochta ilovangizni obuna so'rovi bilan ochadi.",
     "language": "Til",
     "rights": "Barcha huquqlar himoyalangan."
+  },
+  "News": {
+    "eyebrow": "Kompaniya yangiliklari",
+    "heading": "Yangiliklar",
+    "body": "Castlerning loyihalari, rejalari va fikrlari — o'z so'zlarimiz bilan.",
+    "readMore": "Batafsil",
+    "breadcrumbHome": "Yangiliklar",
+    "moreArticles": "Boshqa yangiliklar",
+    "notFoundTitle": "Maqola topilmadi",
+    "notFoundBody": "Bu maqola ko'chirilgan yoki o'chirilgan bo'lishi mumkin.",
+    "notFoundCta": "Barcha yangiliklarga qaytish"
+  },
+  "ArticleCategories": {
+    "projects": "Loyihalar",
+    "philosophy": "Falsafa",
+    "company": "Kompaniya"
+  },
+  "Articles": {
+    "afsona-mall": {
+      "title": "Afsona Mall: xalqaro pudratchi qila olmagan loyihani Castler qanday amalga oshirmoqda",
+      "excerpt": "Afsona Mall — xalqaro pudratchi bilan raqobatda Castler tanlab olingan 20 000 m² savdo markazi. Hozirda qurilish nazorati bosqichida.",
+      "metaTitle": "Afsona Mall — Castler tomonidan loyihalashtirilgan 20 000 m² savdo markazi",
+      "metaDescription": "Afsona Mall — xalqaro pudratchi bilan raqobatda Castler tanlab olingan 20 000 m² savdo markazi. Hozirda qurilish nazorati bosqichida.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Namanganda amalga oshirilayotgan eng yirik tijorat loyihalaridan biri — 20 000 m² maydonga ega Afsona Mall savdo markazi. Bu loyiha Castlerning tijorat arxitekturasidagi qobiliyatini eng aniq ko'rsatib beruvchi amaliy misollardan biri."
+        },
+        {
+          "type": "heading",
+          "text": "Vazifa"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vazifa oddiy emas edi: yirik va murakkab tijorat obyektini boshidan oxirigacha boshqarish, xalqaro standartlarga javob beradigan natija berish — va buni mahalliy sharoitda, mahalliy jamoa bilan amalga oshirish. Loyihaning ilk bosqichida xalqaro pudratchi bilan ishlangan edi, biroq jarayon to'xtab qoldi. Shundan so'ng Afsona Holding Castlerga murojaat qildi."
+        },
+        {
+          "type": "heading",
+          "text": "Nega Castler tanlandi"
+        },
+        {
+          "type": "paragraph",
+          "text": "Castler jamoasi loyihani raqobat asosida ko'rib chiqdi va tanlab olindi — bu nafaqat narx yoki taklif emas, balki ishonch va aniq ko'rsatilgan qobiliyat natijasi edi."
+        },
+        {
+          "type": "heading",
+          "text": "Hozirgi holat"
+        },
+        {
+          "type": "paragraph",
+          "text": "Loyiha hozirda qurilish nazorati bosqichida. Castler jamoasi konsepsiyadan konstruktiv yechimlargacha, muhandislik tizimlaridan qurilish maydonidagi kundalik nazoratgacha — butun jarayonni o'z zimmasiga oldi. Bu — Castlerning \"to'liq javobgarlik\" tamoyilining amaliyotdagi eng yirik namunasi: mijoz bir nechta pudratchini o'zi muvofiqlashtirishga majbur bo'lmadi, balki bitta jamoa bilan ishladi."
+        },
+        {
+          "type": "heading",
+          "text": "Nima keyin"
+        },
+        {
+          "type": "paragraph",
+          "text": "Afsona Mallning ochilishi yaqinlashib kelmoqda. Loyiha yakunlangach, Castler uni to'liq hujjatlashtirib, kompaniyaning tijorat arxitekturasidagi yangi mezonini belgilaydigan asosiy portfolio ishi sifatida taqdim etadi."
+        },
+        {
+          "type": "quote",
+          "text": "Bu loyiha bizga nimani isbotladi? Yirik, murakkab tijorat obyektini boshqarish uchun xalqaro nom shart emas — kerak bo'lgani chuqur mas'uliyat, tizimli yondashuv va natijaga sodiqlik.",
+          "attribution": "Castler jamoasi"
+        }
+      ]
+    },
+    "kelajak-rejalari": {
+      "title": "Castlerning kelajak rejalari: Namangandan O'zbekiston miqyosiga",
+      "excerpt": "Castler o'z faoliyatini kengaytirmoqda — Toshkentda yangi ofis ochish rejalari va tijorat arxitekturasidagi yangi bosqich haqida.",
+      "metaTitle": "Castlerning kelajak rejalari — Toshkentga kengayish",
+      "metaDescription": "Castler o'z faoliyatini kengaytirmoqda — Toshkentda yangi ofis ochish rejalari va tijorat arxitekturasidagi yangi bosqich haqida.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "On ikki yildan ortiq vaqt davomida Castler Namanganda mustahkam poydevor qurdi — 200 000 m²dan ortiq maydonni qamrab olgan loyihalar, ishonchli jamoa va aniq ishlash tizimlari. Endi navbat — bu poydevorni kengroq miqyosga olib chiqish."
+        },
+        {
+          "type": "heading",
+          "text": "Toshkentga qadam"
+        },
+        {
+          "type": "paragraph",
+          "text": "Castlerning navbatdagi bosqichi — Toshkentda yangi ofis ochish. Bu qadam kompaniyaning O'zbekiston bo'ylab yirik tijorat mijozlariga yaqinroq bo'lish va poytaxtdagi tobora o'sib borayotgan tijorat qurilish bozorida faol ishtirok etish istagidan kelib chiqadi."
+        },
+        {
+          "type": "heading",
+          "text": "Tijorat yo'nalishiga chuqurroq e'tibor"
+        },
+        {
+          "type": "paragraph",
+          "text": "Castler kelajak strategiyasida tijorat obyektlariga — savdo markazlari, biznes markazlari, mehmonxonalar va aralash funksiyali komplekslarga — alohida e'tibor qaratmoqda. Bu Afsona Mall kabi yirik loyihalarda to'plangan tajribaning tabiiy davomi.",
+          "linkText": "Afsona Mall",
+          "linkSlug": "afsona-mall"
+        },
+        {
+          "type": "heading",
+          "text": "Nima o'zgarmaydi"
+        },
+        {
+          "type": "paragraph",
+          "text": "Kengayish davomida Castlerning asosiy tamoyillari o'zgarmaydi: har bir loyihaga to'liq javobgarlik bilan yondashish, insonni markazga qo'yuvchi dizayn falsafasi, va endilikda — har bir loyihaning ishlashi va foydaliligiga alohida e'tibor."
+        },
+        {
+          "type": "quote",
+          "text": "Castler uchun o'sish — shunchaki ko'proq shahar emas, balki ko'proq mijozga xuddi shu sifat va ishonchni yetkazish demakdir."
+        }
+      ]
+    },
+    "ishlaydigan-arxitektura": {
+      "title": "\"Ishlaydigan arxitektura\" — Castlerning yangi davri",
+      "excerpt": "Castler uchun yaxshi dizayn ikki narsani anglatadi: kuchli g'oya va ishlaydigan natija. Yangi pozitsiya haqida.",
+      "metaTitle": "\"Ishlaydigan arxitektura\" — Castlerning yangi davri",
+      "metaDescription": "Castler uchun yaxshi dizayn ikki narsani anglatadi: kuchli g'oya va ishlaydigan natija. Yangi pozitsiya haqida.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Arxitektura ko'pincha faqat go'zallik haqida gap sifatida qabul qilinadi. Castler uchun bu yetarli emas."
+        },
+        {
+          "type": "heading",
+          "text": "Ikki savol, bitta javob"
+        },
+        {
+          "type": "paragraph",
+          "text": "Har bir loyihada Castler ikkita savolni bir vaqtda beradi: bu joy qanday ko'rinishi kerak, va bu joy qanday ishlashi kerak? Birinchi savol dizaynerlik mahoratiga tegishli. Ikkinchisi — biznes tafakkuriga. Ikkalasi ham bir xil darajada muhim."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tijorat mijozi uchun bino shunchaki chiroyli bo'lishi kifoya qilmaydi — u daromad keltirishi, moslashuvchan bo'lishi, vaqt o'tishi bilan foydali bo'lib qolishi kerak. Xususiy mijoz uchun ham xuddi shunday: uy nafaqat ko'zni quvontirishi, balki haqiqatan ham yashash uchun qulay bo'lishi kerak."
+        },
+        {
+          "type": "heading",
+          "text": "Nima uchun bu muhim"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bitta uslub yoki material atrofida ishlaydigan studiyalardan farqli o'laroq, Castler har bir loyihani uning maqsadidan kelib chiqib quradi. Bu yondashuv kompaniyaga turli xil — kichik uydan yirik savdo markazigacha — loyihalarda muvaffaqiyatli ishlash imkonini berdi."
+        },
+        {
+          "type": "heading",
+          "text": "Amaliyotda nima anglatadi"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bu falsafa Castlerning ish jarayoniga chuqur singib ketgan: loyiha maydonining har bir kvadrat metri hisobga olinadi, dizayn qarorlari amaliy asoslanadi, va loyiha nafaqat taqdimotda, balki foydalanishda ham kutilgan natijani berishi kerak."
+        },
+        {
+          "type": "paragraph",
+          "text": "Castlerning manifesti — \"Makonlarni obod, insonlarni shod qilish maqsadi ila dunyoga boqish\" — aslida shu g'oyaning ildizi: obodlik shunchaki tashqi go'zallik emas, balki chinakam farovonlik va ishlash demakdir."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bu g'oya Castlerning kelajak rejalarida ham davom etmoqda.",
+          "linkText": "kelajak rejalarida",
+          "linkSlug": "kelajak-rejalari"
+        },
+        {
+          "type": "quote",
+          "text": "Ishlaydigan arxitektura."
+        }
+      ]
+    },
+    "boshidan-oxirigacha": {
+      "title": "Nega Castler har bir loyihani boshidan oxirigacha o'zi boshqaradi",
+      "excerpt": "Castler nima uchun loyihani konsepsiyadan qurilish nazoratigacha to'liq o'z zimmasiga oladi — va bu mijoz uchun nimani anglatadi.",
+      "metaTitle": "Nega Castler har bir loyihani boshidan oxirigacha o'zi boshqaradi",
+      "metaDescription": "Castler nima uchun loyihani konsepsiyadan qurilish nazoratigacha to'liq o'z zimmasiga oladi — va bu mijoz uchun nimani anglatadi.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Yirik qurilish loyihalarida eng katta xavflardan biri — turli bosqichlarni turli kompaniyalar bajarishi natijasida yuzaga keladigan \"bo'shliqlar\". Arxitektor chizadi, boshqa kompaniya quradi, yana boshqasi nazorat qiladi — va muammo yuzaga kelganda, hech kim to'liq javobgar bo'lmaydi."
+        },
+        {
+          "type": "paragraph",
+          "text": "Castler bu muammoni boshidanoq boshqacha hal qildi: loyihani boshidan oxirigacha bitta jamoa olib boradi."
+        },
+        {
+          "type": "heading",
+          "text": "Bu qanday ishlaydi"
+        },
+        {
+          "type": "paragraph",
+          "text": "Konsepsiya va dizayndan boshlab, konstruktiv va muhandislik yechimlarigacha, hujjatlashtirishdan qurilish maydonidagi kundalik nazoratgacha — barchasi Castler ichida muvofiqlashtiriladi. Mijoz o'nlab turli pudratchi va konsultant bilan aloqa o'rnatishga majbur bo'lmaydi."
+        },
+        {
+          "type": "heading",
+          "text": "Mijoz uchun nima anglatadi"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bu yondashuvning amaliy foydasi aniq: muammo yuzaga kelganda, javobgarlikni \"boshqa kompaniyaga\" o'tkazib bo'lmaydi. Loyiha g'oyasi qurilish jarayonida yo'qolib ketmaydi, chunki uni yaratgan jamoaning o'zi oxirigacha kuzatib boradi. Va eng muhimi — mijoz bir marta kelishib, keyin butun jarayon davomida ishonchli hamkor bilan ishlaydi."
+        },
+        {
+          "type": "heading",
+          "text": "Amaldagi isbot"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bu tamoyilning eng yaqqol namunasi — hozirda qurilish nazorati bosqichidagi Afsona Mall loyihasi: konsepsiyadan tortib kundalik qurilish nazoratigacha, barchasi bitta Castler jamoasi tomonidan olib borilmoqda.",
+          "linkText": "Afsona Mall",
+          "linkSlug": "afsona-mall"
+        },
+        {
+          "type": "quote",
+          "text": "Castler uchun bu shunchaki xizmat modeli emas — bu mas'uliyat haqidagi tushuncha: loyiha \"topshirilgani\"da emas, balki u haqiqatan ishga tushganida yakunlangan hisoblanadi."
+        }
+      ]
+    }
   }
 }

@@ -30,7 +30,7 @@ export function MobileMenu({
       label: tFooter("officeHeading"),
       links: [
         { href: "/about", label: t("about") },
-        { href: "/journal", label: t("journal") },
+        { href: "/news", label: t("news") },
         { href: "/careers", label: t("careers") },
         { href: "/contact", label: t("contact") },
       ],

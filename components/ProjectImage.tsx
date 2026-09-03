@@ -13,6 +13,10 @@ export function ProjectImage({
   image,
   className,
   priority,
+  /** CSS object-position (e.g. "50% 70%"), for a crop that needs to favor
+   *  one part of the photo over a plain center crop — the frame this image
+   *  fills isn't always the photo's own aspect ratio. Defaults to center. */
+  objectPosition,
   ref,
 }: {
   slug: string;
@@ -20,6 +24,7 @@ export function ProjectImage({
   image?: string;
   className?: string;
   priority?: boolean;
+  objectPosition?: string;
   ref?: React.Ref<HTMLDivElement>;
 }) {
   if (image) {
@@ -31,6 +36,7 @@ export function ProjectImage({
           fill
           priority={priority}
           className="object-cover"
+          style={objectPosition ? { objectPosition } : undefined}
           sizes="(min-width: 1024px) 60vw, 100vw"
         />
       </div>

@@ -24,7 +24,7 @@ export function Navbar() {
 
   const officeLinks = [
     { href: "/about", label: t("about") },
-    { href: "/journal", label: t("journal") },
+    { href: "/news", label: t("news") },
     { href: "/careers", label: t("careers") },
     { href: "/contact", label: t("contact") },
   ];

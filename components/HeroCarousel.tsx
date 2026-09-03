@@ -31,7 +31,7 @@ export function HeroCarousel({ slides }: { slides: Project[] }) {
 
   return (
     <div
-      className="relative h-[80vh] min-h-[420px] w-full overflow-hidden rounded-2xl sm:h-[85vh] sm:rounded-3xl"
+      className="relative h-[62vh] min-h-[360px] w-full overflow-hidden rounded-2xl sm:h-[80vh] sm:min-h-[420px] sm:rounded-3xl"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -53,6 +53,7 @@ export function HeroCarousel({ slides }: { slides: Project[] }) {
             slug={s.slug}
             title={s.title}
             image={s.image}
+            objectPosition={s.objectPosition}
             priority
             className="pointer-events-none h-full w-full"
           />
@@ -83,14 +84,18 @@ export function HeroCarousel({ slides }: { slides: Project[] }) {
           ))}
         </div>
 
-        <div className="flex items-center justify-between gap-4">
+        {/* Stacked on mobile so the location never truncates mid-word to make
+            room for the CTA pill beside it — there's no good short form for
+            "ARCHITECTURE · NAMANGAN, UZBEKISTAN" at that width. From `sm` up
+            there's enough room for the original single-row layout. */}
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <div className="min-w-0">
             <p className="font-display truncate text-lg">{slide.title}</p>
-            <p className="label-mono truncate text-paper/60">
+            <p className="label-mono text-paper/60 sm:truncate">
               {tCategories(slide.category)} · {slide.location}
             </p>
           </div>
-          <span className="pill flex shrink-0 items-center gap-1.5 bg-paper text-ink">
+          <span className="pill flex w-fit shrink-0 items-center gap-1.5 bg-paper text-ink">
             {t("heroCta")}
             <ArrowRightIcon className="h-3.5 w-3.5" />
           </span>

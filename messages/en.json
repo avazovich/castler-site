@@ -14,6 +14,10 @@
     },
     "contact": {
       "title": "Contact — Get in Touch with Castler"
+    },
+    "news": {
+      "title": "News & Insights — Castler",
+      "description": "Castler's projects, plans, and design philosophy — company news and insights from an architecture and design studio in Namangan, Uzbekistan."
     }
   },
   "Nav": {
@@ -21,12 +25,12 @@
     "work": "Work",
     "office": "Office",
     "about": "About",
-    "journal": "Journal",
     "careers": "Careers",
     "contact": "Contact",
     "menu": "Menu",
     "close": "Close",
-    "callUs": "Call us"
+    "callUs": "Call us",
+    "news": "News"
   },
   "Home": {
     "tagline": "Design that performs.",
@@ -65,12 +69,6 @@
     "body": "A cross-section of the studio's work in progress and completed projects.",
     "filterAll": "All",
     "placeholderNotice": "Project photography is being finalized — shown here with placeholder artwork."
-  },
-  "Blog": {
-    "eyebrow": "Journal",
-    "heading": "Castler News",
-    "body": "News, press mentions, and studio updates as they happen.",
-    "notice": "Placeholder entries — real studio news and press coverage coming soon."
   },
   "Careers": {
     "eyebrow": "Castler Careers",
@@ -305,5 +303,21 @@
     "newsConsent": "Opens your email app to send a signup request.",
     "language": "Language",
     "rights": "All rights reserved."
+  },
+  "News": {
+    "eyebrow": "News & Insights",
+    "heading": "News & Insights",
+    "body": "Castler's projects, plans, and thinking — in our own words.",
+    "readMore": "Read more",
+    "breadcrumbHome": "News",
+    "moreArticles": "More articles",
+    "notFoundTitle": "Article not found",
+    "notFoundBody": "This article may have moved or been removed.",
+    "notFoundCta": "Back to all news"
+  },
+  "ArticleCategories": {
+    "projects": "Projects",
+    "philosophy": "Philosophy",
+    "company": "Company"
   }
 }
