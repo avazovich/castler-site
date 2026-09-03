@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { ReactLenis } from "lenis/react";
 import { Footer } from "@/components/Footer";
 import { FooterRevealLayout } from "@/components/FooterRevealLayout";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { ModalSlot } from "@/components/ModalSlot";
 import { Navbar } from "@/components/Navbar";
 import { PageTransition } from "@/components/PageTransition";
@@ -63,6 +64,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${spaceMono.variable} ${poppins.variable} h-full`}>
       <body className="min-h-full flow-root bg-ink text-ink antialiased">
+        <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           <ReactLenis root options={{ lerp: 0.1, duration: 1.1, smoothWheel: true }} />
           <FooterRevealLayout footer={<Footer />}>
