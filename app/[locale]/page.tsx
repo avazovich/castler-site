@@ -60,7 +60,7 @@ export default async function HomePage() {
     name: "Castler",
     alternateName: "Castler Group",
     description:
-      "Architecture and design company based in Namangan, Uzbekistan, founded in 2013, focused on commercial projects. Approximately 200,000 m² realised across residential and commercial work, including Afsona Mall, a 20,000 m² shopping centre. Full-service design from concept to construction supervision.",
+      "Architecture and design company based in Namangan, Uzbekistan, founded in 2013, focused on commercial projects. Approximately 200,000 m² realised across residential and commercial work, including Afsona Mall, a 50,000 m² shopping centre. Full-service design from concept to construction supervision.",
     foundingDate: FOUNDING_YEAR,
     founder: {
       "@type": "Person",
@@ -80,7 +80,7 @@ export default async function HomePage() {
         "@type": "CreativeWork",
         name: "Afsona Mall",
         description:
-          "A 20,000 m² shopping centre designed by Castler, selected in competition with an international contractor, currently in construction supervision.",
+          "A 50,000 m² shopping centre designed by Castler, selected in competition with an international contractor, currently in construction supervision.",
       },
     },
   };

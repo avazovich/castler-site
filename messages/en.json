@@ -38,7 +38,7 @@
     "statYearsLabel": "Years of practice",
     "statArea": "~200,000 m²",
     "statAreaLabel": "Realised",
-    "statLargest": "20,000 m²",
+    "statLargest": "50,000 m²",
     "statLargestLabel": "Largest project",
     "heroCta": "View",
     "featuredEyebrow": "Selected Work",
@@ -186,7 +186,7 @@
       {
         "title": "Experience and scale",
         "body": [
-          "Castler's portfolio spans private houses, villas, multi-storey residential buildings, restaurants, office centres, and large commercial developments. Among its most significant projects is Afsona Mall, a 20,000 m² shopping centre selected in competition with an international contractor and currently in the construction-supervision phase — a live proof point of Castler's ability to manage large, complex commercial work."
+          "Castler's portfolio spans private houses, villas, multi-storey residential buildings, restaurants, office centres, and large commercial developments. Among its most significant projects is Afsona Mall, a 50,000 m² shopping centre selected in competition with an international contractor and currently in the construction-supervision phase — a live proof point of Castler's ability to manage large, complex commercial work."
         ]
       },
       {
@@ -224,7 +224,7 @@
       },
       {
         "question": "Does Castler design commercial buildings?",
-        "answer": "Yes. Castler specialises in commercial projects including shopping centres, office buildings, and restaurants, and is currently working on Afsona Mall, a 20,000 m² shopping centre selected in competition with an international contractor."
+        "answer": "Yes. Castler specialises in commercial projects including shopping centres, office buildings, and restaurants, and is currently working on Afsona Mall, a 50,000 m² shopping centre selected in competition with an international contractor."
       },
       {
         "question": "Who founded Castler?",
@@ -284,7 +284,7 @@
     ]
   },
   "Awards": {
-    "flagshipMall": "Flagship Project, 20,000+ m² Commercial Development",
+    "flagshipMall": "Flagship Project, 50,000 m² Commercial Development",
     "centralAsianDesign": "Shortlisted, Central Asian Design Awards",
     "regionalInteriorJournal": "Featured Project, Regional Interior Journal",
     "emergingStudios": "Selected, Emerging Studios Showcase",

@@ -34,14 +34,14 @@ export const articles: Article[] = [
     date: "2026-09-03",
     title: "Afsona Mall: How Castler Took On What an International Contractor Could Not",
     excerpt:
-      "Afsona Mall is a 20,000 m² shopping centre selected in competition with an international contractor. Currently in construction supervision, led by Castler from concept to completion.",
-    metaTitle: "Afsona Mall — A 20,000 m² Shopping Centre Designed by Castler",
+      "Afsona Mall is a 50,000 m² shopping centre selected in competition with an international contractor. Currently in construction supervision, led by Castler from concept to completion.",
+    metaTitle: "Afsona Mall — A 50,000 m² Shopping Centre Designed by Castler",
     metaDescription:
-      "Afsona Mall is a 20,000 m² shopping centre selected in competition with an international contractor. Currently in construction supervision, led by Castler from concept to completion.",
+      "Afsona Mall is a 50,000 m² shopping centre selected in competition with an international contractor. Currently in construction supervision, led by Castler from concept to completion.",
     body: [
       {
         type: "paragraph",
-        text: "Among the largest commercial projects currently underway in Namangan is Afsona Mall, a 20,000 m² shopping centre — and one of the clearest examples of Castler's capability in commercial architecture.",
+        text: "Among the largest commercial projects currently underway in Namangan is Afsona Mall, a 50,000 m² shopping centre — and one of the clearest examples of Castler's capability in commercial architecture.",
       },
       { type: "heading", text: "The brief" },
       {

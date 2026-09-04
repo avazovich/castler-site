@@ -38,7 +38,7 @@
     "statYearsLabel": "Yillik tajriba",
     "statArea": "~200 000 m²",
     "statAreaLabel": "Amalga oshirilgan",
-    "statLargest": "20 000 m²",
+    "statLargest": "50 000 m²",
     "statLargestLabel": "Eng yirik loyiha",
     "heroCta": "Ko'rish",
     "featuredEyebrow": "Tanlangan ishlar",
@@ -186,7 +186,7 @@
       {
         "title": "Tajriba va miqyos",
         "body": [
-          "Castlerning portfeli xususiy uylar, villalar, ko'p qavatli turar-joy binolari, restoranlar, ofis markazlari va yirik tijorat obyektlarini o'z ichiga oladi. Kompaniyaning eng yirik loyihalaridan biri — xalqaro pudratchi bilan raqobatda tanlab olingan, 20 000 m² maydondagi Afsona Mall savdo markazi bo'lib, hozirda qurilish nazorati bosqichida. Bu — Castlerning yirik, murakkab tijorat loyihalarini boshqarish qobiliyatining amaldagi isboti."
+          "Castlerning portfeli xususiy uylar, villalar, ko'p qavatli turar-joy binolari, restoranlar, ofis markazlari va yirik tijorat obyektlarini o'z ichiga oladi. Kompaniyaning eng yirik loyihalaridan biri — xalqaro pudratchi bilan raqobatda tanlab olingan, 50 000 m² maydondagi Afsona Mall savdo markazi bo'lib, hozirda qurilish nazorati bosqichida. Bu — Castlerning yirik, murakkab tijorat loyihalarini boshqarish qobiliyatining amaldagi isboti."
         ]
       },
       {
@@ -224,7 +224,7 @@
       },
       {
         "question": "Castler tijorat obyektlarini loyihalaydimi?",
-        "answer": "Ha. Castler savdo markazlari, ofis binolari, restoranlar va boshqa tijorat obyektlarini loyihalash bo'yicha ixtisoslashgan, jumladan xalqaro pudratchi bilan raqobatda tanlab olingan Afsona Mall — 20 000 m² savdo markazi loyihasi ustida ishlamoqda."
+        "answer": "Ha. Castler savdo markazlari, ofis binolari, restoranlar va boshqa tijorat obyektlarini loyihalash bo'yicha ixtisoslashgan, jumladan xalqaro pudratchi bilan raqobatda tanlab olingan Afsona Mall — 50 000 m² savdo markazi loyihasi ustida ishlamoqda."
       },
       {
         "question": "Castlerni kim asos solgan?",
@@ -295,9 +295,9 @@
       ]
     },
     "afsona-mall": {
-      "summary": "Bizning flagman tijorat interyerimiz — 20 000+ m² savdo markazi, to'liq balandlikdagi atrium atrofida qurilgan, uning ko'p qirrali fonar shifti kunduzgi yorug'likni to'rt qavatli savdo maydoniga tortib tushiradi.",
+      "summary": "Bizning flagman tijorat interyerimiz — 50 000 m² savdo markazi, to'liq balandlikdagi atrium atrofida qurilgan, uning ko'p qirrali fonar shifti kunduzgi yorug'likni to'rt qavatli savdo maydoniga tortib tushiradi.",
       "description": [
-        "20 000 kvadrat metrdan oshadigan Afsona Mall — Castler hozirgacha yaratgan eng katta interyer. Reja yagona ulkan atrium atrofida quriladi: eskalatorlar va shishali panjarali balkonlar markaziy hovli atrofida to'rt qavatni o'rab oladi, bularning barchasi ustidan to'g'ridan-to'g'ri doiraviy fonarga ochiladigan yulduzsimon naqshli, ko'p qirrali shift ostida jamlangan.",
+        "50 000 kvadrat metrli Afsona Mall — Castler hozirgacha yaratgan eng katta interyer. Reja yagona ulkan atrium atrofida quriladi: eskalatorlar va shishali panjarali balkonlar markaziy hovli atrofida to'rt qavatni o'rab oladi, bularning barchasi ustidan to'g'ridan-to'g'ri doiraviy fonarga ochiladigan yulduzsimon naqshli, ko'p qirrali shift ostida jamlangan.",
         "Bronza rangidagi lift o'zaklari va tosh bilan qoplangan ustunlar atriumning issiq palitrasini mustahkamlaydi, birinchi qavatdagi aylanuvchi namoyish platformasi esa — namoyishdagi avtomobildan tortib mavsumiy o'rnatmagacha har qanday narsa uchun mo'ljallangan — savdo markazi yuragini doimiy harakatda saqlaydi. Ovqatlanish zonasi esa xuddi shu tilni inson o'lchamida takrorlaydi: osma disksimon yoritgichlar soyaboni, terrakota ustunlar va o'simlikli to'siqlar katta ovqatlanish zalini bir necha qulay, alohida bo'linmalarga aylantiradi."
       ]
     },
@@ -407,7 +407,7 @@
     ]
   },
   "Awards": {
-    "flagshipMall": "Flagman loyiha, 20 000+ m² tijorat majmuasi",
+    "flagshipMall": "Flagman loyiha, 50 000 m² tijorat majmuasi",
     "centralAsianDesign": "Markaziy Osiyo dizayn mukofotlari — nomzod",
     "regionalInteriorJournal": "Mintaqaviy interyer jurnalida yoritilgan loyiha",
     "emergingStudios": "Yosh studiyalar ko'rgazmasiga tanlangan",
@@ -446,13 +446,13 @@
   "Articles": {
     "afsona-mall": {
       "title": "Afsona Mall: xalqaro pudratchi qila olmagan loyihani Castler qanday amalga oshirmoqda",
-      "excerpt": "Afsona Mall — xalqaro pudratchi bilan raqobatda Castler tanlab olingan 20 000 m² savdo markazi. Hozirda qurilish nazorati bosqichida.",
-      "metaTitle": "Afsona Mall — Castler tomonidan loyihalashtirilgan 20 000 m² savdo markazi",
-      "metaDescription": "Afsona Mall — xalqaro pudratchi bilan raqobatda Castler tanlab olingan 20 000 m² savdo markazi. Hozirda qurilish nazorati bosqichida.",
+      "excerpt": "Afsona Mall — xalqaro pudratchi bilan raqobatda Castler tanlab olingan 50 000 m² savdo markazi. Hozirda qurilish nazorati bosqichida.",
+      "metaTitle": "Afsona Mall — Castler tomonidan loyihalashtirilgan 50 000 m² savdo markazi",
+      "metaDescription": "Afsona Mall — xalqaro pudratchi bilan raqobatda Castler tanlab olingan 50 000 m² savdo markazi. Hozirda qurilish nazorati bosqichida.",
       "body": [
         {
           "type": "paragraph",
-          "text": "Namanganda amalga oshirilayotgan eng yirik tijorat loyihalaridan biri — 20 000 m² maydonga ega Afsona Mall savdo markazi. Bu loyiha Castlerning tijorat arxitekturasidagi qobiliyatini eng aniq ko'rsatib beruvchi amaliy misollardan biri."
+          "text": "Namanganda amalga oshirilayotgan eng yirik tijorat loyihalaridan biri — 50 000 m² maydonga ega Afsona Mall savdo markazi. Bu loyiha Castlerning tijorat arxitekturasidagi qobiliyatini eng aniq ko'rsatib beruvchi amaliy misollardan biri."
         },
         {
           "type": "heading",

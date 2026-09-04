@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { INSTAGRAM_URL } from "@/lib/siteConfig";
 import { BackToTop } from "./BackToTop";
 import { FooterLanguageRow } from "./FooterLanguageRow";
 import { NewsletterSignup } from "./NewsletterSignup";
@@ -72,7 +73,12 @@ export function Footer() {
             <p>
               © {year} Castler. {t("rights")}
             </p>
-            <FooterLanguageRow />
+            <div className="flex items-center gap-4">
+              <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="hover:text-paper">
+                Instagram
+              </a>
+              <FooterLanguageRow />
+            </div>
           </div>
         </div>
       </div>

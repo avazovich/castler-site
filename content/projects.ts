@@ -298,9 +298,9 @@ export const projects: Project[] = [
     year: "2026",
     category: "interior",
     image: "/projects/afsona-mall-hero.jpg",
-    summary: "Our flagship commercial interior — a 20,000+ m² shopping mall built around a full-height atrium, its faceted skylight pulling daylight down through four wrapped levels of retail.",
+    summary: "Our flagship commercial interior — a 50,000 m² shopping mall built around a full-height atrium, its faceted skylight pulling daylight down through four wrapped levels of retail.",
     description: [
-      "At over 20,000 square meters, Afsona Mall is the largest interior Castler has delivered to date. The plan turns on a single grand atrium: escalators and glass-railed balconies wrap four levels around a central court, all of it gathered under a faceted, star-patterned ceiling that opens to a circular skylight directly overhead.",
+      "At 50,000 square meters, Afsona Mall is the largest interior Castler has delivered to date. The plan turns on a single grand atrium: escalators and glass-railed balconies wrap four levels around a central court, all of it gathered under a faceted, star-patterned ceiling that opens to a circular skylight directly overhead.",
       "Bronze-toned elevator cores and stone-clad columns anchor the atrium's warm palette, while a rotating display platform at ground level — built for anything from a showcase vehicle to a seasonal installation — keeps the heart of the mall in constant motion. The food court repeats the language at a human scale: a canopy of suspended disc lighting, terracotta columns, and planted dividers turn a large dining hall into a series of comfortable, broken-up rooms.",
     ],
     galleryCount: 12,
