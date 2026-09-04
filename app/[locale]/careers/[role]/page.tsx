@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRightIcon } from "@/components/icons";
 import { RoleDetailContent } from "@/components/RoleDetailContent";
-import { getRole, openRoles, TELEGRAM_APPLY_URL } from "@/content/roles";
+import { APPLY_URL, getRole, openRoles } from "@/content/roles";
 import { getRoleContent } from "@/lib/roleContent";
 
 export function generateStaticParams() {
@@ -53,7 +53,7 @@ export default async function RoleDetailPage({
             intro={content.intro}
             requirements={content.requirements}
             howToApply={content.howToApply}
-            applyUrl={TELEGRAM_APPLY_URL}
+            applyUrl={APPLY_URL}
             labels={{
               location: t("roleLocation"),
               whatWereLookingFor: t("roleWhatWereLookingFor"),

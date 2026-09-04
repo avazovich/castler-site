@@ -19,4 +19,8 @@ export function getRole(slug: string) {
   return openRoles.find((r) => r.slug === slug);
 }
 
-export const TELEGRAM_APPLY_URL = "https://t.me/castler_group";
+/** Same-origin path to the dedicated application form (app/apply) — not
+ *  under app/[locale]/, so this is a plain absolute path, not a locale-aware
+ *  route. Used to be a direct link to the studio's Telegram group before the
+ *  form existed. */
+export const APPLY_URL = "/apply";

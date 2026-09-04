@@ -31,7 +31,7 @@ export function HeroCarousel({ slides }: { slides: Project[] }) {
 
   return (
     <div
-      className="relative h-[62vh] min-h-[360px] w-full overflow-hidden rounded-2xl sm:h-[80vh] sm:min-h-[420px] sm:rounded-3xl"
+      className="relative h-[68vh] min-h-[420px] w-full overflow-hidden rounded-none sm:h-[80vh] sm:min-h-[420px] sm:rounded-3xl"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

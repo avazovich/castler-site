@@ -53,10 +53,8 @@ export function RoleDetailContent({
         <div className="mt-8 flex flex-wrap gap-3">
           <TrackedLink
             href={applyUrl}
-            eventName="telegram_apply_click"
+            eventName="careers_apply_click"
             eventParams={{ role: slug, location: "role_detail_top" }}
-            target="_blank"
-            rel="noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium uppercase tracking-wide text-paper transition-all duration-200 hover:scale-[1.03] hover:opacity-85 active:scale-[0.97]"
           >
             {labels.apply}
@@ -84,10 +82,8 @@ export function RoleDetailContent({
           <p className="mt-4 max-w-2xl text-ink-soft">{howToApply}</p>
           <TrackedLink
             href={applyUrl}
-            eventName="telegram_apply_click"
+            eventName="careers_apply_click"
             eventParams={{ role: slug, location: "role_detail_how_to_apply" }}
-            target="_blank"
-            rel="noreferrer"
             className="group mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium uppercase tracking-wide text-paper transition-all duration-200 hover:scale-[1.03] hover:opacity-85 active:scale-[0.97]"
           >
             {labels.apply}

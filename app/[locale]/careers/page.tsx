@@ -7,7 +7,7 @@ import { ProjectImage } from "@/components/ProjectImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { RoleNotifyForm } from "@/components/RoleNotifyForm";
 import { TrackedLink } from "@/components/TrackedLink";
-import { openRoles, TELEGRAM_APPLY_URL } from "@/content/roles";
+import { APPLY_URL, openRoles } from "@/content/roles";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Careers");
@@ -87,11 +87,9 @@ export default async function CareersPage() {
                       {t("learnMoreCta")}
                     </Link>
                     <TrackedLink
-                      href={TELEGRAM_APPLY_URL}
-                      eventName="telegram_apply_click"
+                      href={APPLY_URL}
+                      eventName="careers_apply_click"
                       eventParams={{ role: role.slug, location: "careers_list" }}
-                      target="_blank"
-                      rel="noreferrer"
                       className="pill flex items-center gap-1.5 bg-ink text-paper transition-opacity hover:opacity-85"
                     >
                       {t("applyCta")}

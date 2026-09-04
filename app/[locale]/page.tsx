@@ -85,8 +85,12 @@ export default async function HomePage() {
       <SectionSnapScroll />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Hero: swipable carousel, inset to the same gutter as the mosaic below */}
-      <section data-snap className="mx-auto max-w-[1600px] px-4 pt-20 sm:px-6">
+      {/* Hero: swipable carousel. Full-bleed on mobile — screen space is
+          scarce there, and a rounded, gutter-inset card reads small and
+          decorative rather than as the dominant hero image it should be.
+          From sm up there's room to spare, so it insets to the same gutter
+          as the mosaic below. */}
+      <section data-snap className="mx-auto max-w-[1600px] pt-20 sm:px-6">
         <HeroCarousel slides={heroProjects} />
       </section>
 

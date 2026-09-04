@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { RoleDetailModal } from "@/components/RoleDetailModal";
-import { getRole, TELEGRAM_APPLY_URL } from "@/content/roles";
+import { APPLY_URL, getRole } from "@/content/roles";
 import { getRoleContent } from "@/lib/roleContent";
 
 export default async function InterceptedRoleModal({
@@ -28,7 +28,7 @@ export default async function InterceptedRoleModal({
       intro={content.intro}
       requirements={content.requirements}
       howToApply={content.howToApply}
-      applyUrl={TELEGRAM_APPLY_URL}
+      applyUrl={APPLY_URL}
       labels={{
         location: t("roleLocation"),
         whatWereLookingFor: t("roleWhatWereLookingFor"),
