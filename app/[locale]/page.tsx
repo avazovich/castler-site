@@ -13,7 +13,7 @@ import { WorkSpansAccordion } from "@/components/WorkSpansAccordion";
 import { ArrowRightIcon } from "@/components/icons";
 import { categories, heroProjects, photographedProjects } from "@/content/projects";
 import { getCardShapes, type CardShape } from "@/lib/projectCardShape";
-import { FOUNDER_NAME, FOUNDING_YEAR, INSTAGRAM_URL, SITE_URL } from "@/lib/siteConfig";
+import { FOUNDER_INSTAGRAM_URL, FOUNDER_NAME, FOUNDING_YEAR, INSTAGRAM_URL, SITE_URL } from "@/lib/siteConfig";
 
 /**
  * Tile span for one featured-grid cell, chosen from the photo's own shape
@@ -62,7 +62,12 @@ export default async function HomePage() {
     description:
       "Architecture and design company based in Namangan, Uzbekistan, founded in 2013, focused on commercial projects. Approximately 200,000 m² realised across residential and commercial work, including Afsona Mall, a 20,000 m² shopping centre. Full-service design from concept to construction supervision.",
     foundingDate: FOUNDING_YEAR,
-    founder: { "@type": "Person", name: FOUNDER_NAME },
+    founder: {
+      "@type": "Person",
+      name: FOUNDER_NAME,
+      jobTitle: "Founder and CEO",
+      sameAs: [FOUNDER_INSTAGRAM_URL],
+    },
     address: { "@type": "PostalAddress", addressLocality: "Namangan", addressCountry: "UZ" },
     areaServed: "Uzbekistan",
     url: SITE_URL,
@@ -180,6 +185,14 @@ export default async function HomePage() {
             <div>
               <p className="font-medium text-ink">{t("statementName")}</p>
               <p className="label-mono text-ink-soft">{t("statementByline")}</p>
+              <a
+                href={FOUNDER_INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="label-mono mt-1 inline-block text-ink-soft underline decoration-line underline-offset-2 transition-colors hover:text-ink"
+              >
+                @otabekmemor
+              </a>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
