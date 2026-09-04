@@ -69,6 +69,7 @@ function formatUzPhone(raw: string): string {
 export function ApplyForm() {
   const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState<FormState>(INITIAL_STATE);
 
   function set<K extends keyof FormState>(key: K, value: FormState[K]) {
@@ -111,16 +112,13 @@ export function ApplyForm() {
     setStep((s) => Math.max(s - 1, 0));
   }
 
-  function submit() {
-    const direction = DIRECTIONS.find((d) => d.slug === form.direction);
-    trackEvent("careers_apply_submit", { role: form.direction, experience: form.experience });
-
-    const subject = `Yangi ariza: ${direction?.title ?? form.direction} — ${form.fullName}`;
+  function mailtoFallback(directionTitle: string) {
+    const subject = `Yangi ariza: ${directionTitle} — ${form.fullName}`;
     const body = [
       `Ism: ${form.fullName}`,
       `Telefon: ${form.phone}`,
       `Telegram: ${form.telegramSameAsPhone ? form.phone + " (telefon bilan bir xil)" : form.telegram}`,
-      `Yo'nalish: ${direction?.title ?? form.direction}`,
+      `Yo'nalish: ${directionTitle}`,
       `Tajriba: ${form.experience}`,
       `Hozirgi holati: ${form.status}`,
       "",
@@ -138,7 +136,46 @@ export function ApplyForm() {
       .join("\n");
 
     window.location.href = `mailto:hello@castler.uz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+  }
+
+  async function submit() {
+    const direction = DIRECTIONS.find((d) => d.slug === form.direction);
+    const directionTitle = direction?.title ?? form.direction;
+    trackEvent("careers_apply_submit", { role: form.direction, experience: form.experience });
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: form.fullName,
+          phone: form.phone,
+          telegramContact: form.telegramSameAsPhone ? `${form.phone} (telefon bilan bir xil)` : form.telegram,
+          directionLabel: directionTitle,
+          experience: form.experience,
+          status: form.status,
+          portfolioLink: form.portfolioLink,
+          projectSize: form.projectSize,
+          ergonomicsApproach: form.ergonomicsApproach,
+          bimSoftware: form.bimSoftware,
+          hasExpertise: form.hasExpertise,
+          expectedSalary: form.expectedSalary,
+          availability: form.availability,
+          socialLink: form.socialLink,
+        }),
+      });
+      if (!res.ok) throw new Error(`apply API returned ${res.status}`);
+    } catch (err) {
+      // Telegram notification is best-effort server-side already; this catch
+      // is only for the request itself failing to reach the server at all
+      // (offline, deploy hiccup) — fall back to mailto so the lead isn't lost.
+      console.error("Ariza yuborishda xatolik, mailto orqali yuborilmoqda:", err);
+      mailtoFallback(directionTitle);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   }
 
   if (submitted) {
@@ -317,10 +354,10 @@ export function ApplyForm() {
             ) : (
               <button
                 onClick={submit}
-                disabled={!step3Valid}
+                disabled={!step3Valid || submitting}
                 className="pill bg-gold text-ink transition-opacity disabled:cursor-not-allowed disabled:opacity-30"
               >
-                Arizani yuborish →
+                {submitting ? "Yuborilmoqda…" : "Arizani yuborish →"}
               </button>
             )}
           </div>
