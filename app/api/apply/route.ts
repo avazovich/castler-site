@@ -15,6 +15,7 @@ interface ApplyPayload {
   hasExpertise: string;
   expectedSalary: string;
   availability: string;
+  office: string;
   socialLink: string;
 }
 
@@ -58,6 +59,7 @@ export async function POST(request: Request) {
     payload.expectedSalary ? `💰 Kutilgan maosh: ${e(payload.expectedSalary)}` : null,
     "",
     payload.availability ? `🚀 Boshlash vaqti: ${e(payload.availability)}` : null,
+    payload.office ? `🏢 Ofis: ${e(payload.office)}` : null,
     payload.socialLink?.trim() ? `🌐 Ijtimoiy tarmoq: ${e(payload.socialLink.trim())}` : null,
     `🕐 Vaqt: ${timestamp}`,
   ].filter((line): line is string => line !== null);

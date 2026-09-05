@@ -18,6 +18,12 @@ const YES_NO_OPTIONS = ["Ha", "Yo'q"];
 const SALARY_OPTIONS = ["5 mln gacha", "5–10 mln", "10–20 mln", "20–40 mln", "40 mln+", "Kelishilgan holda"];
 const AVAILABILITY_OPTIONS = ["Hozir", "1 hafta ichida", "2 hafta ichida", "1 oy ichida"];
 
+const OFFICE_OPTIONS = [
+  { name: "Namangan", available: true },
+  { name: "Toshkent", available: false },
+  { name: "Astana", available: false },
+] as const;
+
 const STEPS = [
   { label: "Shaxsiy ma'lumot" },
   { label: "Maxsus savollar" },
@@ -39,6 +45,7 @@ interface FormState {
   hasExpertise: string;
   expectedSalary: string;
   availability: string;
+  office: string;
   socialLink: string;
 }
 
@@ -57,6 +64,7 @@ const INITIAL_STATE: FormState = {
   hasExpertise: "",
   expectedSalary: "",
   availability: "",
+  office: "",
   socialLink: "",
 };
 
@@ -96,12 +104,11 @@ export function ApplyForm() {
   const step2Valid =
     form.portfolioLink.trim().length > 3 &&
     form.projectSize &&
-    form.ergonomicsApproach.trim().length > 3 &&
     form.bimSoftware.length > 0 &&
     form.hasExpertise &&
     form.expectedSalary;
 
-  const step3Valid = Boolean(form.availability);
+  const step3Valid = Boolean(form.availability) && Boolean(form.office);
 
   function goNext() {
     trackEvent("careers_apply_step", { step: step + 2 });
@@ -130,6 +137,7 @@ export function ApplyForm() {
       `Kutilgan oylik maosh: ${form.expectedSalary}`,
       "",
       `Boshlay olish vaqti: ${form.availability}`,
+      `Ofis: ${form.office}`,
       form.socialLink && `LinkedIn/Instagram: ${form.socialLink}`,
     ]
       .filter(Boolean)
@@ -162,6 +170,7 @@ export function ApplyForm() {
           hasExpertise: form.hasExpertise,
           expectedSalary: form.expectedSalary,
           availability: form.availability,
+          office: form.office,
           socialLink: form.socialLink,
         }),
       });
@@ -282,7 +291,7 @@ export function ApplyForm() {
                 <ChipGroup options={PROJECT_SIZE_OPTIONS} value={form.projectSize} onChange={(v) => set("projectSize", v)} />
               </Field>
 
-              <Field label="Ergonomika va yorug'lik yondashuvingiz" required>
+              <Field label="Ergonomika va yorug'lik yondashuvingiz">
                 <TextArea value={form.ergonomicsApproach} onChange={(v) => set("ergonomicsApproach", v)} />
               </Field>
 
@@ -323,6 +332,20 @@ export function ApplyForm() {
             <div className="space-y-6">
               <Field label="Qachon boshlay olasiz?" required>
                 <ChipGroup options={AVAILABILITY_OPTIONS} value={form.availability} onChange={(v) => set("availability", v)} />
+              </Field>
+
+              <Field label="Qaysi ofisda ishlaysiz?" required>
+                <div className="flex flex-wrap gap-3">
+                  {OFFICE_OPTIONS.map((office) => (
+                    <OfficeOption
+                      key={office.name}
+                      name={office.name}
+                      available={office.available}
+                      selected={form.office === office.name}
+                      onClick={() => set("office", office.name)}
+                    />
+                  ))}
+                </div>
               </Field>
 
               <Field label="LinkedIn yoki Instagram">
@@ -484,6 +507,39 @@ function ChipGroup({
         </button>
       ))}
     </div>
+  );
+}
+
+function OfficeOption({
+  name,
+  available,
+  selected,
+  onClick,
+}: {
+  name: string;
+  available: boolean;
+  selected: boolean;
+  onClick: () => void;
+}) {
+  if (!available) {
+    return (
+      <div className="flex cursor-not-allowed items-center gap-2 rounded-lg border border-line-on-ink px-4 py-2.5 text-sm text-paper/30">
+        {name}
+        <span className="label-mono text-[10px] text-paper/25">Tez orada</span>
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`rounded-lg border px-4 py-2.5 text-sm transition-colors ${
+        selected ? "border-gold bg-gold/10 text-paper" : "border-line-on-ink text-paper/70 hover:border-paper/30"
+      }`}
+    >
+      {name}
+    </button>
   );
 }
 
