@@ -6,18 +6,18 @@
     },
     "work": {
       "title": "Projects — Castler Architecture & Design",
-      "description": "A selection of residential and commercial projects designed by Castler — approximately 200,000 m² realised since 2013."
+      "description": "A selection of residential and commercial projects designed by Castler — approximately 300,000 m² realised since 2013."
     },
     "about": {
-      "title": "About Castler — Architecture Company in Namangan Since 2013",
-      "description": "Learn about Castler's history, design philosophy, and values — an architecture and design company practising in Namangan, Uzbekistan since 2013."
+      "title": "About Castler — Architecture & Design Company Since 2013",
+      "description": "Learn about Castler's history, design philosophy, and values — from its roots in Namangan to projects across Uzbekistan today."
     },
     "contact": {
       "title": "Contact — Get in Touch with Castler"
     },
     "news": {
       "title": "News & Insights — Castler",
-      "description": "Castler's projects, plans, and design philosophy — company news and insights from an architecture and design studio in Namangan, Uzbekistan."
+      "description": "Castler's projects, plans, and design philosophy — company news and insights from an architecture and design studio growing across Uzbekistan."
     }
   },
   "Nav": {
@@ -36,7 +36,7 @@
     "tagline": "Design that performs.",
     "statYears": "12+",
     "statYearsLabel": "Years of practice",
-    "statArea": "~200,000 m²",
+    "statArea": "~300,000 m²",
     "statAreaLabel": "Realised",
     "statLargest": "50,000 m²",
     "statLargestLabel": "Largest project",
@@ -51,10 +51,10 @@
     "spansEyebrow": "Our work spans",
     "officeTeaserEyebrow": "The Studio",
     "officeTeaserTitle": "Grounded in craft, driven by clarity",
-    "officeTeaserBody": "Castler is a Namangan-based architectural studio working across residential, commercial, and public projects — from early concept through construction, with a second studio opening soon in Tashkent.",
+    "officeTeaserBody": "Castler is an architectural studio working across residential, commercial, and public projects — from early concept through construction. Founded in Namangan, now growing nationally, with a second studio opening soon in Tashkent.",
     "officeTeaserCta": "About the studio",
     "teamHeading": "Castler Team",
-    "teamBody": "A growing studio based in Namangan, bringing together architects and designers working across residential, commercial, and public projects.",
+    "teamBody": "A growing studio bringing together architects and designers working across residential, commercial, and public projects — rooted in Namangan, building beyond it.",
     "teamCta": "Our people"
   },
   "Categories": {
@@ -73,11 +73,11 @@
   "Careers": {
     "eyebrow": "Castler Careers",
     "heading": "Join us and make your best work.",
-    "body": "We're a growing studio in Namangan, and we're always looking for architects, interior designers, and visualizers who share our approach — even when there isn't an open listing for your exact role.",
+    "body": "We're a growing studio — founded in Namangan, expanding across Uzbekistan — and we're always looking for architects, interior designers, and visualizers who share our approach, even when there isn't an open listing for your exact role.",
     "viewOpenRolesCta": "View open roles",
     "aboutUsCta": "About us",
     "openRolesHeading": "Open Roles",
-    "openRolesIntro1": "Castler is currently based in Namangan, with a second studio opening soon in Tashkent. We work across architecture, interior design, and visualization — from private villas to large-scale commercial interiors.",
+    "openRolesIntro1": "Castler started in Namangan and is growing fast, with a second studio opening soon in Tashkent. We work across architecture, interior design, and visualization — from private villas to large-scale commercial interiors.",
     "openRolesIntro2": "We're open to architectural, interior, exterior/facade, and visualization talent of all experience levels who want to grow with us.",
     "officeHeading": "Namangan Office",
     "tashkentNote": "Tashkent studio opening soon — reach out to be considered first.",
@@ -98,7 +98,7 @@
     "roleWhatWereLookingFor": "What we're looking for",
     "roles": {
       "architectural-designer": {
-        "intro": "We're looking for an architectural designer to join our studio in Namangan, working across residential and commercial projects from early concept through construction documentation.",
+        "intro": "We're looking for an architectural designer to join our team, working across residential and commercial projects from early concept through construction documentation.",
         "requirements": [
           "A strong design sensibility, shown through a portfolio with complete design processes, not just final renders",
           "Comfort working in AutoCAD, Revit, SketchUp, or similar tools, alongside a rendering package such as Enscape, Lumion, or D5",
@@ -108,7 +108,7 @@
         "howToApply": "Message us on Telegram with a short introduction and a link to your portfolio."
       },
       "interior-designer": {
-        "intro": "We're looking for an interior designer to join our studio in Namangan, shaping material, lighting, and furniture decisions across residential and commercial interiors.",
+        "intro": "We're looking for an interior designer to join our team, shaping material, lighting, and furniture decisions across residential and commercial interiors.",
         "requirements": [
           "A portfolio showing a clear point of view on material, light, and detail",
           "Comfort working in AutoCAD or SketchUp for layout and detailing, plus a rendering package for presentation",
@@ -118,7 +118,7 @@
         "howToApply": "Message us on Telegram with a short introduction and a link to your portfolio."
       },
       "facade-designer": {
-        "intro": "We're looking for an exterior and facade designer to join our studio in Namangan, developing the massing, materiality, and building envelope for our architectural projects.",
+        "intro": "We're looking for an exterior and facade designer to join our team, developing the massing, materiality, and building envelope for our architectural projects.",
         "requirements": [
           "A portfolio showing facade and massing studies, not only interior or rendering work",
           "Comfort working in Rhino, Grasshopper, Revit, or similar tools for envelope and detailing studies",
@@ -128,7 +128,7 @@
         "howToApply": "Message us on Telegram with a short introduction and a link to your portfolio."
       },
       "visualization-artist": {
-        "intro": "We're looking for a 3D visualization artist to join our studio in Namangan, producing the renders and walkthroughs that carry our projects from pitch to construction.",
+        "intro": "We're looking for a 3D visualization artist to join our team, producing the renders and walkthroughs that carry our projects from pitch to construction.",
         "requirements": [
           "A portfolio of photoreal architectural or interior renders",
           "Proficiency in 3ds Max, SketchUp, or Blender, alongside a renderer such as Corona, V-Ray, Enscape, or D5",
@@ -166,7 +166,7 @@
   "AboutNarrative": {
     "heading": "About Castler",
     "intro": [
-      "Castler is an architecture and design company, focused on commercial work, practising in Namangan, Uzbekistan since 2013. Over more than twelve years, the company's projects have realised approximately 200,000 m² — from private homes to large-scale retail and business developments.",
+      "Castler is an architecture and design company focused on commercial work, founded in Namangan, Uzbekistan in 2013 and now growing across the country. Over more than twelve years, the company's projects have realised approximately 300,000 m² — from private homes to large-scale retail and business developments.",
       "The company was founded by architect Otabek Isoqjonov, who continues to serve as its creative lead today — and is widely known on Instagram, where his work reaches hundreds of thousands of followers across Uzbekistan. Castler works across two core disciplines — interior design and architecture/exterior design — bringing together the right expertise for each project."
     ],
     "sections": [
@@ -196,9 +196,9 @@
         ]
       },
       {
-        "title": "From Namangan to Uzbekistan",
+        "title": "From Namangan, and beyond",
         "body": [
-          "Founded in Namangan, Castler now works with serious clients and commercial projects across Uzbekistan. The company is actively growing and planning to open a Tashkent office, as it builds a national reputation as a trusted partner in commercial architecture."
+          "Founded in Namangan, Castler has already built well beyond it — with completed projects reaching Tashkent, Samarkand, Bukhara, and other regions of Uzbekistan. The ambition doesn't stop at the border, either: the company is actively growing, with a Tashkent office as its next concrete step, and its sights set on becoming a trusted partner in commercial architecture across the wider region."
         ]
       }
     ]
@@ -216,11 +216,11 @@
       },
       {
         "question": "Where is Castler located?",
-        "answer": "Castler's head office is in Namangan, Uzbekistan. The company works with clients across the country and is planning to open a Tashkent office."
+        "answer": "Castler's head office is in Namangan, Uzbekistan, with a second studio opening soon in Tashkent. Its portfolio already includes completed projects across Tashkent, Samarkand, Bukhara, Navoiy, and Fergana, and the company works with clients across Uzbekistan and the wider region, with plans to keep expanding."
       },
       {
         "question": "How much has Castler built?",
-        "answer": "Castler has realised approximately 200,000 m² across its projects since it was founded in 2013."
+        "answer": "Castler has realised approximately 300,000 m² across its projects since it was founded in 2013."
       },
       {
         "question": "Does Castler design commercial buildings?",
@@ -262,7 +262,7 @@
     "heading": "About Castler",
     "intro": "Castler is an architectural design studio working across architecture, interiors, and urban design to create environments where the built form connects deeply with the people who use it.",
     "paragraphs": [
-      "Founded by Otabek Isoqjonov, Castler is based in Namangan and works across residential, commercial, and public projects, from early concept through construction — with a second studio opening soon in Tashkent. The studio approaches each project through its relationship to site, climate, and the people who will use it.",
+      "Founded in Namangan by Otabek Isoqjonov, Castler works across residential, commercial, and public projects, from early concept through construction — growing beyond its home city, with a second studio opening soon in Tashkent. The studio approaches each project through its relationship to site, climate, and the people who will use it.",
       "Placeholder — a fuller studio history, notable projects, and press mentions will be added here once available."
     ],
     "sections": [

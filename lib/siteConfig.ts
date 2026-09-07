@@ -26,5 +26,5 @@ export const FOUNDER_NAME = "Otabek Isoqjonov";
 // schema and in the About narrative, so Google/LLMs can tie the company to
 // an independently-recognized public figure rather than just a claimed name.
 export const FOUNDER_INSTAGRAM_URL = "https://www.instagram.com/otabekmemor/";
-export const AREA_REALIZED = "~200,000 m²";
+export const AREA_REALIZED = "~300,000 m²";
 export const GA_MEASUREMENT_ID = "G-SGD7GM3MFT";

@@ -84,7 +84,7 @@ export const articles: Article[] = [
     body: [
       {
         type: "paragraph",
-        text: "Over more than twelve years, Castler has built a solid foundation in Namangan — projects spanning more than 200,000 m², a trusted team, and clear operating systems. The next step is taking that foundation further.",
+        text: "Over more than twelve years, Castler has built a solid foundation in Namangan — projects spanning more than 300,000 m², a trusted team, and clear operating systems. The next step is taking that foundation further.",
       },
       { type: "heading", text: "A step toward Tashkent" },
       {

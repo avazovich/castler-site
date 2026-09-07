@@ -6,10 +6,10 @@
     },
     "work": {
       "title": "Loyihalar — Castler arxitektura va dizayn",
-      "description": "Castler tomonidan loyihalashtirilgan turar joy va tijorat obyektlari. 2013 yildan beri taxminan 200 000 m² maydon amalga oshirilgan."
+      "description": "Castler tomonidan loyihalashtirilgan turar joy va tijorat obyektlari. 2013 yildan beri taxminan 300 000 m² maydon amalga oshirilgan."
     },
     "about": {
-      "title": "Biz haqimizda — Castler, 2013 yildan Namangan arxitektura kompaniyasi",
+      "title": "Biz haqimizda — Castler, 2013 yildan arxitektura va dizayn kompaniyasi",
       "description": "Castler — 12 yildan ortiq tajribaga ega arxitektura va dizayn kompaniyasi. Bizning tarixi, yondashuvimiz va qadriyatlarimiz haqida."
     },
     "contact": {
@@ -17,7 +17,7 @@
     },
     "news": {
       "title": "Yangiliklar — Castler",
-      "description": "Castlerning loyihalari, rejalari va dizayn falsafasi — Namangandagi arxitektura va dizayn kompaniyasidan yangiliklar."
+      "description": "Castlerning loyihalari, rejalari va dizayn falsafasi — O'zbekiston bo'ylab kengayib borayotgan arxitektura va dizayn studiyasidan yangiliklar."
     }
   },
   "Nav": {
@@ -36,7 +36,7 @@
     "tagline": "Ishlaydigan arxitektura.",
     "statYears": "12+",
     "statYearsLabel": "Yillik tajriba",
-    "statArea": "~200 000 m²",
+    "statArea": "~300 000 m²",
     "statAreaLabel": "Amalga oshirilgan",
     "statLargest": "50 000 m²",
     "statLargestLabel": "Eng yirik loyiha",
@@ -51,10 +51,10 @@
     "spansEyebrow": "Ish yo'nalishlarimiz",
     "officeTeaserEyebrow": "Studiya haqida",
     "officeTeaserTitle": "Hunarga asoslangan, aniqlikka yo'naltirilgan",
-    "officeTeaserBody": "Castler — Namanganda joylashgan arxitektura studiyasi, turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanadi — dastlabki konseptdan qurilishgacha, tez orada Toshkentda ikkinchi studiyamiz ham ochiladi.",
+    "officeTeaserBody": "Castler — turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanuvchi arxitektura studiyasi — dastlabki konseptdan qurilishgacha. Namanganda tashkil topgan, endi butun mamlakat bo'ylab o'sib bormoqda, tez orada Toshkentda ikkinchi studiyamiz ham ochiladi.",
     "officeTeaserCta": "Studiya haqida",
     "teamHeading": "Castler jamoasi",
-    "teamBody": "Namanganda joylashgan, o'sib borayotgan studiya — turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanuvchi me'mor va dizaynerlar jamoasi.",
+    "teamBody": "Turar-joy, tijorat va ijtimoiy loyihalar bilan shug'ullanuvchi me'mor va dizaynerlarning o'sib borayotgan jamoasi — ildizi Namanganda, lekin undan ham uzoqroqqa intiladi.",
     "teamCta": "Bizning jamoa"
   },
   "Categories": {
@@ -73,11 +73,11 @@
   "Careers": {
     "eyebrow": "Castler Karyera",
     "heading": "Jamoamizga qo'shiling va eng yaxshi ishingizni yarating.",
-    "body": "Biz Namangandagi o'sib borayotgan studiyamiz va aynan sizning lavozimingiz uchun ochiq e'lon bo'lmasa ham, yondashuvimizni baham ko'radigan me'mor, interyer dizaynerlari va vizualizatorlarni doimo izlaymiz.",
+    "body": "Biz o'sib borayotgan studiyamiz — Namanganda tashkil topgan, O'zbekiston bo'ylab kengayib bormoqda — va aynan sizning lavozimingiz uchun ochiq e'lon bo'lmasa ham, yondashuvimizni baham ko'radigan me'mor, interyer dizaynerlari va vizualizatorlarni doimo izlaymiz.",
     "viewOpenRolesCta": "Bo'sh o'rinlarni ko'rish",
     "aboutUsCta": "Biz haqimizda",
     "openRolesHeading": "Bo'sh o'rinlar",
-    "openRolesIntro1": "Castler hozircha Namanganda joylashgan, tez orada Toshkentda ikkinchi studiyamiz ham ochiladi. Biz arxitektura, interyer dizayni va vizualizatsiya bo'yicha — xususiy villalardan tortib yirik tijorat interyerlarigacha — ishlaymiz.",
+    "openRolesIntro1": "Castler Namangandan boshlangan va tez sur'atlarda o'smoqda — tez orada Toshkentda ikkinchi studiyamiz ham ochiladi. Biz arxitektura, interyer dizayni va vizualizatsiya bo'yicha — xususiy villalardan tortib yirik tijorat interyerlarigacha — ishlaymiz.",
     "openRolesIntro2": "Biz har qanday tajriba darajasidagi arxitektura, interyer, tashqi ko'rinish/fasad va vizualizatsiya iste'dodlariga ochiqmiz.",
     "officeHeading": "Namangan ofisi",
     "tashkentNote": "Toshkent studiyasi tez orada ochiladi — birinchilardan bo'lib ko'rib chiqilish uchun biz bilan bog'laning.",
@@ -98,7 +98,7 @@
     "roleWhatWereLookingFor": "Kimni izlayapmiz",
     "roles": {
       "architectural-designer": {
-        "intro": "Namangandagi studiyamizga qo'shiladigan arxitektor-dizaynerni izlayapmiz — turar-joy va tijorat loyihalarida dastlabki konseptdan tortib qurilish hujjatlarigacha ishlaysiz.",
+        "intro": "Jamoamizga qo'shiladigan arxitektor-dizaynerni izlayapmiz — turar-joy va tijorat loyihalarida dastlabki konseptdan tortib qurilish hujjatlarigacha ishlaysiz.",
         "requirements": [
           "Faqat tayyor renderlar emas, balki to'liq dizayn jarayonini ko'rsatuvchi portfolio orqali namoyon bo'ladigan kuchli dizayn hissi",
           "AutoCAD, Revit, SketchUp yoki shunga o'xshash dasturlarda, shuningdek Enscape, Lumion yoki D5 kabi render dasturlarida ishlash ko'nikmasi",
@@ -108,7 +108,7 @@
         "howToApply": "Telegram orqali qisqa tanishuv va portfolioingiz havolasi bilan yozing."
       },
       "interior-designer": {
-        "intro": "Namangandagi studiyamizga qo'shiladigan interyer dizaynerini izlayapmiz — turar-joy va tijorat interyerlarida material, yoritish va mebel qarorlarini shakllantirasiz.",
+        "intro": "Jamoamizga qo'shiladigan interyer dizaynerini izlayapmiz — turar-joy va tijorat interyerlarida material, yoritish va mebel qarorlarini shakllantirasiz.",
         "requirements": [
           "Material, yorug'lik va detallarga aniq qarashni ko'rsatuvchi portfolio",
           "Joylashuv va detallashtirish uchun AutoCAD yoki SketchUp'da, taqdimot uchun esa render dasturida ishlash ko'nikmasi",
@@ -118,7 +118,7 @@
         "howToApply": "Telegram orqali qisqa tanishuv va portfolioingiz havolasi bilan yozing."
       },
       "facade-designer": {
-        "intro": "Namangandagi studiyamizga qo'shiladigan tashqi ko'rinish va fasad dizaynerini izlayapmiz — arxitektura loyihalarimiz uchun hajm, material va bino qobig'ini ishlab chiqasiz.",
+        "intro": "Jamoamizga qo'shiladigan tashqi ko'rinish va fasad dizaynerini izlayapmiz — arxitektura loyihalarimiz uchun hajm, material va bino qobig'ini ishlab chiqasiz.",
         "requirements": [
           "Faqat interyer yoki render ishlari emas, balki fasad va hajm tadqiqotlarini ko'rsatuvchi portfolio",
           "Qobiq va detallashtirish tadqiqotlari uchun Rhino, Grasshopper, Revit yoki shunga o'xshash dasturlarda ishlash ko'nikmasi",
@@ -128,7 +128,7 @@
         "howToApply": "Telegram orqali qisqa tanishuv va portfolioingiz havolasi bilan yozing."
       },
       "visualization-artist": {
-        "intro": "Namangandagi studiyamizga qo'shiladigan 3D vizualizatorni izlayapmiz — loyihalarimizni taqdimotdan qurilishgacha olib boruvchi render va videoaylanmalarni yaratasiz.",
+        "intro": "Jamoamizga qo'shiladigan 3D vizualizatorni izlayapmiz — loyihalarimizni taqdimotdan qurilishgacha olib boruvchi render va videoaylanmalarni yaratasiz.",
         "requirements": [
           "Fotorealistik arxitektura yoki interyer renderlaridan iborat portfolio",
           "3ds Max, SketchUp yoki Blender'da, shuningdek Corona, V-Ray, Enscape yoki D5 kabi render dasturida ishlash ko'nikmasi",
@@ -166,7 +166,7 @@
   "AboutNarrative": {
     "heading": "Castler haqida",
     "intro": [
-      "Castler — 2013 yildan beri O'zbekistonning Namangan shahrida faoliyat yuritayotgan, tijorat yo'nalishiga ixtisoslashgan arxitektura va dizayn kompaniyasi. On ikki yildan ortiq davr ichida kompaniya loyihalari orqali taxminan 200 000 m² maydon amalga oshirilgan — xususiy uylardan tortib yirik savdo va biznes markazlarigacha.",
+      "Castler — tijorat yo'nalishiga ixtisoslashgan arxitektura va dizayn kompaniyasi, 2013 yilda O'zbekistonning Namangan shahrida tashkil topgan va bugungi kunda butun mamlakat bo'ylab faoliyat yuritmoqda. On ikki yildan ortiq davr ichida kompaniya loyihalari orqali taxminan 300 000 m² maydon amalga oshirilgan — xususiy uylardan tortib yirik savdo va biznes markazlarigacha.",
       "Kompaniyani me'mor Otabek Isoqjonov asos solgan va bugungi kunda ham ijodiy rahbarlik qilib kelmoqda — u Instagramda ham keng tanilgan bo'lib, uning ishlari O'zbekiston bo'ylab yuz minglab kuzatuvchiga yetib boradi. Castler interyer dizayn va arxitektura/eksteryer loyihalash yo'nalishlarida xizmat ko'rsatadi, har bir loyiha uchun zarur mutaxassislar jamoasini shakllantiradi."
     ],
     "sections": [
@@ -196,9 +196,9 @@
         ]
       },
       {
-        "title": "Namangandan O'zbekistongacha",
+        "title": "Namangandan — va undan ham nariga",
         "body": [
-          "Namanganda tashkil topgan Castler bugungi kunda O'zbekistonning turli hududlaridagi jiddiy mijozlar va tijorat loyihalari bilan ishlaydi. Kompaniya faol o'sib bormoqda va Toshkentda yangi ofis ochishni rejalashtirmoqda — mamlakat miqyosida tijorat arxitekturasi yo'nalishida ishonchli hamkor sifatida tanilishga intilib."
+          "Namanganda tashkil topgan Castler o'z shahridan ancha uzoqqa loyihalar amalga oshirgan — Toshkent, Samarqand, Buxoro va O'zbekistonning boshqa hududlarida yakunlangan obyektlar bilan. Bu bilan to'xtab qolish niyati ham yo'q: kompaniya faol o'sib bormoqda, Toshkentda yangi ofis ochish esa navbatdagi aniq qadam, maqsad esa — butun mintaqada tijorat arxitekturasi yo'nalishida ishonchli hamkor sifatida tanilish."
         ]
       }
     ]
@@ -216,11 +216,11 @@
       },
       {
         "question": "Castler qayerda joylashgan?",
-        "answer": "Castlerning bosh ofisi Namangan shahrida, O'zbekistonda joylashgan. Kompaniya mamlakatning turli hududlaridagi loyihalar bilan ishlaydi va Toshkentda yangi ofis ochishni rejalashtirmoqda."
+        "answer": "Castlerning bosh ofisi Namangan shahrida, O'zbekistonda joylashgan, tez orada Toshkentda ikkinchi studiya ham ochiladi. Portfelimizda Toshkent, Samarqand, Buxoro, Navoiy va Farg'ona kabi hududlarda yakunlangan loyihalar allaqachon mavjud — kompaniya O'zbekiston va butun mintaqadagi mijozlar bilan ishlaydi va kengayishni davom ettirmoqda."
       },
       {
         "question": "Castler nechta loyiha bajargan?",
-        "answer": "2013 yildan beri Castler orqali taxminan 200 000 m² maydon amalga oshirilgan — xususiy uylardan yirik tijorat obyektlarigacha."
+        "answer": "2013 yildan beri Castler orqali taxminan 300 000 m² maydon amalga oshirilgan — xususiy uylardan yirik tijorat obyektlarigacha."
       },
       {
         "question": "Castler tijorat obyektlarini loyihalaydimi?",
@@ -385,7 +385,7 @@
     "heading": "Castler haqida",
     "intro": "Castler — arxitektura, interyer va shaharsozlik yo'nalishlarida ishlaydigan dizayn studiyasi. Maqsadimiz — qurilgan muhitni undan foydalanadigan odamlar bilan chuqur bog'laydigan makonlar yaratish.",
     "paragraphs": [
-      "Otabek Isoqjonov tomonidan asos solingan Castler Namanganda joylashgan bo'lib, turar-joy, tijorat va ijtimoiy loyihalar bilan — dastlabki g'oyadan qurilish yakuniga qadar — shug'ullanadi; tez orada Toshkentda ikkinchi studiyamiz ham ochiladi. Studiya har bir loyihaga uning joylashuvi, iqlimi va undan foydalanadigan odamlar bilan bog'liqligi orqali yondashadi.",
+      "Otabek Isoqjonov tomonidan Namanganda asos solingan Castler turar-joy, tijorat va ijtimoiy loyihalar bilan — dastlabki g'oyadan qurilish yakuniga qadar — shug'ullanadi; o'z shahridan tashqariga chiqib o'smoqda, tez orada Toshkentda ikkinchi studiyamiz ham ochiladi. Studiya har bir loyihaga uning joylashuvi, iqlimi va undan foydalanadigan odamlar bilan bog'liqligi orqali yondashadi.",
       "Vaqtinchalik matn — studiyaning to'liq tarixi, e'tiborga molik loyihalari va matbuotdagi eslatmalari tayyor bo'lgach shu yerga qo'shiladi."
     ],
     "sections": [
@@ -501,7 +501,7 @@
       "body": [
         {
           "type": "paragraph",
-          "text": "On ikki yildan ortiq vaqt davomida Castler Namanganda mustahkam poydevor qurdi — 200 000 m²dan ortiq maydonni qamrab olgan loyihalar, ishonchli jamoa va aniq ishlash tizimlari. Endi navbat — bu poydevorni kengroq miqyosga olib chiqish."
+          "text": "On ikki yildan ortiq vaqt davomida Castler Namanganda mustahkam poydevor qurdi — 300 000 m²dan ortiq maydonni qamrab olgan loyihalar, ishonchli jamoa va aniq ishlash tizimlari. Endi navbat — bu poydevorni kengroq miqyosga olib chiqish."
         },
         {
           "type": "heading",
