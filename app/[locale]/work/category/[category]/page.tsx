@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
 import { getCardShape } from "@/lib/projectCardShape";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 function isCategory(value: string): value is ProjectCategory {
   return (categories as string[]).includes(value);
@@ -24,7 +25,11 @@ export async function generateMetadata({
   const { category } = await params;
   if (!isCategory(category)) return { title: "Castler" };
   const tCategories = await getTranslations("Categories");
-  return { title: `${tCategories(category)} — Castler` };
+  const locale = await getLocale();
+  return {
+    title: `${tCategories(category)} — Castler`,
+    alternates: localizedAlternates(locale, `/work/category/${category}`),
+  };
 }
 
 export default async function CategoryPage({

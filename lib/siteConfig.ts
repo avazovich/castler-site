@@ -1,7 +1,22 @@
+import { routing } from "@/i18n/routing";
+
 // www is the canonical host — the bare apex domain 308-redirects here, so
 // every URL we emit (sitemap, robots, canonical, structured data) should
 // point straight at the final destination rather than through a redirect.
 export const SITE_URL = "https://www.castler.uz";
+
+/**
+ * Per-locale canonical + hreflang alternates for a path under [locale].
+ * Each locale must self-canonicalize (never collapse to one "shared" URL)
+ * — otherwise Google treats the other locales as duplicates of whichever
+ * one the bare/no-locale URL redirects to and drops them from the index.
+ */
+export function localizedAlternates(locale: string, path = "") {
+  return {
+    canonical: `${SITE_URL}/${locale}${path}`,
+    languages: Object.fromEntries(routing.locales.map((l) => [l, `${SITE_URL}/${l}${path}`])),
+  };
+}
 export const INSTAGRAM_URL = "https://www.instagram.com/castler.uz";
 export const FOUNDING_YEAR = "2013";
 export const FOUNDER_NAME = "Otabek Isoqjonov";

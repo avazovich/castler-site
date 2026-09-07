@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ArrowRightIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
@@ -8,10 +8,15 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { RoleNotifyForm } from "@/components/RoleNotifyForm";
 import { TrackedLink } from "@/components/TrackedLink";
 import { APPLY_URL, openRoles } from "@/content/roles";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Careers");
-  return { title: `${t("eyebrow")} — Castler` };
+  const locale = await getLocale();
+  return {
+    title: `${t("eyebrow")} — Castler`,
+    alternates: localizedAlternates(locale, "/careers"),
+  };
 }
 
 export default async function CareersPage() {

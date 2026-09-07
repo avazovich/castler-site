@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ArrowRightIcon } from "@/components/icons";
@@ -10,6 +10,7 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { getProject, photographedProjects, projects } from "@/content/projects";
 import { getImageDimensions } from "@/lib/imageDimensions";
 import { getLocalizedProjectContent } from "@/lib/projectContent";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -22,7 +23,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = getProject(slug);
-  return { title: project ? `${project.title} — Castler` : "Castler" };
+  const locale = await getLocale();
+  return {
+    title: project ? `${project.title} — Castler` : "Castler",
+    alternates: localizedAlternates(locale, `/work/${slug}`),
+  };
 }
 
 export default async function ProjectPage({

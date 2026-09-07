@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ContactForm } from "@/components/ContactForm";
 import { ArrowRightIcon, MailIcon, PhoneIcon } from "@/components/icons";
 import { ProjectImage } from "@/components/ProjectImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { TrackedLink } from "@/components/TrackedLink";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
-  return { title: t("contact.title") };
+  const locale = await getLocale();
+  return {
+    title: t("contact.title"),
+    alternates: localizedAlternates(locale, "/contact"),
+  };
 }
 
 export default async function ContactPage() {

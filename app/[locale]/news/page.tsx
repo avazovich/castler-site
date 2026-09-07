@@ -6,14 +6,15 @@ import { OfficeTeaser } from "@/components/OfficeTeaser";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { articles } from "@/content/articles";
 import { getLocalizedArticleContent } from "@/lib/articleContent";
-import { SITE_URL } from "@/lib/siteConfig";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
+  const locale = await getLocale();
   return {
     title: t("news.title"),
     description: t("news.description"),
-    alternates: { canonical: `${SITE_URL}/news` },
+    alternates: localizedAlternates(locale, "/news"),
   };
 }
 

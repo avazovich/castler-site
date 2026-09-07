@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { AboutStoryContent, type StoryContent } from "@/components/AboutStoryContent";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Story");
-  return { title: `${t("heading")} — Castler` };
+  const locale = await getLocale();
+  return {
+    title: `${t("heading")} — Castler`,
+    alternates: localizedAlternates(locale, "/about/story"),
+  };
 }
 
 export default async function AboutStoryPage() {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { OfficeTeaser } from "@/components/OfficeTeaser";
@@ -13,7 +13,14 @@ import { WorkSpansAccordion } from "@/components/WorkSpansAccordion";
 import { ArrowRightIcon } from "@/components/icons";
 import { categories, heroProjects, photographedProjects } from "@/content/projects";
 import { getCardShapes, type CardShape } from "@/lib/projectCardShape";
-import { FOUNDER_INSTAGRAM_URL, FOUNDER_NAME, FOUNDING_YEAR, INSTAGRAM_URL, SITE_URL } from "@/lib/siteConfig";
+import {
+  FOUNDER_INSTAGRAM_URL,
+  FOUNDER_NAME,
+  FOUNDING_YEAR,
+  INSTAGRAM_URL,
+  localizedAlternates,
+  SITE_URL,
+} from "@/lib/siteConfig";
 
 /**
  * Tile span for one featured-grid cell, chosen from the photo's own shape
@@ -42,10 +49,11 @@ function cardAspect(shape: CardShape): string {
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
+  const locale = await getLocale();
   return {
     title: t("home.title"),
     description: t("home.description"),
-    alternates: { canonical: SITE_URL },
+    alternates: localizedAlternates(locale),
   };
 }
 

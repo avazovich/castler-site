@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { AboutHero } from "@/components/AboutHero";
 import { AboutNarrative } from "@/components/AboutNarrative";
@@ -9,10 +9,16 @@ import { FAQSection } from "@/components/FAQSection";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { awards } from "@/content/awards";
 import { getProject } from "@/content/projects";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
-  return { title: t("about.title"), description: t("about.description") };
+  const locale = await getLocale();
+  return {
+    title: t("about.title"),
+    description: t("about.description"),
+    alternates: localizedAlternates(locale, "/about"),
+  };
 }
 
 export default async function AboutPage() {

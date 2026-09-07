@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { AnimatedText } from "@/components/AnimatedText";
 import { OfficeTeaser } from "@/components/OfficeTeaser";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { WorkGallery } from "@/components/WorkGallery";
 import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
 import { getCardShapes } from "@/lib/projectCardShape";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Meta");
-  return { title: t("work.title"), description: t("work.description") };
+  const locale = await getLocale();
+  return {
+    title: t("work.title"),
+    description: t("work.description"),
+    alternates: localizedAlternates(locale, "/work"),
+  };
 }
 
 export default async function WorkPage({

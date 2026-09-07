@@ -11,7 +11,7 @@ import { Link } from "@/i18n/navigation";
 import { articles, getArticle } from "@/content/articles";
 import { getLocalizedArticleContent } from "@/lib/articleContent";
 import { formatArticleDate } from "@/lib/formatArticleDate";
-import { SITE_URL } from "@/lib/siteConfig";
+import { localizedAlternates, SITE_URL } from "@/lib/siteConfig";
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
@@ -28,11 +28,10 @@ export async function generateMetadata({
 
   const { metaTitle, metaDescription } = await getLocalizedArticleContent(article);
   const locale = await getLocale();
-  const canonical = `${SITE_URL}/${locale}/news/${slug}`;
   return {
     title: metaTitle,
     description: metaDescription,
-    alternates: { canonical },
+    alternates: localizedAlternates(locale, `/news/${slug}`),
   };
 }
 

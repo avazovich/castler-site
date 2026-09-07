@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowRightIcon } from "@/components/icons";
 import { RoleDetailContent } from "@/components/RoleDetailContent";
 import { APPLY_URL, getRole, openRoles } from "@/content/roles";
 import { getRoleContent } from "@/lib/roleContent";
+import { localizedAlternates } from "@/lib/siteConfig";
 
 export function generateStaticParams() {
   return openRoles.map((role) => ({ role: role.slug }));
@@ -18,7 +19,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { role: slug } = await params;
   const role = getRole(slug);
-  return { title: role ? `${role.title} — Castler` : "Castler" };
+  const locale = await getLocale();
+  return {
+    title: role ? `${role.title} — Castler` : "Castler",
+    alternates: localizedAlternates(locale, `/careers/${slug}`),
+  };
 }
 
 export default async function RoleDetailPage({
