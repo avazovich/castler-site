@@ -47,7 +47,7 @@ export default async function AboutPage() {
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-      <AboutHero heading={t("heroHeading")} cta={t("heroCta")} />
+      <AboutHero heading={t("heroHeading")} />
 
       <AboutNarrative
         heading={tNarrative("heading")}
@@ -55,12 +55,9 @@ export default async function AboutPage() {
         sections={tNarrative.raw("sections")}
       />
 
-      <AwardsSection
-        eyebrow={t("awardsEyebrow")}
-        heading={t("awardsHeading")}
-        notice={t("awardsNotice")}
-        awards={resolvedAwards}
-      />
+      {resolvedAwards.length > 0 && (
+        <AwardsSection eyebrow={t("awardsEyebrow")} heading={t("awardsHeading")} awards={resolvedAwards} />
+      )}
 
       <FAQSection heading={tFaq("heading")} items={faqItems} />
 

@@ -155,10 +155,8 @@
   "About": {
     "eyebrow": "Ofis",
     "heroHeading": "Odamlarni atrof-muhit bilan bog'laydigan fazolarni yaratamiz.",
-    "heroCta": "Biz haqimizda",
     "awardsEyebrow": "Yutuqlar",
     "awardsHeading": "Mukofotlar",
-    "awardsNotice": "Vaqtinchalik yozuvlar — haqiqiy mukofotlar va matbuot tarixi tez orada qo'shiladi.",
     "joinTitle": "Bizga qo'shiling",
     "joinBody": "Yondashuvimizni baham ko'radigan me'mor va dizaynerlardan xabar olishdan doim mamnunmiz.",
     "joinCta": "Bog'lanish"
@@ -380,43 +378,7 @@
       ]
     }
   },
-  "Story": {
-    "eyebrow": "Bizning tariximiz",
-    "heading": "Castler haqida",
-    "intro": "Castler — arxitektura, interyer va shaharsozlik yo'nalishlarida ishlaydigan dizayn studiyasi. Maqsadimiz — qurilgan muhitni undan foydalanadigan odamlar bilan chuqur bog'laydigan makonlar yaratish.",
-    "paragraphs": [
-      "Otabek Isoqjonov tomonidan Namanganda asos solingan Castler turar-joy, tijorat va ijtimoiy loyihalar bilan — dastlabki g'oyadan qurilish yakuniga qadar — shug'ullanadi; o'z shahridan tashqariga chiqib o'smoqda, tez orada Toshkentda ikkinchi studiyamiz ham ochiladi. Studiya har bir loyihaga uning joylashuvi, iqlimi va undan foydalanadigan odamlar bilan bog'liqligi orqali yondashadi.",
-      "Vaqtinchalik matn — studiyaning to'liq tarixi, e'tiborga molik loyihalari va matbuotdagi eslatmalari tayyor bo'lgach shu yerga qo'shiladi."
-    ],
-    "sections": [
-      {
-        "title": "Yo'nalishlar",
-        "seed": "story-disciplines",
-        "body": "Biz arxitektura, interyer dizayni va shaharsozlik bo'yicha ishlaymiz — har bir loyihaga umumiy hajmdan tortib material va detallargacha yagona uzluksiz g'oya sifatida yondashamiz. Vaqtinchalik matn — yakuniy nusxa keyinroq qo'shiladi."
-      },
-      {
-        "title": "Loyiha turlari",
-        "seed": "story-programs",
-        "body": "Portfolimiz villalar va xususiy turar-joylardan tortib, mehmonxona interyerlari, madaniy-ijtimoiy binolar va dastlabki bosqichdagi shaharsozlik konseptlarigacha bo'lgan yo'nalishlarni qamrab oladi. Vaqtinchalik matn — yakuniy nusxa keyinroq qo'shiladi."
-      },
-      {
-        "title": "Qadriyatlar",
-        "seed": "story-values",
-        "body": "Yaxshi dizayn mijozlar va pudratchilar bilan yaqin hamkorlik, bosqichma-bosqich ishlash jarayoni hamda joy, iqlim va mahalliy kontekstga doimo sezgir bo'lgan intizom natijasida yuzaga keladi, deb ishonamiz. Vaqtinchalik matn — yakuniy nusxa keyinroq qo'shiladi."
-      }
-    ]
-  },
-  "Awards": {
-    "flagshipMall": "Flagman loyiha, 50 000 m² tijorat majmuasi",
-    "centralAsianDesign": "Markaziy Osiyo dizayn mukofotlari — nomzod",
-    "regionalInteriorJournal": "Mintaqaviy interyer jurnalida yoritilgan loyiha",
-    "emergingStudios": "Yosh studiyalar ko'rgazmasiga tanlangan",
-    "workplaceDesign": "Ish makoni dizayni mukofotlari — faxriy eslatma",
-    "residentialInterior": "Toshkent dizayn haftaligi — eng yaxshi turar-joy interyeri",
-    "hospitalityDigest": "Mehmondo'stlik dizayni jurnalida yoritilgan",
-    "residentialInteriorsPrize": "Turar-joy interyerlari mukofoti — nomzod",
-    "retailConceptShowcase": "Chakana savdo konsepti ko'rgazmasiga tanlangan"
-  },
+  "Awards": {},
   "Footer": {
     "tagline": "Arxitektura dizayn kompaniyasi",
     "workHeading": "Ishlar",

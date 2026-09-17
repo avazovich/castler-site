@@ -1,33 +1,14 @@
-import type { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
-import { AboutStoryContent, type StoryContent } from "@/components/AboutStoryContent";
-import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { localizedAlternates } from "@/lib/siteConfig";
+import { getLocale } from "next-intl/server";
+import { permanentRedirect } from "@/i18n/navigation";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Story");
-  const locale = await getLocale();
-  return {
-    title: `${t("heading")} — Castler`,
-    alternates: localizedAlternates(locale, "/about/story"),
-  };
-}
-
+/**
+ * /about/story never had finished content (placeholder copy only) and isn't
+ * part of the current information architecture — the About page is the
+ * canonical destination. Kept as a permanent redirect, rather than deleted
+ * outright, so old links/bookmarks/indexed URLs land somewhere real instead
+ * of 404ing.
+ */
 export default async function AboutStoryPage() {
-  const t = await getTranslations("Story");
-  const content: StoryContent = {
-    eyebrow: t("eyebrow"),
-    heading: t("heading"),
-    intro: t("intro"),
-    paragraphs: t.raw("paragraphs"),
-    sections: t.raw("sections"),
-  };
-
-  return (
-    <div className="px-6 pb-24 pt-24 sm:px-10 sm:pt-28">
-      <RevealOnScroll>
-        <AboutStoryContent content={content} />
-      </RevealOnScroll>
-    </div>
-  );
+  const locale = await getLocale();
+  permanentRedirect({ href: "/about", locale });
 }

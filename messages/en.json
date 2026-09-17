@@ -155,10 +155,8 @@
   "About": {
     "eyebrow": "Office",
     "heroHeading": "Crafting spaces that connect people to their environment.",
-    "heroCta": "About us",
     "awardsEyebrow": "Recognition",
     "awardsHeading": "Awards",
-    "awardsNotice": "Placeholder entries — real award and press history coming soon.",
     "joinTitle": "Join us",
     "joinBody": "We're always open to hearing from architects and designers who share our approach.",
     "joinCta": "Get in touch"
@@ -257,43 +255,7 @@
     "body": "The page you're looking for doesn't exist or has moved.",
     "cta": "Back to home"
   },
-  "Story": {
-    "eyebrow": "Our Story",
-    "heading": "About Castler",
-    "intro": "Castler is an architectural design studio working across architecture, interiors, and urban design to create environments where the built form connects deeply with the people who use it.",
-    "paragraphs": [
-      "Founded in Namangan by Otabek Isoqjonov, Castler works across residential, commercial, and public projects, from early concept through construction — growing beyond its home city, with a second studio opening soon in Tashkent. The studio approaches each project through its relationship to site, climate, and the people who will use it.",
-      "Placeholder — a fuller studio history, notable projects, and press mentions will be added here once available."
-    ],
-    "sections": [
-      {
-        "title": "Disciplines",
-        "seed": "story-disciplines",
-        "body": "We work across architecture, interior design, and urban planning, approaching each project as a single continuous idea carried from massing down to material and detail. Placeholder text — final copy to follow."
-      },
-      {
-        "title": "Program Types",
-        "seed": "story-programs",
-        "body": "Our portfolio spans villas and private residences, hospitality interiors, cultural and civic buildings, and early-stage urban concepts. Placeholder text — final copy to follow."
-      },
-      {
-        "title": "Values",
-        "seed": "story-values",
-        "body": "We believe good design comes from close collaboration with clients and contractors, an iterative process, and a discipline that stays responsive to site, climate, and local context. Placeholder text — final copy to follow."
-      }
-    ]
-  },
-  "Awards": {
-    "flagshipMall": "Flagship Project, 50,000 m² Commercial Development",
-    "centralAsianDesign": "Shortlisted, Central Asian Design Awards",
-    "regionalInteriorJournal": "Featured Project, Regional Interior Journal",
-    "emergingStudios": "Selected, Emerging Studios Showcase",
-    "workplaceDesign": "Honorable Mention, Workplace Design Awards",
-    "residentialInterior": "Best Residential Interior, Tashkent Design Week",
-    "hospitalityDigest": "Featured, Hospitality Design Digest",
-    "residentialInteriorsPrize": "Shortlisted, Residential Interiors Prize",
-    "retailConceptShowcase": "Selected, Retail Concept Showcase"
-  },
+  "Awards": {},
   "Footer": {
     "tagline": "Architectural design company",
     "workHeading": "Work",

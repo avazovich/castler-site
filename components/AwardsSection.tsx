@@ -10,7 +10,7 @@ export function AwardsSection({
 }: {
   eyebrow: string;
   heading: string;
-  notice: string;
+  notice?: string;
   awards: ResolvedAward[];
 }) {
   return (
@@ -19,7 +19,7 @@ export function AwardsSection({
         <RevealOnScroll>
           <p className="label-mono text-ink-soft">{eyebrow}</p>
           <h2 className="font-display mt-2 text-4xl sm:text-5xl">{heading}</h2>
-          <p className="mt-2 max-w-lg text-sm italic text-ink-soft/70">{notice}</p>
+          {notice && <p className="mt-2 max-w-lg text-sm italic text-ink-soft/70">{notice}</p>}
         </RevealOnScroll>
 
         <div className="mt-10 border-t border-line">

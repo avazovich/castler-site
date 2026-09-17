@@ -7,20 +7,16 @@ export interface AwardEntry {
 }
 
 /**
- * Placeholder recognition list for the About page's Awards table — entries
- * reference real, currently-listed projects for plausibility, but the
- * awards themselves are illustrative only until the studio supplies its
- * real history. Award titles live in the `Awards` translation namespace so
- * each locale reads naturally rather than falling back to English.
+ * Real, verified recognition only — awards, press mentions, nominations,
+ * or certifications Castler has actually received. Empty until the studio
+ * supplies verified history; do not add illustrative/placeholder entries
+ * here. AwardsSection (see app/[locale]/about/page.tsx) renders nothing
+ * when this list is empty, rather than showing a "coming soon" section.
+ *
+ * To add a real entry once verified: push { id, projectSlug, year } and add
+ * the matching title under the `Awards` namespace in each messages/*.json
+ * file. If a future entry isn't tied to one of the existing project slugs,
+ * or needs an organization/category/link/image, extend this interface
+ * accordingly rather than forcing it into the current shape.
  */
-export const awards: AwardEntry[] = [
-  { id: "flagshipMall", projectSlug: "afsona-mall", year: "2026" },
-  { id: "centralAsianDesign", projectSlug: "afsona-villa", year: "2026" },
-  { id: "regionalInteriorJournal", projectSlug: "tashkent-penthouse", year: "2026" },
-  { id: "emergingStudios", projectSlug: "exclusive-signature-restaurant", year: "2026" },
-  { id: "workplaceDesign", projectSlug: "inolla-office", year: "2026" },
-  { id: "residentialInterior", projectSlug: "samarkand-hotel-room", year: "2025" },
-  { id: "hospitalityDigest", projectSlug: "yorokobi-wok-and-noodles", year: "2025" },
-  { id: "residentialInteriorsPrize", projectSlug: "turakorgan-residence", year: "2025" },
-  { id: "retailConceptShowcase", projectSlug: "mustang-showroom", year: "2026" },
-];
+export const awards: AwardEntry[] = [];

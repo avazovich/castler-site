@@ -5,7 +5,7 @@ import { categories, photographedProjects } from "@/content/projects";
 import { openRoles } from "@/content/roles";
 import { SITE_URL } from "@/lib/siteConfig";
 
-const STATIC_PATHS = ["", "/work", "/about", "/about/story", "/contact", "/news", "/careers"];
+const STATIC_PATHS = ["", "/work", "/about", "/contact", "/news", "/careers"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const visibleCategories = categories.filter((c) => photographedProjects.some((p) => p.category === c));
