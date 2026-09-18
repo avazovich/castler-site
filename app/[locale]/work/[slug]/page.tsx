@@ -4,16 +4,16 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ArrowRightIcon } from "@/components/icons";
-import { ImageSlider, type GalleryItem } from "@/components/ImageSlider";
+import { ImageSlider } from "@/components/ImageSlider";
 import { ParallaxImage } from "@/components/ParallaxImage";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { getProject, photographedProjects, projects } from "@/content/projects";
-import { getImageDimensions } from "@/lib/imageDimensions";
-import { getLocalizedProjectContent } from "@/lib/projectContent";
+import { getProject, getPhotographedProjects, getProjectSlugs } from "@/content/projects";
+import { buildGalleryItems } from "@/lib/projectImages";
 import { localizedAlternates } from "@/lib/siteConfig";
 
-export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+export async function generateStaticParams() {
+  const slugs = await getProjectSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -22,8 +22,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProject(slug);
-  const locale = await getLocale();
+  const [project, locale] = await Promise.all([getProject(slug), getLocale()]);
   return {
     title: project ? `${project.title} — Castler` : "Castler",
     alternates: localizedAlternates(locale, `/work/${slug}`),
@@ -36,25 +35,20 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = getProject(slug);
+  const project = await getProject(slug);
   if (!project) notFound();
 
   const t = await getTranslations("Project");
   const tCategories = await getTranslations("Categories");
-  const { description } = await getLocalizedProjectContent(project);
 
+  const photographedProjects = await getPhotographedProjects();
   const currentIndex = photographedProjects.findIndex((p) => p.slug === slug);
   const nextProject =
     currentIndex === -1
       ? photographedProjects[0]
       : photographedProjects[(currentIndex + 1) % photographedProjects.length];
 
-  const galleryImages: GalleryItem[] = project.gallery
-    ? project.gallery.map((src, i) => ({ key: `g-${i}`, src, ...getImageDimensions(src) }))
-    : Array.from({ length: Math.max(project.galleryCount - 1, 0) }).map((_, i) => ({
-        key: `g-${i}`,
-        seed: `${project.slug}-${i}`,
-      }));
+  const galleryImages = buildGalleryItems(project);
 
   return (
     <div className="pt-20 lg:pt-24">
@@ -91,7 +85,7 @@ export default async function ProjectPage({
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.1} className="mt-8 space-y-4 text-ink-soft">
-            {description.map((paragraph, i) => (
+            {project.description.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
           </RevealOnScroll>

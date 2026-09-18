@@ -4,7 +4,7 @@ import { AnimatedText } from "@/components/AnimatedText";
 import { OfficeTeaser } from "@/components/OfficeTeaser";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { WorkGallery } from "@/components/WorkGallery";
-import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
+import { categories, getPhotographedProjects, type ProjectCategory } from "@/content/projects";
 import { getCardShapes } from "@/lib/projectCardShape";
 import { localizedAlternates } from "@/lib/siteConfig";
 
@@ -31,6 +31,7 @@ export default async function WorkPage({
     ? (category as ProjectCategory)
     : undefined;
 
+  const photographedProjects = await getPhotographedProjects();
   const visibleCategories = categories.filter((c) =>
     photographedProjects.some((p) => p.category === c),
   );

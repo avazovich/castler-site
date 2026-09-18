@@ -26,9 +26,10 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Skip API routes, Next internals, static files (images, fonts, etc.), and
-  // /apply — a standalone, no-locale-prefix ad landing page that lives
-  // outside the [locale] tree on purpose (see app/apply/layout.tsx), so it
-  // must never get locale-redirected or wrapped in the main site chrome.
-  matcher: ["/((?!api|_next|_vercel|apply|.*\\..*).*)"],
+  // Skip API routes, Next internals, static files (images, fonts, etc.),
+  // /apply (a standalone, no-locale-prefix ad landing page — see
+  // app/apply/layout.tsx), and /studio (the embedded Sanity Studio — see
+  // app/studio/layout.tsx). Both live outside the [locale] tree on purpose
+  // and must never get locale-redirected or wrapped in the main site chrome.
+  matcher: ["/((?!api|_next|_vercel|apply|studio|.*\\..*).*)"],
 };

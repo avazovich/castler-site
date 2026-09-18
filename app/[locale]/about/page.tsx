@@ -26,11 +26,13 @@ export default async function AboutPage() {
   const tAwards = await getTranslations("Awards");
   const tNarrative = await getTranslations("AboutNarrative");
   const tFaq = await getTranslations("FAQ");
-  const resolvedAwards = awards.map((entry) => ({
-    award: tAwards(entry.id),
-    project: getProject(entry.projectSlug)?.title ?? entry.projectSlug,
-    year: entry.year,
-  }));
+  const resolvedAwards = await Promise.all(
+    awards.map(async (entry) => ({
+      award: tAwards(entry.id),
+      project: (await getProject(entry.projectSlug))?.title ?? entry.projectSlug,
+      year: entry.year,
+    })),
+  );
 
   const faqItems = tFaq.raw("items") as { question: string; answer: string }[];
   const faqJsonLd = {

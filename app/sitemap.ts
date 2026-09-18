@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
-import { articles } from "@/content/articles";
-import { categories, photographedProjects } from "@/content/projects";
+import { getArticles } from "@/content/articles";
+import { categories, getPhotographedProjects } from "@/content/projects";
 import { openRoles } from "@/content/roles";
 import { SITE_URL } from "@/lib/siteConfig";
 
 const STATIC_PATHS = ["", "/work", "/about", "/contact", "/news", "/careers"];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [photographedProjects, articles] = await Promise.all([getPhotographedProjects(), getArticles()]);
   const visibleCategories = categories.filter((c) => photographedProjects.some((p) => p.category === c));
 
   const paths = [

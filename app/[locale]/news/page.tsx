@@ -4,8 +4,7 @@ import { AnimatedText } from "@/components/AnimatedText";
 import { ArticleCard } from "@/components/ArticleCard";
 import { OfficeTeaser } from "@/components/OfficeTeaser";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { articles } from "@/content/articles";
-import { getLocalizedArticleContent } from "@/lib/articleContent";
+import { getArticles } from "@/content/articles";
 import { localizedAlternates } from "@/lib/siteConfig";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,14 +21,7 @@ export default async function NewsPage() {
   const t = await getTranslations("News");
   const tCategories = await getTranslations("ArticleCategories");
   const tHome = await getTranslations("Home");
-  const locale = await getLocale();
-
-  const cards = await Promise.all(
-    articles.map(async (article) => {
-      const { title, excerpt } = await getLocalizedArticleContent(article);
-      return { ...article, title, excerpt };
-    }),
-  );
+  const [locale, articles] = await Promise.all([getLocale(), getArticles()]);
 
   return (
     <>
@@ -43,7 +35,7 @@ export default async function NewsPage() {
         </RevealOnScroll>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((article, i) => (
+          {articles.map((article, i) => (
             <RevealOnScroll key={article.slug} delay={Math.min(i * 0.06, 0.3)}>
               <ArticleCard
                 slug={article.slug}

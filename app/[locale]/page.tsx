@@ -11,7 +11,7 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { SectionSnapScroll } from "@/components/SectionSnapScroll";
 import { WorkSpansAccordion } from "@/components/WorkSpansAccordion";
 import { ArrowRightIcon } from "@/components/icons";
-import { categories, heroProjects, photographedProjects } from "@/content/projects";
+import { categories, getFeaturedProjects, getHeroProjects } from "@/content/projects";
 import { getCardShapes, type CardShape } from "@/lib/projectCardShape";
 import {
   FOUNDER_INSTAGRAM_URL,
@@ -60,7 +60,8 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function HomePage() {
   const t = await getTranslations("Home");
   const tCategories = await getTranslations("Categories");
-  const cardShapes = getCardShapes(photographedProjects);
+  const [heroProjects, featuredProjects] = await Promise.all([getHeroProjects(), getFeaturedProjects()]);
+  const cardShapes = getCardShapes(featuredProjects);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -152,7 +153,7 @@ export default async function HomePage() {
         </RevealOnScroll>
 
         <div className="mt-12 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[240px] lg:grid-flow-row-dense xl:auto-rows-[280px]">
-          {photographedProjects.map((project, i) => (
+          {featuredProjects.map((project, i) => (
             <RevealOnScroll
               key={project.slug}
               delay={Math.min(i * 0.04, 0.3)}

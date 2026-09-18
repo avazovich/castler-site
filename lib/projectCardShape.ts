@@ -1,5 +1,4 @@
 import type { Project } from "@/content/projects";
-import { getImageDimensions } from "./imageDimensions";
 
 /** Tile proportion a listing card should take, derived from its photo. */
 export type CardShape = "tall" | "wide";
@@ -13,8 +12,10 @@ export type CardShape = "tall" | "wide";
 export type ShownPhoto = "cover" | "hero";
 
 /**
- * Decides whether a project's listing tile should be tall or wide by reading
- * the real proportions of the photo it shows (server-only: reads from public/).
+ * Decides whether a project's listing tile should be tall or wide from the
+ * real proportions of the photo it shows — Sanity stores each image's pixel
+ * dimensions as metadata at upload time, fetched alongside the image URL
+ * (see content/projects.ts's PROJECT_PROJECTION), so no file reads happen here.
  *
  * Listing tiles crop with `object-cover`, so a tile whose shape fights the
  * photo's own shape cuts the subject in half — a portrait interior forced into
@@ -24,10 +25,10 @@ export type ShownPhoto = "cover" | "hero";
  * lose less than they would in a short, wide one.
  */
 export function getCardShape(project: Project, shows: ShownPhoto = "cover"): CardShape {
-  const src = shows === "cover" ? project.coverImage ?? project.image : project.image;
-  if (!src) return "tall";
-  const { width, height } = getImageDimensions(src);
-  return width / height >= 1.15 ? "wide" : "tall";
+  const dimensions =
+    shows === "cover" ? (project.coverImageDimensions ?? project.imageDimensions) : project.imageDimensions;
+  if (!dimensions) return "tall";
+  return dimensions.width / dimensions.height >= 1.15 ? "wide" : "tall";
 }
 
 /** Card shapes for a list of projects, index-aligned to the input. */

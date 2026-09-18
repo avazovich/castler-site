@@ -1,3 +1,7 @@
+import { getLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { client } from "@/sanity/lib/client";
+
 export type ProjectCategory = "architecture" | "interior" | "urban" | "concept";
 
 export interface Project {
@@ -9,637 +13,148 @@ export interface Project {
   summary: string;
   description: string[];
   galleryCount: number;
-  /** Path under /public to a real photo (e.g. "/projects/afsona-villa.jpg").
-   *  Falls back to the abstract PlaceholderImage gradient when unset. */
+  /** Real photo URL (Sanity CDN). Falls back to the abstract PlaceholderImage
+   *  gradient when unset. */
   image?: string;
-  /** Additional real photos beyond `image`, shown in the gallery/slider.
-   *  Falls back to placeholder gradients (per galleryCount) when unset. */
-  gallery?: string[];
+  imageDimensions?: { width: number; height: number };
+  /** Additional real photos beyond `image`, shown in the gallery/slider. */
+  gallery?: { src: string; width: number; height: number }[];
   /** Alternate photo shown on the Home featured grid, when it should differ
-   *  from `image` (the one used on the Work page and the project's own
-   *  hero). Falls back to `image` when unset. */
+   *  from `image`. Falls back to `image` when unset. */
   coverImage?: string;
-  /** CSS object-position for `image`, when a plain center crop cuts off the
-   *  part of the photo that matters — only ever set on the hero-carousel
-   *  copy of a project (see HERO_IMAGE_OVERRIDES below), never on the base
-   *  entry, since every other use of `image` crops it differently. */
+  coverImageDimensions?: { width: number; height: number };
+  /** CSS object-position, when a plain center crop cuts off the part of the
+   *  photo that matters — only ever set on the hero-carousel copy of a
+   *  project, via Home settings' per-slide override in Sanity. */
   objectPosition?: string;
 }
 
-/**
- * Placeholder project set — titles/copy/locations are illustrative only,
- * standing in until real project photography and write-ups are supplied.
- * Rendered with PlaceholderImage rather than real photos for now.
- */
-export const projects: Project[] = [
-  {
-    slug: "exclusive-signature-restaurant",
-    title: "Exclusive Signature Restaurant",
-    location: "Namangan, Uzbekistan",
-    year: "2026",
-    category: "architecture",
-    image: "/projects/qodirxon-pavilion.jpg",
-    summary: "An exclusive restaurant design made only for this place — three gold-crowned circular halls gathered around a shared threshold beside the water.",
-    description: [
-      "Commissioned as a one-of-a-kind restaurant, the pavilion was never meant to be repeatable: its plan of three circular dining halls, fanned around a central entrance, exists for this lakeside site in Namangan alone.",
-      "Each hall is capped by a luminous gold disc that reads from the water as a lit lantern at dusk, while floor-to-ceiling glazing keeps every table facing the reflecting pool and the trees beyond it.",
-      "Inside, a freeform bronze canopy gathers over the main dining room, breaking the ceiling's geometric grid the way a tree breaks a clearing.",
-      "Arrival is its own sequence: a curved, gold-lit porte-cochère draws cars in under a canopy backlit like a night sky, opening onto a fountain court in dark marble before guests ever reach the dining halls themselves.",
-    ],
-    galleryCount: 10,
-    gallery: [
-      "/projects/qodirxon-pavilion-6.jpg",
-      "/projects/qodirxon-pavilion-7.jpg",
-      "/projects/qodirxon-pavilion-8.jpg",
-      "/projects/qodirxon-pavilion-5.jpg",
-      "/projects/qodirxon-pavilion-interior.jpg",
-      "/projects/qodirxon-pavilion-9.jpg",
-      "/projects/qodirxon-pavilion-entrance-3.jpg",
-      "/projects/qodirxon-pavilion-entrance-2.jpg",
-      "/projects/qodirxon-pavilion-entrance-1.jpg",
-    ],
-  },
-  {
-    slug: "riverside-cultural-pavilion",
-    title: "Riverside Cultural Pavilion",
-    location: "Tashkent, Uzbekistan",
-    year: "2024",
-    category: "architecture",
-    summary: "A low, terraced pavilion that steps down toward the riverbank, folding gallery and event space into a single continuous roofline.",
-    description: [
-      "The pavilion sits at the point where the embankment park meets the old city grid, and its plan responds to both: a straight civic edge on one side, a soft terraced descent toward the water on the other.",
-      "Inside, a single roof plane rises and falls over a sequence of gallery, workshop, and event spaces, held apart by full-height glazing so the river is always in view.",
-    ],
-    galleryCount: 5,
-  },
-  {
-    slug: "chorsu-housing-block",
-    title: "Chorsu Housing Block",
-    location: "Tashkent, Uzbekistan",
-    year: "2023",
-    category: "architecture",
-    summary: "A mid-rise residential block organized around a shaded internal courtyard, reintroducing the mahalla courtyard at apartment-building scale.",
-    description: [
-      "Sixty units wrap a planted internal courtyard shielded from the street by a perforated brick screen, borrowing directly from the region's mahalla courtyard tradition.",
-      "Deep loggias on every unit cut solar gain while giving residents usable outdoor space year-round.",
-    ],
-    galleryCount: 4,
-  },
-  {
-    slug: "samarkand-hotel-room",
-    title: "Hotel Room",
-    location: "Samarkand, Uzbekistan",
-    year: "2024",
-    category: "interior",
-    image: "/projects/hotel-room.jpg",
-    summary: "A guest suite interior for a hotel project in Samarkand.",
-    description: ["Full project write-up coming soon."],
-    galleryCount: 1,
-  },
-  {
-    slug: "amir-timur-plaza-masterplan",
-    title: "Amir Timur Plaza Masterplan",
-    location: "Tashkent, Uzbekistan",
-    year: "2022",
-    category: "urban",
-    summary: "A masterplan reconnecting three disconnected civic plazas into a single pedestrian spine through the city center.",
-    description: [
-      "Three plazas, previously separated by traffic lanes, are joined by a raised pedestrian spine with intermittent civic pavilions, market stalls, and shaded seating.",
-      "Vehicle traffic is pushed to a single below-grade service lane, freeing the entire surface for pedestrians and cyclists.",
-    ],
-    galleryCount: 4,
-  },
-  {
-    slug: "afsona-villa",
-    title: "Afsona Villa",
-    location: "Namangan, Uzbekistan",
-    year: "2024",
-    category: "architecture",
-    image: "/projects/afsona-villa.jpg",
-    summary: "A charcoal-and-travertine villa built around a lap pool, its dark slate cladding and cypress courtyard giving way to a glazed riverside elevation of timber and stone.",
-    description: [
-      "The villa's street face is deliberately restrained — dark stone, a slatted timber door, cypress trees planted in strict rows — before opening onto a pool terrace framed by full-height glazing and a bronze water sculpture.",
-      "A rear elevation facing the water trades the entrance's formality for openness: two storeys of glass and travertine wrapped in deep roof overhangs, set beside a reflecting pool and designed to be read from the water as much as from the garden.",
-    ],
-    galleryCount: 10,
-    gallery: [
-      "/projects/afsona-villa-01.jpg",
-      "/projects/afsona-villa-04.jpg",
-      "/projects/afsona-villa-05.jpg",
-      "/projects/afsona-villa-03.jpg",
-      "/projects/afsona-villa-09.jpg",
-      "/projects/afsona-villa-07.jpg",
-      "/projects/afsona-villa-06.jpg",
-      "/projects/afsona-villa-10.jpg",
-      "/projects/afsona-villa-08.jpg",
-    ],
-  },
-  {
-    slug: "tashkent-penthouse",
-    title: "Penthouse",
-    location: "Tashkent, Uzbekistan",
-    year: "2024",
-    category: "interior",
-    summary: "An outdoor terrace and lounge for a penthouse residence in Tashkent.",
-    description: ["Full project write-up coming soon."],
-    galleryCount: 1,
-  },
-  {
-    slug: "terraced-market-concept",
-    title: "Terraced Market Concept",
-    location: "Bukhara, Uzbekistan",
-    year: "2025",
-    category: "concept",
-    summary: "An unbuilt proposal for a stepped market hall referencing the region's historic covered bazaars.",
-    description: [
-      "The proposal reinterprets the domed bazaar as a series of stepped terraces, each stall opening onto the next level down, with a shared roof of perforated concrete shells.",
-      "Submitted as an open ideas competition entry; not currently under construction.",
-    ],
-    galleryCount: 3,
-  },
-  {
-    slug: "green-belt-transit-hub",
-    title: "Green Belt Transit Hub",
-    location: "Tashkent, Uzbekistan",
-    year: "2022",
-    category: "urban",
-    summary: "A transit interchange wrapped in a planted canopy, treating the roof as public park as much as shelter.",
-    description: [
-      "The hub stitches together a metro entrance, bus interchange, and cycle hub under one canopy, planted so the roof reads as an extension of the adjacent park.",
-      "Platforms are naturally ventilated through the canopy's open lattice structure rather than mechanically cooled.",
-    ],
-    galleryCount: 4,
-  },
-  {
-    slug: "civic-library-atrium",
-    title: "Civic Library Atrium",
-    location: "Bukhara, Uzbekistan",
-    year: "2023",
-    category: "architecture",
-    summary: "A public library wrapped around a top-lit reading atrium, built from load-bearing brick vaults.",
-    description: [
-      "The library replaces a demolished Soviet-era reading hall with a sequence of brick vaults, each rising to a small oculus that washes the stacks below in daylight.",
-      "Reading rooms step down half-levels around the central atrium, keeping every seat within sight of the courtyard beyond.",
-    ],
-    galleryCount: 4,
-  },
-  {
-    slug: "hillside-viewing-pavilion",
-    title: "Hillside Viewing Pavilion",
-    location: "Chimgan, Uzbekistan",
-    year: "2025",
-    category: "concept",
-    summary: "An unbuilt proposal for a cantilevered viewing platform folded into a mountainside trail.",
-    description: [
-      "The pavilion cantilevers off a ridge along the Chimgan trail network, its folded steel deck framing the valley without a single tree removed on approach.",
-      "Concept proposal submitted to the regional tourism board; not yet funded for construction.",
-    ],
-    galleryCount: 3,
-  },
-  {
-    slug: "urban-waterfront-promenade",
-    title: "Urban Waterfront Promenade",
-    location: "Tashkent, Uzbekistan",
-    year: "2024",
-    category: "urban",
-    summary: "A two-kilometer canal-side promenade replacing a service road with terraced public space.",
-    description: [
-      "The promenade reclaims a former service road running along the Anhor canal, replacing it with terraced seating, cycle paths, and small pavilions at every bridge crossing.",
-      "Planting follows the existing canal ecology rather than introducing an ornamental landscape, keeping maintenance low.",
-    ],
-    galleryCount: 5,
-  },
-  {
-    slug: "yorokobi-wok-and-noodles",
-    title: "Yorokobi Wok & Noodles",
-    location: "Bukhara, Uzbekistan",
-    year: "2025",
-    category: "interior",
-    image: "/projects/yorokobi-hero.png",
-    coverImage: "/projects/yorokobi-cover.jpg",
-    summary: "A fast-casual wok and noodle house in Bukhara, built around a bright red-and-mustard palette and a ceiling of trailing greenery.",
-    description: [
-      "Yorokobi packs a full-service noodle bar into a compact footprint, using colour rather than square footage to do the work: lacquer-red booths, mustard-yellow pendant lamps, and a hand-painted logo wall anchor the room the moment you walk in.",
-      "A canopy of trailing plants runs the length of the ceiling, softening the exposed services below it, while a quieter back-of-house — manager's office, security room, staff lounge — carries the same red-and-charcoal palette through to the spaces guests never see.",
-    ],
-    galleryCount: 17,
-    gallery: [
-      "/projects/yorokobi-08.png",
-      "/projects/yorokobi-05.png",
-      "/projects/yorokobi-12.jpg",
-      "/projects/yorokobi-11.png",
-      "/projects/yorokobi-07.png",
-      "/projects/yorokobi-13.jpg",
-      "/projects/yorokobi-06.png",
-      "/projects/yorokobi-15.png",
-      "/projects/yorokobi-16.jpg",
-      "/projects/yorokobi-09.png",
-      "/projects/yorokobi-14.jpg",
-      "/projects/yorokobi-10.png",
-      "/projects/yorokobi-01.jpg",
-      "/projects/yorokobi-17.jpg",
-      "/projects/yorokobi-02.jpg",
-      "/projects/yorokobi-03.jpg",
-    ],
-  },
-  {
-    slug: "turakorgan-residence",
-    title: "Turakorgan Residence",
-    location: "Turakorgan, Uzbekistan",
-    year: "2025",
-    category: "interior",
-    image: "/projects/torakorgan-hero.jpg",
-    coverImage: "/projects/torakorgan-cover.jpg",
-    summary: "A family residence where traditional and modern design integration carries through every room — a grand dastarkhan dining hall beside unmistakably contemporary interiors.",
-    description: [
-      "The house is built on a single idea: tradition and modernity sharing the same room rather than competing for it. A grand dining hall built for large family gatherings — a long communal table, patterned wood panelling, an sculptural chandelier — sits at the heart of a home that carries traditional Uzbek hospitality through a thoroughly contemporary shell.",
-      "Elsewhere the material language turns quieter and more current: walnut-toned wood, boucle upholstery, and abstract art carry the same restraint through the living rooms, bedrooms, and kitchen, so the traditional heart of the home never feels like a period piece bolted onto a modern shell.",
-    ],
-    galleryCount: 33,
-    gallery: [
-      "/projects/torakorgan-28.jpg",
-      "/projects/torakorgan-10.jpg",
-      "/projects/torakorgan-11.jpg",
-      "/projects/torakorgan-26.jpg",
-      "/projects/torakorgan-33.jpg",
-      "/projects/torakorgan-20.jpg",
-      "/projects/torakorgan-08.jpg",
-      "/projects/torakorgan-12.jpg",
-      "/projects/torakorgan-09.jpg",
-      "/projects/torakorgan-30.jpg",
-      "/projects/torakorgan-29.jpg",
-      "/projects/torakorgan-31.jpg",
-      "/projects/torakorgan-32.jpg",
-      "/projects/torakorgan-17.jpg",
-      "/projects/torakorgan-18.jpg",
-      "/projects/torakorgan-15.jpg",
-      "/projects/torakorgan-16.jpg",
-      "/projects/torakorgan-19.jpg",
-      "/projects/torakorgan-21.jpg",
-      "/projects/torakorgan-23.jpg",
-      "/projects/torakorgan-25.jpg",
-      "/projects/torakorgan-22.jpg",
-      "/projects/torakorgan-27.jpg",
-      "/projects/torakorgan-34.jpg",
-      "/projects/torakorgan-07.jpg",
-      "/projects/torakorgan-13.jpg",
-      "/projects/torakorgan-14.jpg",
-      "/projects/torakorgan-01.jpg",
-      "/projects/torakorgan-03.jpg",
-      "/projects/torakorgan-04.jpg",
-      "/projects/torakorgan-05.jpg",
-      "/projects/torakorgan-02.jpg",
-    ],
-  },
-  {
-    slug: "afsona-mall",
-    title: "Afsona Mall",
-    location: "Namangan, Uzbekistan",
-    year: "2026",
-    category: "interior",
-    image: "/projects/afsona-mall-hero.jpg",
-    summary: "Our flagship commercial interior — a 50,000 m² shopping mall built around a full-height atrium, its faceted skylight pulling daylight down through four wrapped levels of retail.",
-    description: [
-      "At 50,000 square meters, Afsona Mall is the largest interior Castler has delivered to date. The plan turns on a single grand atrium: escalators and glass-railed balconies wrap four levels around a central court, all of it gathered under a faceted, star-patterned ceiling that opens to a circular skylight directly overhead.",
-      "Bronze-toned elevator cores and stone-clad columns anchor the atrium's warm palette, while a rotating display platform at ground level — built for anything from a showcase vehicle to a seasonal installation — keeps the heart of the mall in constant motion. The food court repeats the language at a human scale: a canopy of suspended disc lighting, terracotta columns, and planted dividers turn a large dining hall into a series of comfortable, broken-up rooms.",
-    ],
-    galleryCount: 12,
-    gallery: [
-      "/projects/afsona-mall-06.jpg",
-      "/projects/afsona-mall-09.jpg",
-      "/projects/afsona-mall-07.jpg",
-      "/projects/afsona-mall-08.jpg",
-      "/projects/afsona-mall-04.jpg",
-      "/projects/afsona-mall-03.jpg",
-      "/projects/afsona-mall-05.jpg",
-      "/projects/afsona-mall-01.jpg",
-      "/projects/afsona-mall-02.jpg",
-      "/projects/afsona-mall-10.jpg",
-      "/projects/afsona-mall-11.jpg",
-    ],
-  },
-  {
-    slug: "inolla-office",
-    title: "Inolla Office",
-    location: "Uzbekistan",
-    year: "2026",
-    category: "interior",
-    image: "/projects/inolla-office-hero.jpg",
-    summary: "A corporate office split between two registers — warm wood-and-greenery workstations and a darker, terracotta-and-charcoal lounge for informal meetings.",
-    description: [
-      "Inolla's workspace is organized around long suspended light coffers trailing greenery, softening the exposed-ceiling, open-plan desks below. The effect reads as a garden threaded through the workstations rather than a decorative afterthought.",
-      "A separate lounge wing shifts register entirely — dark leather sectionals, a terracotta-and-charcoal palette, and full-height glazing — giving the office an informal space for conversations that don't belong at a desk.",
-    ],
-    galleryCount: 16,
-    gallery: [
-      "/projects/inolla-office-06.jpg",
-      "/projects/inolla-office-09.jpg",
-      "/projects/inolla-office-13.jpg",
-      "/projects/inolla-office-07.jpg",
-      "/projects/inolla-office-08.jpg",
-      "/projects/inolla-office-05.jpg",
-      "/projects/inolla-office-03.jpg",
-      "/projects/inolla-office-02.jpg",
-      "/projects/inolla-office-12.jpg",
-      "/projects/inolla-office-10.jpg",
-      "/projects/inolla-office-04.jpg",
-      "/projects/inolla-office-11.jpg",
-      "/projects/inolla-office-01.jpg",
-      "/projects/inolla-office-15.jpg",
-      "/projects/inolla-office-14.jpg",
-    ],
-  },
-  {
-    slug: "megaton-office",
-    title: "Megaton Office",
-    location: "Uzbekistan",
-    year: "2026",
-    category: "interior",
-    image: "/projects/megaton-office-02.jpg",
-    summary: "A corporate headquarters interior pairing a brushed-metal, branded reception with quiet, garden-view private offices.",
-    description: [
-      "The reception sequence sets the tone in brass and brushed steel: a backlit brand mark set into a metal-clad wall, a leather sofa, and terrazzo flooring carry the material language from the entrance into the circulation corridors.",
-      "Private offices trade that formality for calm — pale wood joinery, floor-to-ceiling glazed doors onto a private lawn, and a fully wired desk setup make each office a self-contained working room rather than a cubicle.",
-    ],
-    galleryCount: 13,
-    gallery: [
-      "/projects/megaton-office-05.jpg",
-      "/projects/megaton-office-01.jpg",
-      "/projects/megaton-office-03.jpg",
-      "/projects/megaton-office-08.jpg",
-      "/projects/megaton-office-09.jpg",
-      "/projects/megaton-office-04.jpg",
-      "/projects/megaton-office-06.jpg",
-      "/projects/megaton-office-11.jpg",
-      "/projects/megaton-office-13.jpg",
-      "/projects/megaton-office-12.jpg",
-      "/projects/megaton-office-10.jpg",
-      "/projects/megaton-office-hero.jpg",
-    ],
-  },
-  {
-    slug: "mustang-showroom",
-    title: "Mustang Showroom",
-    location: "Uzbekistan",
-    year: "2026",
-    category: "interior",
-    image: "/projects/mustang-showroom-hero.jpg",
-    summary: "A tailoring showroom where garments are staged like gallery pieces — olive trees, stone plinths, and a long wardrobe wall running the length of the fitting corridor.",
-    description: [
-      "The showroom reads as much like a curated gallery as a retail floor: suits and outerwear are hung from freestanding rails beside potted olive trees and raw stone plinths, with a patterned tile runner marking the path from entrance to fitting rooms.",
-      "A wall of open wood wardrobes lines the corridor toward a private consultation room, so the showroom experience carries all the way from first browse to final fitting without a change in material language.",
-    ],
-    galleryCount: 10,
-    gallery: [
-      "/projects/mustang-showroom-03.jpg",
-      "/projects/mustang-showroom-01.jpg",
-      "/projects/mustang-showroom-05.jpg",
-      "/projects/mustang-showroom-08.jpg",
-      "/projects/mustang-showroom-07.jpg",
-      "/projects/mustang-showroom-04.jpg",
-      "/projects/mustang-showroom-06.jpg",
-      "/projects/mustang-showroom-02.jpg",
-      "/projects/mustang-showroom-09.jpg",
-    ],
-  },
-  {
-    slug: "mustang-office",
-    title: "Mustang Office",
-    location: "Uzbekistan",
-    year: "2026",
-    category: "interior",
-    image: "/projects/mustang-office-hero.jpg",
-    summary: "A private office wrapped in warm oak paneling, with a trailing-plant light canopy suspended over the desk in place of a standard ceiling fixture.",
-    description: [
-      "Mustang's office reuses the trailing-greenery ceiling motif from the brand's other interiors, here scaled down to a single canopy over the desk — a quiet, plant-softened counterpoint to the oak panelling and backlit glass shelving that lines the rest of the room.",
-      "Every surface — desk, shelving, wardrobe, coat stand — is kept in the same warm timber tone, so the office reads as one continuous material rather than a set of separate furniture pieces.",
-    ],
-    galleryCount: 9,
-    gallery: [
-      "/projects/mustang-office-01.jpg",
-      "/projects/mustang-office-02.jpg",
-      "/projects/mustang-office-08.jpg",
-      "/projects/mustang-office-06.jpg",
-      "/projects/mustang-office-05.jpg",
-      "/projects/mustang-office-07.jpg",
-      "/projects/mustang-office-09.jpg",
-      "/projects/mustang-office-04.jpg",
-    ],
-  },
-  {
-    slug: "axsikent",
-    title: "Axsikent Residence",
-    location: "Axsikent, Uzbekistan",
-    year: "2026",
-    category: "interior",
-    image: "/projects/axsikent-hero.jpg",
-    summary: "A classic residential interior — panelled walls, crystal chandeliers, and a symmetrical double-height living room built around a central staircase.",
-    description: [
-      "The living room is the clearest statement of the house's language: tall wainscoted walls, framed botanical prints, and a cascading crystal chandelier hung from a double-height ceiling, with a matched pair of sofas and wing chairs arranged in strict symmetry around a black lacquered coffee table.",
-      "That same restrained classicism — soft neutral upholstery, dark wood accents, monochrome detailing — carries through the rest of the residence, giving every room the same quiet formality without feeling cold.",
-    ],
-    galleryCount: 6,
-    gallery: [
-      "/projects/axsikent-08.jpg",
-      "/projects/axsikent-02.jpg",
-      "/projects/axsikent-04.jpg",
-      "/projects/axsikent-01.jpg",
-      "/projects/axsikent-07.jpg",
-    ],
-  },
-  {
-    slug: "mashad",
-    title: "Mashad Residence",
-    location: "Mashad, Uzbekistan",
-    year: "2026",
-    category: "interior",
-    image: "/projects/mashad-hero.jpg",
-    summary: "A residential interior in soft taupe and walnut, its bedrooms built around sculptural pendant lighting and deep upholstered headboards, set behind a matching beige-stucco exterior of arched cypress-lined courtyards.",
-    description: [
-      "Each bedroom is composed around a single dramatic fixture — a tiered fabric pendant, a cluster of hanging candle-style lamps — hung over a tall upholstered headboard, with a plaster ceiling medallion tying the lighting back into the architecture above it.",
-      "A muted taupe-and-walnut palette runs through every room, with curved joinery, backlit niches, and herringbone flooring keeping the detailing rich without breaking the calm, tonal restraint of the house.",
-      "Outside, the same warmth carries into the architecture itself: a low beige-stucco villa with a deep entrance overhang, slatted timber screening, and a cypress-lined motor court that sets the tone before a single interior door is opened.",
-    ],
-    galleryCount: 24,
-    gallery: [
-      "/projects/mashad-01.jpg",
-      "/projects/mashad-08.jpg",
-      "/projects/mashad-07.jpg",
-      "/projects/mashad-03.jpg",
-      "/projects/mashad-02.jpg",
-      "/projects/mashad-06.jpg",
-      "/projects/mashad-ex-06.jpg",
-      "/projects/mashad-ex-05.jpg",
-      "/projects/mashad-ex-10.jpg",
-      "/projects/mashad-ex-08.jpg",
-      "/projects/mashad-ex-01.jpg",
-      "/projects/mashad-ex-09.jpg",
-      "/projects/mashad-ex-07.jpg",
-      "/projects/mashad-ex-13.jpg",
-      "/projects/mashad-ex-04.jpg",
-      "/projects/mashad-ex-02.jpg",
-      "/projects/mashad-ex-12.jpg",
-      "/projects/mashad-ex-11.jpg",
-      "/projects/mashad-ex-03.jpg",
-      "/projects/mashad-09.jpg",
-      "/projects/mashad-11.jpg",
-      "/projects/mashad-05.jpg",
-      "/projects/mashad-04.jpg",
-    ],
-  },
-  {
-    slug: "navoiy",
-    title: "Navoiy Residence",
-    location: "Navoiy, Uzbekistan",
-    year: "2026",
-    category: "architecture",
-    image: "/projects/navoiy-hero.jpg",
-    summary: "A single-storey residence in Navoiy built around a tiered stone water feature, its warm-lit eaves and cypress-lined approach carrying through to a wood-panelled interior lit by a single round skylight.",
-    description: [
-      "The house reads as a sequence of thresholds: a cypress-flanked drive gives way to a deep, backlit roof overhang, then to a courtyard anchored by a five-channel stone waterfall wall lit from below at dusk.",
-      "Inside, the same restraint continues — a circular window cut into a dark timber ceiling frames a single tree overhead, turning what could have been an ordinary skylight into a deliberate, singular view.",
-    ],
-    galleryCount: 18,
-    gallery: [
-      "/projects/navoiy-01.jpg",
-      "/projects/navoiy-20.jpg",
-      "/projects/navoiy-12.jpg",
-      "/projects/navoiy-06.jpg",
-      "/projects/navoiy-08.jpg",
-      "/projects/navoiy-05.jpg",
-      "/projects/navoiy-07.jpg",
-      "/projects/navoiy-11.jpg",
-      "/projects/navoiy-13.jpg",
-      "/projects/navoiy-14.jpg",
-      "/projects/navoiy-15.jpg",
-      "/projects/navoiy-04.jpg",
-      "/projects/navoiy-09.jpg",
-      "/projects/navoiy-10.jpg",
-      "/projects/navoiy-16.jpg",
-      "/projects/navoiy-02.jpg",
-      "/projects/navoiy-18.jpg",
-    ],
-  },
-  {
-    slug: "chortoq-estate",
-    title: "Chortoq Estate",
-    location: "Chortoq, Namangan Region, Uzbekistan",
-    year: "2026",
-    category: "architecture",
-    image: "/projects/chortoq-estate-hero.jpg",
-    summary: "A cream-travertine estate near Chortoq built around a sequence of columned pavilions, its grand arched entrance carrying through to an open-air dining loggia and a black-stone waterfall wall.",
-    description: [
-      "The estate's entrance sets the register immediately: a two-storey arched portico in pale travertine, black-brick accent bands, and a rooftop garden fenced in above the eaves. A columned pergola off the courtyard, curtained in white linen, doubles as an outdoor dining room shaded from the afternoon sun.",
-      "Elsewhere the grounds carry a resort's variety of set pieces — a lattice-walled garden pavilion painted sage green, a black-stone waterfall framed in ivy, and an interior hall lit by a trio of candle-ring chandeliers — without losing the estate's singular material language of pale stone and dark accents.",
-    ],
-    galleryCount: 13,
-    gallery: [
-      "/projects/chortoq-estate-02.jpg",
-      "/projects/chortoq-estate-04.jpg",
-      "/projects/chortoq-estate-07.jpg",
-      "/projects/chortoq-estate-03.jpg",
-      "/projects/chortoq-estate-13.jpg",
-      "/projects/chortoq-estate-12.jpg",
-      "/projects/chortoq-estate-11.jpg",
-      "/projects/chortoq-estate-10.jpg",
-      "/projects/chortoq-estate-08.jpg",
-      "/projects/chortoq-estate-09.jpg",
-      "/projects/chortoq-estate-06.jpg",
-      "/projects/chortoq-estate-01.jpg",
-    ],
-  },
-  {
-    slug: "margilon-residence",
-    title: "Margilon Residence",
-    location: "Margilon, Uzbekistan",
-    year: "2026",
-    category: "architecture",
-    image: "/projects/margilon-residence-hero.jpg",
-    summary: "A travertine residence in Margilon centred on a hand-carved circular wood door, its warm eave lighting and Japanese maple plantings framing the entrance sequence.",
-    description: [
-      "The entrance is the house's clear focal point: a concentric-ringed wood door set into a travertine surround, lit by a suspended crystal fixture visible through the glazed threshold beside it, with a chandelier-lit courtyard dining set just beyond.",
-      "Red maple and cypress plantings soften the stone envelope on approach, while warm linear lighting under the deep roof overhang carries the same material calm from dusk through to the interior.",
-    ],
-    galleryCount: 12,
-    gallery: Array.from({ length: 11 }, (_, i) => `/projects/margilon-residence-${String(i + 1).padStart(2, "0")}.jpg`),
-  },
-  {
-    slug: "mingchinor-residence",
-    title: "Mingchinor Residence",
-    location: "Mingchinor, Uzbekistan",
-    year: "2026",
-    category: "architecture",
-    image: "/projects/mingchinor-residence-hero.jpg",
-    summary: "A two-storey residence in Mingchinor wrapped in pale stone and dark steel, its glazed upper floor and covered carport built around a serious car collection.",
-    description: [
-      "The house presents two registers at once: a glazed, dark-framed upper floor that reads as a modern box at night, set above a solid stone-and-timber ground floor built around a deep, wood-soffited carport.",
-      "Cypress and pine plantings run the length of the site, keeping the composition calm despite the scale — this is a house built as much around its cars and its garden as around the rooms themselves.",
-    ],
-    galleryCount: 10,
-    gallery: Array.from({ length: 9 }, (_, i) => `/projects/mingchinor-residence-${String(i + 1).padStart(2, "0")}.jpg`),
-  },
-  {
-    slug: "nanay-dacha",
-    title: "Nanay Dacha",
-    location: "Nanay, Uzbekistan",
-    year: "2026",
-    category: "architecture",
-    image: "/projects/nanay-dacha-hero.jpg",
-    summary: "A travertine dacha in Nanay built around a single dark stone chimney element, its covered carport and dense broadleaf landscaping giving the entrance a resort-like calm.",
-    description: [
-      "A charcoal stone tower — half chimney, half sculptural marker — anchors the composition, rising above a low travertine volume with a deeply recessed timber front door.",
-      "The carport reuses the same stone-and-timber language at a domestic scale, while broad-leafed planting at the entrance signals a garden built for shade and privacy rather than formal display.",
-    ],
-    galleryCount: 7,
-    gallery: Array.from({ length: 6 }, (_, i) => `/projects/nanay-dacha-${String(i + 1).padStart(2, "0")}.jpg`),
-  },
-];
+type Localized<T> = { en: T; uz?: T; ru?: T };
 
-export function getProject(slug: string) {
-  return projects.find((p) => p.slug === slug);
+function resolve<T>(field: Localized<T> | undefined, locale: Locale, fallback: T): T {
+  if (!field) return fallback;
+  return (locale !== "en" && field[locale]) || field.en;
+}
+
+const PROJECT_PROJECTION = /* groq */ `{
+  "slug": slug.current,
+  title,
+  location,
+  year,
+  category,
+  summary,
+  description,
+  galleryCount,
+  "image": image.asset->url,
+  "imageDimensions": image.asset->metadata.dimensions,
+  "gallery": gallery[]{ "src": asset->url, "width": asset->metadata.dimensions.width, "height": asset->metadata.dimensions.height },
+  "coverImage": coverImage.asset->url,
+  "coverImageDimensions": coverImage.asset->metadata.dimensions,
+}`;
+
+interface RawProject {
+  slug: string;
+  title: string;
+  location: string;
+  year: string;
+  category: ProjectCategory;
+  summary: Localized<string>;
+  description: Localized<string[]>;
+  galleryCount: number;
+  image?: string;
+  imageDimensions?: { width: number; height: number };
+  gallery?: { src: string; width: number; height: number }[];
+  coverImage?: string;
+  coverImageDimensions?: { width: number; height: number };
+}
+
+async function toProject(raw: RawProject, locale: Locale, objectPosition?: string): Promise<Project> {
+  return {
+    slug: raw.slug,
+    title: raw.title,
+    location: raw.location,
+    year: raw.year,
+    category: raw.category,
+    summary: resolve(raw.summary, locale, raw.summary?.en ?? ""),
+    description: resolve(raw.description, locale, raw.description?.en ?? []),
+    galleryCount: raw.galleryCount,
+    image: raw.image,
+    imageDimensions: raw.imageDimensions,
+    gallery: raw.gallery,
+    coverImage: raw.coverImage,
+    coverImageDimensions: raw.coverImageDimensions,
+    objectPosition,
+  };
+}
+
+/** Every project slug — locale-independent (slugs don't vary by language),
+ *  for generateStaticParams, which runs with no request/locale context at
+ *  all and must never call locale-resolving functions like getLocale(). */
+export async function getProjectSlugs(): Promise<string[]> {
+  const raw = await client.fetch<string[] | null>(`*[_type == "project"].slug.current`);
+  return raw ?? [];
+}
+
+/** Every project, in the current request's locale. */
+export async function getProjects(): Promise<Project[]> {
+  const locale = (await getLocale()) as Locale;
+  const raw = await client.fetch<RawProject[] | null>(`*[_type == "project"]${PROJECT_PROJECTION}`);
+  return Promise.all((raw ?? []).map((p) => toProject(p, locale)));
+}
+
+/** A single project by slug, in the current request's locale. */
+export async function getProject(slug: string): Promise<Project | undefined> {
+  const locale = (await getLocale()) as Locale;
+  const raw = await client.fetch<RawProject | null>(
+    `*[_type == "project" && slug.current == $slug][0]${PROJECT_PROJECTION}`,
+    { slug },
+  );
+  return raw ? toProject(raw, locale) : undefined;
 }
 
 export const categories: ProjectCategory[] = ["architecture", "interior", "urban", "concept"];
 
-/**
- * Home hero carousel, in display order — an explicit slug list rather than a
- * `hero` flag on each project, since the flag left ordering to depend on each
- * project's position in the array above, which made "put this one first"
- * require moving whole project blocks around rather than editing one list.
- */
-const HERO_SLUGS = ["afsona-villa", "samarkand-hotel-room", "exclusive-signature-restaurant", "mashad"];
+interface RawHeroSlide {
+  project: RawProject;
+  imageOverride?: string;
+  objectPositionOverride?: string;
+}
 
-/**
- * Per-slide photo (and crop) override for the hero banner, keyed by slug —
- * used when the project's own `image` (picked for its detail page and
- * listing tiles first) isn't right for this wide banner: either the wrong
- * shape for a landscape crop (Mashad's hero is a 0.73 portrait bedroom
- * shot), simply not the specific photo wanted here (the restaurant's own
- * hero is landscape too, but the arrival shot reads better at this size),
- * or a photo whose subject sits low in the frame — a plain center crop on a
- * wide, short banner keeps mostly empty sky and clips the subject itself.
- */
-const HERO_IMAGE_OVERRIDES: Partial<Record<string, { image?: string; objectPosition?: string }>> = {
-  "exclusive-signature-restaurant": {
-    image: "/projects/qodirxon-pavilion-7.jpg",
-    objectPosition: "50% 80%",
-  },
-  mashad: { image: "/projects/mashad-ex-13.jpg" },
-};
+/** Home hero carousel — curated in Sanity (Home page settings), in display order. */
+export async function getHeroProjects(): Promise<Project[]> {
+  const locale = (await getLocale()) as Locale;
+  const raw = await client.fetch<RawHeroSlide[] | null>(
+    `*[_type == "homeSettings"][0].heroProjects[]{
+      "project": project->${PROJECT_PROJECTION},
+      "imageOverride": imageOverride.asset->url,
+      objectPositionOverride,
+    }`,
+  );
+  return Promise.all(
+    (raw ?? [])
+      .filter((slide) => slide.project)
+      .map(async (slide) => {
+        const project = await toProject(slide.project, locale, slide.objectPositionOverride);
+        return slide.imageOverride ? { ...project, image: slide.imageOverride } : project;
+      }),
+  );
+}
 
-export const heroProjects = HERO_SLUGS.map((slug) => {
-  const project = getProject(slug);
-  if (!project) return undefined;
-  const override = HERO_IMAGE_OVERRIDES[slug];
-  if (!override) return project;
-  return {
-    ...project,
-    image: override.image ?? project.image,
-    objectPosition: override.objectPosition,
-  };
-}).filter((p) => p !== undefined);
+/** Curated selection for the Home page's featured mosaic grid, in order —
+ *  distinct from `getPhotographedProjects`, which is every real project
+ *  (used on the /work listing, where nothing is curated). */
+export async function getFeaturedProjects(): Promise<Project[]> {
+  const locale = (await getLocale()) as Locale;
+  const raw = await client.fetch<RawProject[] | null>(
+    `*[_type == "homeSettings"][0].featuredProjects[]->${PROJECT_PROJECTION}`,
+  );
+  return Promise.all((raw ?? []).map((p) => toProject(p, locale)));
+}
 
 /** Projects with real photography — the only ones shown on public listings,
  *  so a still-unphotographed project never renders as an empty placeholder
  *  card. Unlisted projects keep their detail route for when photos arrive. */
-export const photographedProjects = projects.filter((p) => p.image);
+export async function getPhotographedProjects(): Promise<Project[]> {
+  const projects = await getProjects();
+  return projects.filter((p) => p.image);
+}

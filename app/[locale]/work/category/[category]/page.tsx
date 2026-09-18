@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { AnimatedText } from "@/components/AnimatedText";
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { categories, photographedProjects, type ProjectCategory } from "@/content/projects";
+import { categories, getPhotographedProjects, type ProjectCategory } from "@/content/projects";
 import { getCardShape } from "@/lib/projectCardShape";
 import { localizedAlternates } from "@/lib/siteConfig";
 
@@ -42,6 +42,7 @@ export default async function CategoryPage({
 
   const t = await getTranslations("Work");
   const tCategories = await getTranslations("Categories");
+  const photographedProjects = await getPhotographedProjects();
   const filtered = photographedProjects.filter((p) => p.category === category);
   const visibleCategories = categories.filter((c) =>
     photographedProjects.some((p) => p.category === c),
