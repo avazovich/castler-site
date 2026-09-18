@@ -27,6 +27,8 @@ export interface Project {
    *  photo that matters — only ever set on the hero-carousel copy of a
    *  project, via Home settings' per-slide override in Sanity. */
   objectPosition?: string;
+  /** Who worked on this project, shown on its page. */
+  team?: { name: string; role?: string }[];
 }
 
 type Localized<T> = { en: T; uz?: T; ru?: T };
@@ -50,6 +52,7 @@ const PROJECT_PROJECTION = /* groq */ `{
   "gallery": gallery[]{ "src": asset->url, "width": asset->metadata.dimensions.width, "height": asset->metadata.dimensions.height },
   "coverImage": coverImage.asset->url,
   "coverImageDimensions": coverImage.asset->metadata.dimensions,
+  team,
 }`;
 
 interface RawProject {
@@ -66,6 +69,7 @@ interface RawProject {
   gallery?: { src: string; width: number; height: number }[];
   coverImage?: string;
   coverImageDimensions?: { width: number; height: number };
+  team?: { name: string; role?: string }[];
 }
 
 async function toProject(raw: RawProject, locale: Locale, objectPosition?: string): Promise<Project> {
@@ -84,6 +88,7 @@ async function toProject(raw: RawProject, locale: Locale, objectPosition?: strin
     coverImage: raw.coverImage,
     coverImageDimensions: raw.coverImageDimensions,
     objectPosition,
+    team: raw.team,
   };
 }
 

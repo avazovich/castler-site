@@ -82,6 +82,20 @@ export default async function ProjectPage({
               <span className="label-mono w-20 shrink-0 text-ink-soft">{t("year")}</span>
               <span>{project.year}</span>
             </div>
+            {project.team && project.team.length > 0 && (
+              <div className="flex gap-3">
+                <span className="label-mono w-20 shrink-0 text-ink-soft">{t("team")}</span>
+                <span>
+                  {project.team.map((member, i) => (
+                    <span key={i}>
+                      {member.name}
+                      {member.role && <span className="text-ink-soft"> — {member.role}</span>}
+                      {i < project.team!.length - 1 && ", "}
+                    </span>
+                  ))}
+                </span>
+              </div>
+            )}
           </RevealOnScroll>
 
           <RevealOnScroll delay={0.1} className="mt-8 space-y-4 text-ink-soft">

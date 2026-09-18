@@ -52,6 +52,22 @@ export default defineType({
       of: [{ type: "image", options: { hotspot: true } }],
     }),
     defineField({
+      name: "team",
+      title: "Design team",
+      description: "Who worked on this project — shown on the project's page.",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            { name: "name", type: "string", validation: (Rule) => Rule.required() },
+            { name: "role", title: "Role (optional)", type: "string" },
+          ],
+          preview: { select: { title: "name", subtitle: "role" } },
+        },
+      ],
+    }),
+    defineField({
       name: "galleryCount",
       title: "Gallery slot count",
       type: "number",
