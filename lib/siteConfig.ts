@@ -17,6 +17,12 @@ export function localizedAlternates(locale: string, path = "") {
     languages: Object.fromEntries(routing.locales.map((l) => [l, `${SITE_URL}/${l}${path}`])),
   };
 }
+// The ready-made house plans shop — a separate site from this one. It only has
+// Uzbek and Russian pages, so English visitors are sent to its Uzbek (default) side.
+export const PLANS_SITE_URL = "https://uylar.castler.uz";
+export function plansSiteUrl(locale: string) {
+  return `${PLANS_SITE_URL}/${locale === "ru" ? "ru" : "uz"}`;
+}
 export const INSTAGRAM_URL = "https://www.instagram.com/castler.uz";
 export const FOUNDING_YEAR = "2013";
 export const FOUNDER_NAME = "Otabek Isoqjonov";

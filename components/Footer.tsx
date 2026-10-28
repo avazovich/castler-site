@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { INSTAGRAM_URL } from "@/lib/siteConfig";
+import { INSTAGRAM_URL, plansSiteUrl } from "@/lib/siteConfig";
 import { BackToTop } from "./BackToTop";
 import { FooterLanguageRow } from "./FooterLanguageRow";
 import { NewsletterSignup } from "./NewsletterSignup";
@@ -9,6 +9,7 @@ import { NewsletterSignup } from "./NewsletterSignup";
 export function Footer() {
   const t = useTranslations("Footer");
   const tNav = useTranslations("Nav");
+  const locale = useLocale();
   const year = new Date().getFullYear();
 
   return (
@@ -39,6 +40,12 @@ export function Footer() {
                 <Link href="/work" className="pill bg-paper/10 text-paper transition-colors hover:bg-paper/20">
                   {tNav("work")}
                 </Link>
+                <a
+                  href={plansSiteUrl(locale)}
+                  className="pill bg-paper/10 text-paper transition-colors hover:bg-paper/20"
+                >
+                  {tNav("plans")}
+                </a>
               </div>
             </div>
 

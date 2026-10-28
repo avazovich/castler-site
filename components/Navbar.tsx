@@ -2,18 +2,20 @@
 
 import { useLenis } from "lenis/react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { trackEvent } from "@/lib/analytics";
+import { plansSiteUrl } from "@/lib/siteConfig";
 import { LanguageSwitch } from "./LanguageSwitch";
-import { MenuIcon, PhoneIcon } from "./icons";
+import { ArrowRightIcon, MenuIcon, PhoneIcon } from "./icons";
 import { MobileMenu } from "./MobileMenu";
 import { OfficeMenu } from "./OfficeMenu";
 import { Wordmark } from "./Wordmark";
 
 export function Navbar() {
   const t = useTranslations("Nav");
+  const locale = useLocale();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -51,6 +53,14 @@ export function Navbar() {
             >
               {t("work")}
             </Link>
+            <a
+              href={plansSiteUrl(locale)}
+              onClick={() => trackEvent("plans_site_click", { location: "navbar" })}
+              className="pill flex items-center gap-1.5 bg-paper-2 text-ink hover:bg-line"
+            >
+              {t("plans")}
+              <ArrowRightIcon className="h-3 w-3 -rotate-45" />
+            </a>
             <OfficeMenu label={t("office")} links={officeLinks} />
             <a
               href="tel:+998770001600"

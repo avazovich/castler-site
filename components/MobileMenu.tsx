@@ -1,9 +1,10 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { trackEvent } from "@/lib/analytics";
+import { plansSiteUrl } from "@/lib/siteConfig";
 import { CloseIcon, PhoneIcon } from "./icons";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { Wordmark } from "./Wordmark";
@@ -17,6 +18,7 @@ export function MobileMenu({
 }) {
   const t = useTranslations("Nav");
   const tFooter = useTranslations("Footer");
+  const locale = useLocale();
 
   const groups = [
     {
@@ -24,6 +26,7 @@ export function MobileMenu({
       links: [
         { href: "/", label: t("home") },
         { href: "/work", label: t("work") },
+        { href: plansSiteUrl(locale), label: t("plans"), external: true },
       ],
     },
     {
@@ -56,16 +59,27 @@ export function MobileMenu({
               <div key={group.label}>
                 <p className="label-mono text-paper/45">{group.label}</p>
                 <div className="mt-2 flex flex-col items-start">
-                  {group.links.map((link) => (
-                    <Dialog.Close asChild key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="font-display block text-[13vw] leading-[1.15] text-paper transition-all duration-300 hover:translate-x-3 hover:text-gold-light sm:text-5xl"
-                      >
-                        {link.label}
-                      </Link>
-                    </Dialog.Close>
-                  ))}
+                  {group.links.map((link) => {
+                    const className =
+                      "font-display block text-[13vw] leading-[1.15] text-paper transition-all duration-300 hover:translate-x-3 hover:text-gold-light sm:text-5xl";
+                    return (
+                      <Dialog.Close asChild key={link.href}>
+                        {"external" in link ? (
+                          <a
+                            href={link.href}
+                            onClick={() => trackEvent("plans_site_click", { location: "mobile_menu" })}
+                            className={className}
+                          >
+                            {link.label}
+                          </a>
+                        ) : (
+                          <Link href={link.href} className={className}>
+                            {link.label}
+                          </Link>
+                        )}
+                      </Dialog.Close>
+                    );
+                  })}
                 </div>
               </div>
             ))}
