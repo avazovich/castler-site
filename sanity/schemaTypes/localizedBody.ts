@@ -2,7 +2,14 @@ import { defineType } from "sanity";
 
 const bodyArray = {
   type: "array" as const,
-  of: [{ type: "articleHeading" }, { type: "articleParagraph" }, { type: "articleQuote" }],
+  of: [
+    { type: "articleHeading" },
+    { type: "articleParagraph" },
+    { type: "articleList" },
+    { type: "articleImage" },
+    { type: "articleQuote" },
+    { type: "articleFaq" },
+  ],
 };
 
 /** An article's body — same optional-Uzbek/Russian, falls-back-to-English
