@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { ApplyOfficeNotice } from "./ApplyOfficeNotice";
 
 const DIRECTIONS = [
   { slug: "interior-designer", title: "Interyer dizayner", subtitle: "Interyerlar va yashash muhitini loyihalash" },
@@ -35,6 +36,7 @@ interface FormState {
   phone: string;
   telegramSameAsPhone: boolean;
   telegram: string;
+  location: string;
   direction: string;
   experience: string;
   status: string;
@@ -54,6 +56,7 @@ const INITIAL_STATE: FormState = {
   phone: "",
   telegramSameAsPhone: true,
   telegram: "",
+  location: "",
   direction: "",
   experience: "",
   status: "",
@@ -97,6 +100,7 @@ export function ApplyForm() {
     form.fullName.trim().length > 1 &&
     form.phone.replace(/\D/g, "").length >= 12 &&
     (form.telegramSameAsPhone || form.telegram.trim().length > 3) &&
+    form.location.trim().length > 1 &&
     form.direction &&
     form.experience &&
     form.status;
@@ -125,6 +129,7 @@ export function ApplyForm() {
       `Ism: ${form.fullName}`,
       `Telefon: ${form.phone}`,
       `Telegram: ${form.telegramSameAsPhone ? form.phone + " (telefon bilan bir xil)" : form.telegram}`,
+      `Qayerdan: ${form.location}`,
       `Yo'nalish: ${directionTitle}`,
       `Tajriba: ${form.experience}`,
       `Hozirgi holati: ${form.status}`,
@@ -160,6 +165,7 @@ export function ApplyForm() {
           fullName: form.fullName,
           phone: form.phone,
           telegramContact: form.telegramSameAsPhone ? `${form.phone} (telefon bilan bir xil)` : form.telegram,
+          location: form.location,
           directionLabel: directionTitle,
           experience: form.experience,
           status: form.status,
@@ -251,6 +257,21 @@ export function ApplyForm() {
                 </Field>
               )}
 
+              <div className="space-y-3">
+                <Field
+                  label="Qayerdansiz?"
+                  required
+                  hint="Viloyat va shahar yoki tuman — masalan: Namangan, Chust yoki Toshkent, Chilonzor"
+                >
+                  <TextInput
+                    value={form.location}
+                    onChange={(v) => set("location", v)}
+                    placeholder="Viloyat, shahar / tuman"
+                  />
+                </Field>
+                <ApplyOfficeNotice compact />
+              </div>
+
               <Field label="Yo'nalish" required>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   {DIRECTIONS.map((d, i) => (
@@ -334,7 +355,11 @@ export function ApplyForm() {
                 <ChipGroup options={AVAILABILITY_OPTIONS} value={form.availability} onChange={(v) => set("availability", v)} />
               </Field>
 
-              <Field label="Qaysi ofisda ishlaysiz?" required>
+              <Field
+                label="Qaysi ofisda ishlaysiz?"
+                required
+                hint="Hozircha faqat Namangan ofisi — ish offline, ofisda olib boriladi"
+              >
                 <div className="flex flex-wrap gap-3">
                   {OFFICE_OPTIONS.map((office) => (
                     <OfficeOption

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ApplyForm } from "@/components/ApplyForm";
+import { ApplyOfficeNotice } from "@/components/ApplyOfficeNotice";
 import { Wordmark } from "@/components/Wordmark";
 
 /**
@@ -42,7 +43,7 @@ export default function ApplyPage() {
         <div className="mx-auto max-w-3xl">
           <p className="label-mono flex items-center gap-2 text-gold-light">
             <span className="h-px w-6 bg-gold-light" />
-            Vakansiyalar · 2026
+            Vakansiyalar · 2026 · Namangan
           </p>
           <h1 className="font-display mt-6 text-5xl leading-[1.05] sm:text-6xl">
             Jamoamizga qo&apos;shiling
@@ -52,6 +53,9 @@ export default function ApplyPage() {
             O&apos;zbekistondagi eng yirik loyihalar va brendlar bilan ishlaymiz. Biz bilan
             ishlashni xohlasangiz — arizani to&apos;ldiring.
           </p>
+          <div className="mt-8 max-w-xl">
+            <ApplyOfficeNotice />
+          </div>
           <p className="label-mono mt-6 text-paper/50">
             Interyer dizayner &nbsp;·&nbsp; Arxitektor &nbsp;·&nbsp; Vizualizator
           </p>

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Castlerga ariza qoldiring — Vakansiyalar",
   description:
-    "Castler jamoasiga qo'shiling: interyer dizayner, arxitektor yoki vizualizator sifatida ariza qoldiring. 48 soat ichida javob beramiz.",
+    "Castler jamoasiga qo'shiling: interyer dizayner, arxitektor yoki vizualizator sifatida ariza qoldiring. Ofis Namangan shahrida, ish offline. 48 soat ichida javob beramiz.",
   alternates: { canonical: `${SITE_URL}/apply` },
   robots: { index: true, follow: true },
 };

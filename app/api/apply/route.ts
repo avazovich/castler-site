@@ -5,6 +5,7 @@ interface ApplyPayload {
   fullName: string;
   phone: string;
   telegramContact: string;
+  location: string;
   directionLabel: string;
   experience: string;
   status: string;
@@ -47,6 +48,7 @@ export async function POST(request: Request) {
     `👤 Ism: ${e(payload.fullName.trim())}`,
     `📞 Telefon: ${e(payload.phone.trim())}`,
     payload.telegramContact?.trim() ? `✈️ Telegram: ${e(payload.telegramContact.trim())}` : null,
+    payload.location?.trim() ? `📍 Qayerdan: ${e(payload.location.trim())}` : null,
     `🧭 Yo'nalish: ${e(payload.directionLabel)}`,
     payload.experience ? `⏳ Tajriba: ${e(payload.experience)}` : null,
     payload.status ? `📌 Holati: ${e(payload.status)}` : null,
