@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { notifyTelegram } from "@/lib/telegram";
+import { VACANCY_TOPIC, notifyTelegram } from "@/lib/telegram";
 
 interface ApplyPayload {
   fullName: string;
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     `🕐 Vaqt: ${timestamp}`,
   ].filter((line): line is string => line !== null);
 
-  await notifyTelegram(lines.join("\n"));
+  await notifyTelegram(lines.join("\n"), VACANCY_TOPIC);
 
   return NextResponse.json({ ok: true });
 }
